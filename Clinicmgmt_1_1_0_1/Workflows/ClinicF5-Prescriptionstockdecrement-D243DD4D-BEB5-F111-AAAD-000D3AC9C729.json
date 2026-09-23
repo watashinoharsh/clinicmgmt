@@ -1,0 +1,143 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Dispensed_and_not_yet_deducted": {
+          "runAfter": {},
+          "actions": {
+            "Get_medicine": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_clinicmedicines",
+                  "$select": "hcl_stockonhand",
+                  "recordId": "@triggerOutputs()?['body/_hcl_medicine_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Reduce_stock": {
+              "runAfter": {
+                "Get_medicine": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_clinicmedicines",
+                  "item/hcl_stockonhand": "@max(0, sub(int(coalesce(outputs('Get_medicine')?['body/hcl_stockonhand'], 0)), int(coalesce(triggerOutputs()?['body/hcl_quantity'], 0))))",
+                  "recordId": "@triggerOutputs()?['body/_hcl_medicine_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Mark_deducted": {
+              "runAfter": {
+                "Reduce_stock": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_prescriptions",
+                  "item/hcl_stockdeducted": true,
+                  "recordId": "@triggerOutputs()?['body/hcl_prescriptionid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/hcl_dispensed']",
+                  true
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/hcl_stockdeducted']",
+                    true
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "triggers": {
+        "When_a_prescription_is_dispensed": {
+          "runtimeConfiguration": {
+            "concurrency": {
+              "runs": 1
+            }
+          },
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_prescription",
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/filteringattributes": "hcl_dispensed"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinic home</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F5F7F8;
+    --surface: #FFFFFF;
+    --ink: #10252B;
+    --ink-2: #4A5F66;
+    --ink-3: #6E8288;
+    --line: #DCE4E7;
+    --brand: #0B6E78;
+    --brand-ink: #085861;
+    /* appointment status colours - validated for colour-blind separation; completed is deliberately quiet */
+    --st-booked: #3B7DD8;
+    --st-waiting: #D98A00;
+    --st-consult: #00988F;
+    --st-missed: #D0553F;
+    --st-done: #C6D2D7;
+    --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 var(--font); -webkit-text-size-adjust: 100%; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 40px; }
+
+  /* ---- masthead */
+  .mast { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
+  h1 { margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600; letter-spacing: -0.015em; }
+  .sub { margin: 6px 0 0; color: var(--ink-2); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-weight: 600; }
+  .btn:hover { border-color: var(--ink-3); }
+  .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .btn.primary:hover { background: var(--brand-ink); border-color: var(--brand-ink); }
+
+  section { margin-top: 36px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 14px; }
+  h2 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; }
+
+  /* ---- the schedule ribbon (the one bold element) */
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-2); font-size: 13px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+  .sw.missed { background: repeating-linear-gradient(135deg, var(--st-missed) 0 3px, #f3c9c1 3px 5px); }
+  .ribbon-scroll { overflow-x: auto; padding-bottom: 6px; }
+  .ribbon { position: relative; min-width: 760px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 26px 16px 14px 132px; }
+  .axis { position: relative; height: 22px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  .tick { position: absolute; top: 0; font-size: 12px; color: var(--ink-3); transform: translateX(-50%); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tick.last { transform: translateX(-100%); }
+  .lane { position: relative; height: 46px; margin-bottom: 6px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(var(--hour) - 1px), #EEF2F4 calc(var(--hour) - 1px), #EEF2F4 var(--hour)); }
+  .lane-name { position: absolute; left: -116px; width: 108px; top: 0; height: 46px; display: flex; align-items: center; font-weight: 600; font-size: 13px; line-height: 1.2; overflow: hidden; }
+  .blk { position: absolute; top: 3px; height: 40px; border: 0; border-radius: 6px; padding: 0 8px; color: #fff; text-align: left; cursor: pointer; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 12.5px; line-height: 1.15; box-shadow: 0 0 0 2px var(--surface); }
+  .blk b { display: block; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .blk.compact { padding: 0 6px; }
+  .blk.compact .nm, .blk.compact .ap { display: none; }
+  .blk.compact b { font-size: 12px; }
+  .blk.tiny { padding: 0; font-size: 0; }
+  .blk.tiny b { display: none; }
+  .blk.booked { background: var(--st-booked); }
+  .blk.waiting { background: var(--st-waiting); color: #1c1200; }
+  .blk.consult { background: var(--st-consult); }
+  .blk.done { background: var(--st-done); color: #2c3d43; }
+  .blk.missed { background: repeating-linear-gradient(135deg, var(--st-missed) 0 5px, #b8412d 5px 7px); }
+  .now { position: absolute; top: 24px; bottom: 10px; width: 2px; background: var(--ink); pointer-events: none; }
+  .now::after { content: "now"; position: absolute; top: -21px; left: -14px; font-size: 11px; font-weight: 600; background: var(--ink); color: #fff; padding: 0 5px; border-radius: 3px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .blk { transform-origin: left center; animation: grow .55s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes grow { from { transform: scaleX(0); opacity: .2; } to { transform: none; opacity: 1; } }
+  }
+
+  /* ---- figures */
+  .figures { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .fig { padding: 16px 18px 16px 0; }
+  .fig + .fig { padding-left: 20px; border-left: 1px solid var(--line); }
+  .fig .n { font-size: 34px; line-height: 1.1; font-weight: 300; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .fig .l { margin-top: 4px; color: var(--ink-2); font-size: 13px; }
+
+  /* ---- two columns */
+  .cols { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; }
+  .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .list li { border-bottom: 1px solid var(--line); }
+  .row { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 2px; min-height: 52px; background: none; border: 0; text-align: left; cursor: pointer; }
+  .row:hover { background: #EDF2F4; }
+  .row .who { font-weight: 600; }
+  .row .meta { color: var(--ink-2); font-size: 13px; }
+  .wait { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .wait.long { color: #A85F00; }
+  .empty { color: var(--ink-2); padding: 18px 2px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .err { margin-top: 20px; padding: 12px 14px; border-left: 3px solid var(--st-missed); background: #FBEDEA; color: #6b241a; }
+
+  /* ---- chart */
+  .chart { width: 100%; height: auto; display: block; }
+  .chart text { font: 12px var(--font); fill: var(--ink-3); }
+  .chart .lbl { fill: var(--ink); font-weight: 600; }
+  .bar { fill: #B7C6CB; }
+  .bar.today { fill: var(--brand); }
+  .bar:hover, .bar:focus { fill: var(--brand-ink); outline: none; }
+  .tip { position: fixed; pointer-events: none; background: var(--ink); color: #fff; padding: 6px 10px; border-radius: 6px; font-size: 12.5px; opacity: 0; transition: opacity .1s; z-index: 5; white-space: nowrap; }
+  details { margin-top: 10px; color: var(--ink-2); font-size: 13px; }
+  summary { cursor: pointer; min-height: 32px; }
+  table { border-collapse: collapse; margin-top: 6px; }
+  th, td { text-align: left; padding: 4px 18px 4px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+
+  .foot { margin-top: 30px; color: var(--ink-3); font-size: 13px; display: flex; gap: 14px; align-items: center; }
+  .linkbtn { background: none; border: 0; color: var(--brand); cursor: pointer; font-weight: 600; padding: 8px 2px; min-height: 36px; }
+
+  @media (max-width: 860px) {
+    .cols { grid-template-columns: 1fr; gap: 28px; }
+    .figures { grid-template-columns: repeat(2, 1fr); }
+    .fig, .fig + .fig { padding: 14px 12px 14px 0; border-left: 0; }
+    .fig:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+    .fig { border-bottom: 1px solid var(--line); }
+    .fig:last-child { border-bottom: 0; grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 20px 16px 32px; }
+    h1 { font-size: 25px; }
+    .actions { width: 100%; }
+    .actions .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <h1 id="greet">Good day</h1>
+      <p class="sub" id="sub">Loading today's numbers.</p>
+    </div>
+    <div class="actions">
+      <button class="btn primary" id="bookBtn" type="button">Book appointment</button>
+      <button class="btn" id="patBtn" type="button">New patient</button>
+      <button class="btn" id="invBtn" type="button">New invoice</button>
+    </div>
+  </header>
+
+  <div id="error" class="err" role="alert" hidden></div>
+
+  <section aria-labelledby="h-sched">
+    <div class="sec-head">
+      <h2 id="h-sched">Today's schedule</h2>
+      <div class="legend" aria-label="Appointment status colours">
+        <span><i class="sw" style="background:var(--st-booked)"></i>Booked</span>
+        <span><i class="sw" style="background:var(--st-waiting)"></i>Waiting</span>
+        <span><i class="sw" style="background:var(--st-consult)"></i>In consultation</span>
+        <span><i class="sw" style="background:var(--st-done)"></i>Completed</span>
+        <span><i class="sw missed"></i>No show</span>
+      </div>
+    </div>
+    <div id="ribbonHost"></div>
+  </section>
+
+  <section aria-label="Today in numbers">
+    <div class="figures" id="figures"></div>
+  </section>
+
+  <section class="cols">
+    <div>
+      <div class="sec-head"><h2>Waiting room</h2></div>
+      <div id="waiting"></div>
+    </div>
+    <div>
+      <div class="sec-head"><h2>Appointments, last 7 days</h2></div>
+      <div id="chartHost"></div>
+      <details id="tableView"><summary>View as table</summary><div id="tableHost"></div></details>
+    </div>
+  </section>
+
+  <div class="foot"><span id="updated"></span><button class="linkbtn" id="refreshBtn" type="button">Refresh</button></div>
+</div>
+<div class="tip" id="tip" role="status"></div>
+
+<script>
+(function () {
+  'use strict';
+  var API = location.origin + '/api/data/v9.2/';
+  var HEAD = { 'Accept': 'application/json', 'OData-MaxVersion': '4.0', 'OData-Version': '4.0',
+               'Prefer': 'odata.include-annotations="OData.Community.Display.V1.FormattedValue"' };
+  var FV = '@OData.Community.Display.V1.FormattedValue';
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function get(path) {
+    return fetch(API + path, { headers: HEAD, credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) { throw new Error(path.split('?')[0] + ' ' + r.status); }
+      return r.json();
+    });
+  }
+  function xrm() { try { if (window.parent && window.parent.Xrm) { return window.parent.Xrm; } } catch (e) {} return window.Xrm || null; }
+  function openNew(entity) {
+    var x = xrm();
+    if (x && x.Navigation && x.Navigation.openForm) { x.Navigation.openForm({ entityName: entity }); }
+    else { window.open(location.origin + '/main.aspx?pagetype=entityrecord&etn=' + entity, '_top'); }
+  }
+  function openRecord(entity, id) {
+    var x = xrm();
+    if (x && x.Navigation && x.Navigation.openForm) { x.Navigation.openForm({ entityName: entity, entityId: id }); }
+    else { window.open(location.origin + '/main.aspx?pagetype=entityrecord&etn=' + entity + '&id=' + id, '_top'); }
+  }
+  function fmtTime(d) { return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }
+  function timeHtml(d) { var t = fmtTime(d).split(/[\s\u202f]+/); return esc(t[0]) + (t[1] ? '<span class="ap"> ' + esc(t[1]) + '</span>' : ''); }
+  function money(n) { return (n || 0).toLocaleString(undefined, { maximumFractionDigits: 2 }); }
+  function midnight(offsetDays) { var d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + (offsetDays || 0)); return d; }
+
+  // status -> one of: booked, waiting, consult, done, missed, canceled
+  function group(a) {
+    var s = (a['statuscode' + FV] || '').toLowerCase();
+    if (a.statecode === 2) { return s.indexOf('no show') > -1 ? 'missed' : 'canceled'; }
+    if (a.statecode === 1) { return 'done'; }
+    if (s.indexOf('checked') > -1) { return 'waiting'; }
+    if (s.indexOf('consult') > -1) { return 'consult'; }
+    return 'booked';
+  }
+  var LABEL = { booked: 'Booked', waiting: 'Waiting', consult: 'In consultation', done: 'Completed', missed: 'No show' };
+
+  // ---------------------------------------------------------- render: schedule ribbon
+  function renderRibbon(appts) {
+    var host = $('ribbonHost');
+    if (!appts.length) { host.innerHTML = '<div class="empty">No appointments today. Book one to fill the schedule.</div>'; return; }
+    var lanes = {}, order = [], minH = 23, maxH = 0;
+    appts.forEach(function (a) {
+      var key = a._ownerid_value, name = a['_ownerid_value' + FV] || 'Unassigned';
+      if (!lanes[key]) { lanes[key] = { name: name, items: [] }; order.push(key); }
+      lanes[key].items.push(a);
+      var s = new Date(a.scheduledstart), e = new Date(a.scheduledend || a.scheduledstart);
+      minH = Math.min(minH, s.getHours()); maxH = Math.max(maxH, e.getHours() + (e.getMinutes() ? 1 : 0));
+    });
+    if (maxH - minH < 6) { maxH = Math.min(24, minH + 6); if (maxH - minH < 6) { minH = Math.max(0, maxH - 6); } }
+    var span = (maxH - minH) * 60, hourPct = 100 / (maxH - minH), minW = 148 + (maxH - minH) * 104;
+    var ticks = '';
+    for (var h = minH; h <= maxH; h++) { ticks += '<span class="tick' + (h === maxH ? ' last' : '') + '" style="left:' + ((h - minH) * hourPct) + '%">' + (h % 12 || 12) + (h < 12 ? ' am' : ' pm') + '</span>'; }
+    var html = '<div class="ribbon-scroll"><div class="ribbon" style="min-width:' + minW + 'px"><div class="axis">' + ticks + '</div>';
+    order.forEach(function (k) {
+      html += '<div class="lane" style="--hour:' + hourPct + '%"><div class="lane-name" title="' + esc(lanes[k].name) + '">' + esc(lanes[k].name) + '</div>';
+      lanes[k].items.forEach(function (a, i) {
+        var s = new Date(a.scheduledstart), e = new Date(a.scheduledend || a.scheduledstart);
+        var startMin = (s.getHours() - minH) * 60 + s.getMinutes(), dur = Math.max(10, (e - s) / 60000);
+        var g = group(a), who = a['_regardingobjectid_value' + FV] || 'Patient';
+        var label = fmtTime(s) + ', ' + who + ', ' + LABEL[g];
+        html += '<button type="button" class="blk ' + g + '" data-id="' + a.activityid + '" title="' + esc(label) + '" aria-label="' + esc(label) + '" ' +
+                'style="left:' + (startMin / span * 100) + '%;width:' + (dur / span * 100) + '%;animation-delay:' + (i * 35) + 'ms"><b>' + timeHtml(s) + '</b><span class="nm">' + esc(who) + '</span></button>';
+      });
+      html += '</div>';
+    });
+    var now = new Date(), nowMin = (now.getHours() - minH) * 60 + now.getMinutes();
+    if (nowMin >= 0 && nowMin <= span) { html += '<div class="now" style="left:calc(132px + (100% - 148px) * ' + (nowMin / span) + ')"></div>'; }
+    html += '</div></div>';
+    host.innerHTML = html;
+    Array.prototype.forEach.call(host.querySelectorAll('.blk'), function (b) { if (b.offsetWidth < 40) { b.classList.add('tiny'); } else if (b.offsetWidth < 92) { b.classList.add('compact'); } b.addEventListener('click', function () { openRecord('appointment', b.getAttribute('data-id')); }); });
+  }
+
+  // ---------------------------------------------------------- render: figures
+  function renderFigures(f) {
+    var items = [[f.waiting, 'Waiting now'], [f.seen, 'Seen today'], [f.booked, 'Booked today'], [money(f.collected), 'Collected today'], [money(f.outstanding), 'Outstanding on invoices']];
+    $('figures').innerHTML = items.map(function (it) { return '<div class="fig"><div class="n">' + esc(it[0]) + '</div><div class="l">' + esc(it[1]) + '</div></div>'; }).join('');
+  }
+
+  // ---------------------------------------------------------- render: waiting room
+  function renderWaiting(appts) {
+    var w = appts.filter(function (a) { return group(a) === 'waiting'; }).sort(function (a, b) {
+      return new Date(a.hcl_checkedinat || a.scheduledstart) - new Date(b.hcl_checkedinat || b.scheduledstart);
+    });
+    var host = $('waiting');
+    if (!w.length) { host.innerHTML = '<div class="empty">No one is waiting. Patients appear here when they check in.</div>'; return; }
+    host.innerHTML = '<ul class="list">' + w.map(function (a) {
+      var mins = Math.max(0, Math.round((Date.now() - new Date(a.hcl_checkedinat || a.scheduledstart)) / 60000)); var waited = mins < 90 ? mins + ' min' : Math.floor(mins / 60) + ' h ' + (mins % 60) + ' min';
+      return '<li><button type="button" class="row" data-id="' + a.activityid + '"><span><span class="who">' + esc(a['_regardingobjectid_value' + FV] || 'Patient') + '</span><br><span class="meta">with ' +
+             esc(a['_ownerid_value' + FV] || 'unassigned') + ', booked ' + fmtTime(new Date(a.scheduledstart)) + '</span></span><span class="wait' + (mins >= 20 ? ' long' : '') + '">' + waited + '</span></button></li>';
+    }).join('') + '</ul>';
+    Array.prototype.forEach.call(host.querySelectorAll('.row'), function (b) { b.addEventListener('click', function () { openRecord('appointment', b.getAttribute('data-id')); }); });
+  }
+
+  // ---------------------------------------------------------- render: 7-day bars (single series, one colour, today emphasised)
+  function renderChart(days) {
+    var W = 460, H = 190, padL = 8, padB = 26, padT = 22, bw = 34, gap = (W - padL * 2 - bw * 7) / 6;
+    var max = Math.max(4, Math.max.apply(null, days.map(function (d) { return d.n; })));
+    var svg = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Appointments per day for the last 7 days">';
+    svg += '<line x1="' + padL + '" x2="' + (W - padL) + '" y1="' + (H - padB) + '" y2="' + (H - padB) + '" stroke="#DCE4E7"/>';
+    days.forEach(function (d, i) {
+      var h = (H - padB - padT) * d.n / max, x = padL + i * (bw + gap), y = H - padB - h;
+      var tip = d.label + ': ' + d.n + (d.n === 1 ? ' appointment' : ' appointments');
+      svg += '<path class="bar' + (d.today ? ' today' : '') + '" tabindex="0" data-tip="' + esc(tip) + '" aria-label="' + esc(tip) + '" d="M' + x + ',' + (H - padB) + 'V' + (y + 4) + 'Q' + x + ',' + y + ' ' + (x + 4) + ',' + y + 'H' + (x + bw - 4) + 'Q' + (x + bw) + ',' + y + ' ' + (x + bw) + ',' + (y + 4) + 'V' + (H - padB) + 'Z"/>';
+      svg += '<text x="' + (x + bw / 2) + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(d.short) + '</text>';
+      if (d.today) { svg += '<text class="lbl" x="' + (x + bw / 2) + '" y="' + (y - 6) + '" text-anchor="middle">' + d.n + '</text>'; }
+    });
+    $('chartHost').innerHTML = svg + '</svg>';
+    var tip = $('tip');
+    Array.prototype.forEach.call($('chartHost').querySelectorAll('.bar'), function (b) {
+      function show(e) { tip.textContent = b.getAttribute('data-tip'); var r = b.getBoundingClientRect(); tip.style.left = Math.max(8, r.left + r.width / 2 - tip.offsetWidth / 2) + 'px'; tip.style.top = (r.top - 36) + 'px'; tip.style.opacity = 1; }
+      b.addEventListener('mouseenter', show); b.addEventListener('focus', show);
+      b.addEventListener('mouseleave', function () { tip.style.opacity = 0; }); b.addEventListener('blur', function () { tip.style.opacity = 0; });
+    });
+    $('tableHost').innerHTML = '<table><thead><tr><th>Day</th><th>Appointments</th></tr></thead><tbody>' + days.map(function (d) { return '<tr><td>' + esc(d.label) + '</td><td>' + d.n + '</td></tr>'; }).join('') + '</tbody></table>';
+  }
+
+  // ---------------------------------------------------------- data
+  var loading = false;
+  function load() {
+    if (loading) { return; } loading = true;
+    var t0 = midnight(0), t1 = midnight(1), w0 = midnight(-6);
+    var sel = 'activityid,scheduledstart,scheduledend,statecode,statuscode,hcl_checkedinat,_ownerid_value,_regardingobjectid_value';
+    var q = {
+      me: get('WhoAmI').then(function (w) { return get('systemusers(' + w.UserId + ')?$select=firstname,fullname'); }),
+      today: get('appointments?$select=' + sel + '&$filter=scheduledstart ge ' + t0.toISOString() + ' and scheduledstart lt ' + t1.toISOString() + '&$orderby=scheduledstart asc&$top=300'),
+      week: get('appointments?$select=scheduledstart,statecode&$filter=scheduledstart ge ' + w0.toISOString() + ' and scheduledstart lt ' + t1.toISOString() + '&$top=2000'),
+      pay: get('hcl_clinicpayments?$select=hcl_amount&$filter=hcl_paidon ge ' + t0.toISOString() + ' and hcl_paidon lt ' + t1.toISOString() + '&$top=2000'),
+      owed: get('hcl_clinicinvoices?$select=hcl_balance&$filter=hcl_status eq 813450001 or hcl_status eq 813450002&$top=5000')
+    };
+    var errors = [];
+    function safe(p, fallback, name) { return p.catch(function () { errors.push(name); return fallback; }); }
+    Promise.all([safe(q.me, { firstname: '' }, 'your profile'), safe(q.today, { value: [] }, "today's schedule"), safe(q.week, { value: [] }, 'the weekly chart'),
+                 safe(q.pay, { value: [] }, 'payments'), safe(q.owed, { value: [] }, 'invoices')]).then(function (r) {
+      var me = r[0], appts = r[1].value.filter(function (a) { return group(a) !== 'canceled'; });
+      var hr = new Date().getHours(), part = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening';
+      var fn = me.firstname ? me.firstname.charAt(0).toUpperCase() + me.firstname.slice(1).toLowerCase() : '';
+      $('greet').textContent = part + (fn ? ', ' + fn : '');
+      var waiting = appts.filter(function (a) { return group(a) === 'waiting'; }).length;
+      $('sub').textContent = appts.length
+        ? appts.length + (appts.length === 1 ? ' appointment' : ' appointments') + ' today, ' + waiting + ' waiting now.'
+        : 'No appointments today yet.';
+      renderRibbon(appts);
+      renderFigures({
+        waiting: waiting,
+        seen: appts.filter(function (a) { return group(a) === 'done'; }).length,
+        booked: appts.length,
+        collected: r[3].value.reduce(function (s, p) { return s + (Number(p.hcl_amount) || 0); }, 0),
+        outstanding: r[4].value.reduce(function (s, p) { return s + (Number(p.hcl_balance) || 0); }, 0)
+      });
+      renderWaiting(appts);
+      var days = [];
+      for (var i = 6; i >= 0; i--) {
+        var d0 = midnight(-i), d1 = midnight(-i + 1);
+        var n = r[2].value.filter(function (a) { var s = new Date(a.scheduledstart); return a.statecode !== 2 && s >= d0 && s < d1; }).length;
+        days.push({ n: n, today: i === 0, short: d0.toLocaleDateString([], { weekday: 'short' }), label: d0.toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'short' }) });
+      }
+      renderChart(days);
+      var box = $('error');
+      if (errors.length) { box.hidden = false; box.textContent = "Couldn't load " + errors.join(', ') + '. Check your connection, then choose Refresh.'; } else { box.hidden = true; }
+      $('updated').textContent = 'Updated ' + fmtTime(new Date());
+    }).then(function () { loading = false; }, function () { loading = false; });
+  }
+
+  $('bookBtn').addEventListener('click', function () { openNew('appointment'); });
+  $('patBtn').addEventListener('click', function () { openNew('contact'); });
+  $('invBtn').addEventListener('click', function () { openNew('hcl_clinicinvoice'); });
+  $('refreshBtn').addEventListener('click', load);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) { load(); } });
+  setInterval(function () { if (!document.hidden) { load(); } }, 60000);
+  load();
+})();
+</script>
+</body>
+</html>

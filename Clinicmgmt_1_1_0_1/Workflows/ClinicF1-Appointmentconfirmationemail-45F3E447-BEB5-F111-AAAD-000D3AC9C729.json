@@ -1,0 +1,216 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicOutlook"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_settings": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicsettings",
+              "$top": 1,
+              "$select": "hcl_clinicname,hcl_timezone,hcl_manageremail,hcl_defaulttaxrate"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Regarding_is_a_patient": {
+          "type": "If",
+          "runAfter": {
+            "Manager_email": [
+              "Succeeded"
+            ]
+          },
+          "actions": {
+            "Get_patient": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "$select": "firstname,fullname,emailaddress1,donotemail",
+                  "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Patient_can_be_emailed": {
+              "runAfter": {
+                "Get_doctor": [
+                  "Succeeded"
+                ]
+              },
+              "actions": {
+                "Send_confirmation": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "operationId": "SendEmailV2",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                      "connectionName": "shared_office365"
+                    },
+                    "parameters": {
+                      "emailMessage/Importance": "Normal",
+                      "emailMessage/Body": "<p>Hello @{outputs('Get_patient')?['body/firstname']},</p><p>Your appointment at @{outputs('Clinic_name')} is booked with <b>@{outputs('Get_doctor')?['body/fullname']}</b> on <b>@{convertTimeZone(triggerOutputs()?['body/scheduledstart'], 'UTC', outputs('Time_zone'), 'dddd, dd MMM yyyy hh:mm tt')}</b>.</p><p>Please reply or call us if you need to reschedule.</p>",
+                      "emailMessage/Subject": "Appointment confirmed - @{outputs('Clinic_name')}",
+                      "emailMessage/To": "@outputs('Get_patient')?['body/emailaddress1']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "type": "If",
+              "expression": {
+                "and": [
+                  {
+                    "not": {
+                      "equals": [
+                        "@empty(outputs('Get_patient')?['body/emailaddress1'])",
+                        true
+                      ]
+                    }
+                  },
+                  {
+                    "not": {
+                      "equals": [
+                        "@outputs('Get_patient')?['body/donotemail']",
+                        true
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "Get_doctor": {
+              "runAfter": {
+                "Get_patient": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "systemusers",
+                  "$select": "fullname",
+                  "recordId": "@triggerOutputs()?['body/_ownerid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname']",
+                  "contact"
+                ]
+              }
+            ]
+          }
+        },
+        "Manager_email": {
+          "runAfter": {
+            "Clinic_name": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@first(outputs('Get_settings')?['body/value'])?['hcl_manageremail']"
+        },
+        "Time_zone": {
+          "runAfter": {
+            "Get_settings": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_timezone'], 'UTC')"
+        },
+        "Clinic_name": {
+          "runAfter": {
+            "Time_zone": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_clinicname'], 'Clinic')"
+        }
+      },
+      "triggers": {
+        "When_an_appointment_is_created": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "appointment",
+              "subscriptionRequest/message": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

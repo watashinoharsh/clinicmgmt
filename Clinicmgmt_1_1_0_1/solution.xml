@@ -1,0 +1,182 @@
+<ImportExportXml version="9.2.26091.144" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26091.144" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26091.00144">
+  <SolutionManifest>
+    <UniqueName>Clinicmgmt</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Clinic Management" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Clinic Management: appointments, patients, visits, prescriptions, billing and inventory for clinics. Includes Clinic Manager (desktop/tablet) and Clinic Mobile (phone) apps, 12 automation flows, 4 security roles and a Clinic Settings table. Configure name, time zone and manager email in Clinic Manager &gt; Setup &gt; Clinic settings." languagecode="1033" />
+    </Descriptions>
+    <Version>1.1.0.1</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Harsh</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Clinic Management" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Clinic Management for Power Platform" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>hcl</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>81345</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="1" />
+      <RootComponent type="1" schemaName="appointment" behavior="1" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="hcl_clinicinvoice" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicinvoiceline" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicmedicine" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicpayment" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicservice" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicsetting" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_doctorschedule" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_prescription" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_visit" behavior="0" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="task" behavior="1" />
+      <RootComponent type="20" id="{18cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{24cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{30cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{3ccfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="29" id="{0c807f66-c9b5-f111-aaad-000d3ac99980}" behavior="0" />
+      <RootComponent type="29" id="{1f807f66-c9b5-f111-aaad-000d3ac99980}" behavior="0" />
+      <RootComponent type="29" id="{35f3e447-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{45f3e447-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{94626016-bfb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{9a43dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{a0626016-bfb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{a643dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{b243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{c054dd91-e2b5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="29" id="{c243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{d243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/home.html" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/icon-manager.svg" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/icon-mobile.svg" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_ClinicManagerSiteMap" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_ClinicMobileSiteMap" behavior="0" />
+      <RootComponent type="80" schemaName="ClinicManager" behavior="0" />
+      <RootComponent type="80" schemaName="ClinicMobile" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="2" schemaName="isonlinemeeting" displayName="Is Online Meeting" parentSchemaName="appointment" parentDisplayName="Appointment" solution="msft_ActivitiesInfra_Extensions (9.2.0.81)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="onlinemeetingjoinurl" displayName="Online Meeting Join Url" parentSchemaName="appointment" parentDisplayName="Appointment" solution="msft_ActivitiesInfra_Extensions (9.2.0.81)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Appointment" parentDisplayName="Appointment" solution="msdynce_Activities (9.0.1.2033)" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Activity.HyperlinkControlWithImage" displayName="MscrmControls.Activity.HyperlinkControlWithImage" solution="msdynce_ActivitiesPatch (9.0.26086.260830001)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2609.1007)" />
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.RichTextEditor.RichTextEditorControl" displayName="MscrmControls.RichTextEditor.RichTextEditorControl" solution="msdyn_RichTextEditor (9.0.26083.1012)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="msdyn_CustomControlsExtended" version="9.0.26083.1012">msdyn_TimelineExtended (9.0.26083.1012)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=ClinicManager,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="ClinicManager" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=ClinicMobile,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="ClinicMobile" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="account" displayName="Account" parentSchemaName="" solution="System (5.0)" />
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="task" displayName="Task" parentSchemaName="" solution="msdynce_Activities (9.0.1.2033)" />
+        <Dependent type="1" schemaName="task" displayName="Task" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

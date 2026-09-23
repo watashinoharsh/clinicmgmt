@@ -1,0 +1,370 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicOutlook"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_settings": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicsettings",
+              "$top": 1,
+              "$select": "hcl_clinicname,hcl_timezone,hcl_manageremail,hcl_defaulttaxrate"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Init_collected": {
+          "runAfter": {
+            "Init_owed": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Collected",
+                "value": 0,
+                "type": "float"
+              }
+            ]
+          }
+        },
+        "Local_now": {
+          "runAfter": {
+            "Manager_email": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@convertFromUtc(utcNow(), outputs('Time_zone'))"
+        },
+        "Manager_email": {
+          "runAfter": {
+            "Clinic_name": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@first(outputs('Get_settings')?['body/value'])?['hcl_manageremail']"
+        },
+        "Clinic_name": {
+          "runAfter": {
+            "Time_zone": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_clinicname'], 'Clinic')"
+        },
+        "Init_owed": {
+          "runAfter": {
+            "Local_now": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Owed",
+                "value": 0,
+                "type": "float"
+              }
+            ]
+          }
+        },
+        "Due_now": {
+          "runAfter": {
+            "Init_collected": [
+              "Succeeded"
+            ]
+          },
+          "actions": {
+            "Today_start": {
+              "runAfter": {},
+              "type": "Compose",
+              "inputs": "@convertTimeZone(startOfDay(convertFromUtc(utcNow(), outputs('Time_zone'))), outputs('Time_zone'), 'UTC')"
+            },
+            "Sum_outstanding": {
+              "actions": {
+                "Add_balance": {
+                  "runAfter": {},
+                  "type": "IncrementVariable",
+                  "inputs": {
+                    "value": "@float(coalesce(items('Sum_outstanding')?['hcl_balance'], 0))",
+                    "name": "Owed"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_outstanding": [
+                  "Succeeded"
+                ]
+              },
+              "foreach": "@outputs('List_outstanding')?['body/value']",
+              "type": "Foreach"
+            },
+            "Today_end": {
+              "runAfter": {
+                "Today_start": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Compose",
+              "inputs": "@convertTimeZone(startOfDay(addDays(convertFromUtc(utcNow(), outputs('Time_zone')), 1)), outputs('Time_zone'), 'UTC')"
+            },
+            "List_outstanding": {
+              "runAfter": {
+                "Sum_payments": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_clinicinvoices",
+                  "$filter": "hcl_status eq 813450001 or hcl_status eq 813450002",
+                  "$select": "hcl_balance"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Email_summary": {
+              "runAfter": {
+                "List_low_stock": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "connectionName": "shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/Importance": "Normal",
+                  "emailMessage/Body": "<div style='font-family:Segoe UI,Arial,sans-serif;max-width:640px;border:1px solid #DCE4E7;border-radius:10px;overflow:hidden'><div style='background:#0B6E78;color:#fff;padding:14px 18px;font-size:16px;font-weight:600'>@{outputs('Clinic_name')} - today in numbers</div><table style='width:100%;border-collapse:collapse;color:#10252B'><tr><td style='padding:14px 18px;border-left:1px solid #DCE4E7'><div style='font-size:30px;font-weight:300;line-height:1.1'>@{length(outputs('List_appointments')?['body/value'])}</div><div style='font-size:13px;color:#4A5F66;margin-top:4px'>Appointments</div></td><td style='padding:14px 18px;border-left:1px solid #DCE4E7'><div style='font-size:30px;font-weight:300;line-height:1.1'>@{length(body('Completed'))}</div><div style='font-size:13px;color:#4A5F66;margin-top:4px'>Seen</div></td><td style='padding:14px 18px;border-left:1px solid #DCE4E7'><div style='font-size:30px;font-weight:300;line-height:1.1'>@{length(body('No_shows'))}</div><div style='font-size:13px;color:#4A5F66;margin-top:4px'>No shows</div></td><td style='padding:14px 18px;border-left:1px solid #DCE4E7'><div style='font-size:30px;font-weight:300;line-height:1.1'>@{formatNumber(variables('Collected'), 'N2')}</div><div style='font-size:13px;color:#4A5F66;margin-top:4px'>Collected</div></td><td style='padding:14px 18px;border-left:1px solid #DCE4E7'><div style='font-size:30px;font-weight:300;line-height:1.1'>@{formatNumber(variables('Owed'), 'N2')}</div><div style='font-size:13px;color:#4A5F66;margin-top:4px'>Outstanding</div></td></tr></table><p style='margin:0;padding:14px 18px;color:#4A5F66;font-size:13px;border-top:1px solid #DCE4E7'>Low-stock medicines: <b>@{length(outputs('List_low_stock')?['body/value'])}</b></p></div>",
+                  "emailMessage/Subject": "Today in numbers - @{outputs('Clinic_name')}",
+                  "emailMessage/To": "@outputs('Manager_email')"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Completed": {
+              "runAfter": {
+                "List_appointments": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Query",
+              "inputs": {
+                "where": "@equals(item()?['statecode'], 1)",
+                "from": "@outputs('List_appointments')?['body/value']"
+              }
+            },
+            "List_payments": {
+              "runAfter": {
+                "No_shows": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_clinicpayments",
+                  "$filter": "hcl_paidon ge @{outputs('Today_start')} and hcl_paidon lt @{outputs('Today_end')}",
+                  "$select": "hcl_amount"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Sum_payments": {
+              "actions": {
+                "Add_payment": {
+                  "runAfter": {},
+                  "type": "IncrementVariable",
+                  "inputs": {
+                    "value": "@float(coalesce(items('Sum_payments')?['hcl_amount'], 0))",
+                    "name": "Collected"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_payments": [
+                  "Succeeded"
+                ]
+              },
+              "foreach": "@outputs('List_payments')?['body/value']",
+              "type": "Foreach"
+            },
+            "No_shows": {
+              "runAfter": {
+                "Completed": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Query",
+              "inputs": {
+                "where": "@and(equals(item()?['statecode'], 2), equals(item()?['statuscode'], 813450004))",
+                "from": "@outputs('List_appointments')?['body/value']"
+              }
+            },
+            "List_low_stock": {
+              "runAfter": {
+                "Sum_outstanding": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_clinicmedicines",
+                  "$filter": "hcl_lowstock eq true",
+                  "$select": "hcl_name"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "List_appointments": {
+              "runAfter": {
+                "Today_end": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "appointments",
+                  "$filter": "scheduledstart ge @{outputs('Today_start')} and scheduledstart lt @{outputs('Today_end')}",
+                  "$select": "statecode,statuscode"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@and(equals(int(formatDateTime(outputs('Local_now'), 'HH')), 18), not(empty(outputs('Manager_email'))))",
+              true
+            ]
+          }
+        },
+        "Time_zone": {
+          "runAfter": {
+            "Get_settings": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_timezone'], 'UTC')"
+        }
+      },
+      "triggers": {
+        "Every_hour": {
+          "type": "Recurrence",
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "schedule": {
+              "hours": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23"
+              ],
+              "minutes": [
+                30
+              ]
+            }
+          }
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

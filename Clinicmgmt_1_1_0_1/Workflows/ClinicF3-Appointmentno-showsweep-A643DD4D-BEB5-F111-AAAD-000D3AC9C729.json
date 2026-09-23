@@ -1,0 +1,212 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_settings": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicsettings",
+              "$top": 1,
+              "$select": "hcl_clinicname,hcl_timezone,hcl_manageremail,hcl_defaulttaxrate"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Local_now": {
+          "runAfter": {
+            "Manager_email": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@convertFromUtc(utcNow(), outputs('Time_zone'))"
+        },
+        "Manager_email": {
+          "runAfter": {
+            "Clinic_name": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@first(outputs('Get_settings')?['body/value'])?['hcl_manageremail']"
+        },
+        "Clinic_name": {
+          "runAfter": {
+            "Time_zone": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_clinicname'], 'Clinic')"
+        },
+        "Due_now": {
+          "runAfter": {
+            "Local_now": [
+              "Succeeded"
+            ]
+          },
+          "actions": {
+            "List_missed_appointments": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "appointments",
+                  "$filter": "scheduledend lt @{utcNow()} and (statecode eq 0 or statecode eq 3) and statuscode ne 813450002 and statuscode ne 813450003",
+                  "$select": "activityid"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "For_each_missed": {
+              "actions": {
+                "Clear_slot_key": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "appointments",
+                      "item/hcl_slotkey": "@null",
+                      "recordId": "@items('For_each_missed')?['activityid']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Mark_no_show": {
+                  "runAfter": {
+                    "Clear_slot_key": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "appointments",
+                      "item/statecode": 2,
+                      "item/statuscode": 813450004,
+                      "recordId": "@items('For_each_missed')?['activityid']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_missed_appointments": [
+                  "Succeeded"
+                ]
+              },
+              "foreach": "@outputs('List_missed_appointments')?['body/value']",
+              "type": "Foreach"
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@and(equals(int(formatDateTime(outputs('Local_now'), 'HH')), 23))",
+              true
+            ]
+          }
+        },
+        "Time_zone": {
+          "runAfter": {
+            "Get_settings": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_timezone'], 'UTC')"
+        }
+      },
+      "triggers": {
+        "Every_hour": {
+          "type": "Recurrence",
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "schedule": {
+              "hours": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23"
+              ],
+              "minutes": [
+                30
+              ]
+            }
+          }
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

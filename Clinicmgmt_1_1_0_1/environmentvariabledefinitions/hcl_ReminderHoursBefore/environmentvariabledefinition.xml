@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="hcl_ReminderHoursBefore">
+  <defaultvalue>24</defaultvalue>
+  <displayname default="Reminder Hours Before">
+    <label description="Reminder Hours Before" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.1</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000001</type>
+</environmentvariabledefinition>

@@ -1,0 +1,1 @@
+hcl_bmi: =If(hcl_heightcm > 0, Decimal(Round(hcl_weightkg / ((hcl_heightcm / 100) * (hcl_heightcm / 100)), 1)), Blank())

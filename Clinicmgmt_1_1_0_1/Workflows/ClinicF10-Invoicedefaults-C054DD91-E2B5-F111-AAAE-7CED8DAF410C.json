@@ -1,0 +1,117 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_settings": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicsettings",
+              "$top": 1,
+              "$select": "hcl_clinicname,hcl_timezone,hcl_manageremail,hcl_defaulttaxrate"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Manager_email": {
+          "runAfter": {
+            "Clinic_name": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@first(outputs('Get_settings')?['body/value'])?['hcl_manageremail']"
+        },
+        "Set_defaults": {
+          "runAfter": {
+            "Manager_email": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicinvoices",
+              "item/hcl_taxrate": "@coalesce(triggerOutputs()?['body/hcl_taxrate'], first(outputs('Get_settings')?['body/value'])?['hcl_defaulttaxrate'], 0)",
+              "item/hcl_invoicedate": "@coalesce(triggerOutputs()?['body/hcl_invoicedate'], utcNow())",
+              "recordId": "@triggerOutputs()?['body/hcl_clinicinvoiceid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Time_zone": {
+          "runAfter": {
+            "Get_settings": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_timezone'], 'UTC')"
+        },
+        "Clinic_name": {
+          "runAfter": {
+            "Time_zone": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(first(outputs('Get_settings')?['body/value'])?['hcl_clinicname'], 'Clinic')"
+        }
+      },
+      "triggers": {
+        "When_an_invoice_is_created": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_clinicinvoice",
+              "subscriptionRequest/message": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
