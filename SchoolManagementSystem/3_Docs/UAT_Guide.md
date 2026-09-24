@@ -1,4 +1,4 @@
-# UAT guide - School Management System v2.2.0.0
+# UAT guide - School Management System v2.2.1.0
 
 ## 1. Prerequisites
 - A Dataverse environment with Dynamics 365 activities (appointment, task, contact, account) - a standard environment has these.
@@ -9,7 +9,7 @@
 ## 2. Setup checklist (administrator)
 | # | Step | Done |
 |---|---|---|
-| 1 | Import `SchoolManagementSystem_2.2.0.0_managed.zip` (or unmanaged in DEV) | |
+| 1 | Import `SchoolManagementSystem_2.2.1.0_managed.zip` (or unmanaged in DEV) | |
 | 2 | Bind connection references: `hcl_ClinicDataverse`, `smc_SchoolDataverse` (Dataverse), `hcl_ClinicOutlook` (Office 365 Outlook). Leave `hcl_AiHttp` unbound unless AI drafting is being tested | |
 | 3 | Turn on the flows (18 activate on import when connections are bound). The 2 AI flows stay OFF until an AI endpoint exists | |
 | 4 | Environment variables: `hcl_SharePointSiteUrl`, `hcl_NotificationDeepLinkBase`, `hcl_PaymentLinkBase`, `hcl_DefaultReminderIntervalHours`, `hcl_AiDraftEndpoint` - set per environment, leave empty if not used | |
@@ -22,7 +22,7 @@
 pac auth create --environment <UAT environment URL>
 pac data import --data 2_SampleData\UAT_SampleData.zip
 ```
-Records use fixed IDs, so re-running the import updates them instead of duplicating. Contacts are created with "Do not email" set so no test emails go out. The clinic manager email is left blank on purpose so digest emails are skipped.
+Run this import **once per environment**: the tool assigns new IDs on every run, so importing again creates duplicate records. Contacts are created with "Do not email" set so no test emails go out. The clinic manager email is left blank on purpose so digest emails are skipped.
 
 ## 4. Roles (proposed - confirm with the business)
 | Role | Intended user | Can do | Cannot do |
@@ -33,7 +33,7 @@ Records use fixed IDs, so re-running the import updates them instead of duplicat
 | Suite Front Office | Reception / office | Kiosk, attendance, consent records, billing, re-enrolment, notifications | Edit medical, gradebook |
 | Suite Leadership | Principals / managers | Read everything (including AI runs) | Create or edit anything |
 The original Clinic roles (Admin, Doctor, Nurse, Receptionist) and School Medical Nurse are still present.
-All roles grant access at organisation level (Global). Consent evidence and ID document reference columns are marked secured: only administrators can read them until field-level security profiles are added.
+All roles grant access at organisation level (Global). Consent evidence and ID document reference columns are secured by the field-level security profiles `hcl_ConsentSensitive` and `hcl_IdentityDocs`. Add each tester who should see them to the right profile (Settings > Security > Field security profiles).
 
 ## 5. App map
 Open **School Management System**. Areas: Student and Parent, Admissions and Re-enrolment, Attendance and Kiosk, Wellbeing and Behaviour, School Medical Center, Health Centre (Clinic), Curriculum and Assessment, Engagement and Communication, Approvals, Insights and AI. The earlier apps (Clinic Manager, Clinic Mobile, School Medical Center, CE Phase 3 Admin) still work.
@@ -71,8 +71,13 @@ Record Pass / Fail and the tester name. "Role" = who should run it.
 | U26 | Nurse | Insights and AI > AI suggestions > new suggestion (status Draft), then set Approved and reviewer date | Saved; no message is sent automatically |
 | U27 | Leadership | Open any list and try to edit or create | Records are read-only; no create button works |
 | U28 | Front Office | Try to open Medical Center visits | Not visible / access denied |
-| U29 | Front Office | Consent records: try to read the Evidence column | Column is hidden (secured) |
+| U29 | Front Office | Consent records: try to read the Evidence column (front office is not in the `hcl_ConsentSensitive` profile) | Column is hidden (secured); after adding the tester to the profile it becomes visible |
 | U30 | Administrator | AI flows list | 2 AI flows exist and are OFF |
+| U31 | Nurse | Create a vaccination record with Is Vaccinated = Yes and Parent Consent = No | Rejected: cannot be vaccinated without Parent Consent (server rule) |
+| U32 | Teacher | Approval request: set Approved with a completion date, save, then change to Rejected | Second save rejected: decision already recorded |
+| U33 | Front Office | Insurance policy with Valid To earlier than Valid From | Rejected with a clear message |
+| U34 | Front Office | Re-enrolment with status Blocked and no reason; then Ready for promotion with intent Not returning | Both rejected with clear messages |
+| U35 | Nurse | Save a medical center visit through the form with blood pressure `12080` | Rejected (form and server both enforce the format) |
 
 Defects: log the test ID, role, steps, expected vs actual, screenshot.
 

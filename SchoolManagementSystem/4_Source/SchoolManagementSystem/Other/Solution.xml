@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="School Management System: one end-to-end solution covering students and parents, admissions and re-enrolment, attendance and kiosk, wellbeing and behaviour, school medical center and health centre (clinic), curriculum and assessment, communication and consent, approvals, activities, gradebook, academic reports and AI-assisted drafting." languagecode="1033" />
     </Descriptions>
-    <Version>2.2.0.0</Version>
+    <Version>2.2.1.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>Harsh</UniqueName>
@@ -196,6 +196,8 @@
       <RootComponent type="62" schemaName="hcl_ClinicMobileSiteMap" behavior="0" />
       <RootComponent type="62" schemaName="hcl_SuiteSiteMap" behavior="0" />
       <RootComponent type="62" schemaName="smc_SchoolMedicalSiteMap" behavior="0" />
+      <RootComponent type="70" id="{6eb0b280-2fb8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="70" id="{77b0b280-2fb8-f111-aaae-7ced8daf410c}" behavior="0" />
       <RootComponent type="80" schemaName="ClinicManager" behavior="0" />
       <RootComponent type="80" schemaName="ClinicMobile" behavior="0" />
       <RootComponent type="80" schemaName="hcl_CEPhase3Admin" behavior="0" />

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldSecurityProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FieldSecurityProfile name="hcl_ConsentSensitive" description="Access to consent evidence" fieldsecurityprofileid="{77b0b280-2fb8-f111-aaae-7ced8daf410c}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>hcl_consentrecord</EntityName>
+        <AttributeName>hcl_evidence</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+        <CanReadUnmasked>0</CanReadUnmasked>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+  <FieldSecurityProfile name="hcl_IdentityDocs" description="Access to visitor and pickup identity document references" fieldsecurityprofileid="{6eb0b280-2fb8-f111-aaae-7ced8daf410c}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>hcl_visitor</EntityName>
+        <AttributeName>hcl_iddocumentref</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+        <CanReadUnmasked>0</CanReadUnmasked>
+      </FieldPermission>
+      <FieldPermission>
+        <EntityName>hcl_pickupauthorisation</EntityName>
+        <AttributeName>hcl_iddocumentref</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+        <CanReadUnmasked>0</CanReadUnmasked>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+</FieldSecurityProfiles>

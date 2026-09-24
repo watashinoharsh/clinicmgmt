@@ -1,4 +1,4 @@
-# Known limitations and open items (v2.2.0.0)
+# Known limitations and open items (v2.2.1.0)
 
 ## Not built
 - **Phase 1 links.** No Student Profile / School / Campus / Staff / Academic Year lookups on the Phase 3 tables (those objects are not in the source environment). Attendance, kiosk, consent, activity participants, behaviour, gradebook results, reports and re-enrolment records are therefore **not linked to a student** yet. This is the largest functional gap.
@@ -6,7 +6,7 @@
 - Front ends: SXP, PXP, LXP, Canvas apps, student search cards and barcode scan, return-to-class pass, hospital finder, vaccination event batch screen. The backlog items marked "SXP / Canvas" are not built; the Dataverse tables and model-driven form logic they need are.
 - Integrations: Teams, SharePoint, Finance (FnO), gradebook system, contact centre, Power BI, third-party SIS. Hand-off table in `Architecture_and_Module_Map.md`.
 - AI: endpoint, agents, EduScope. Only the registry, review tables and 2 drafting flows exist, both off by default.
-- Field-level security profiles: several attempts to import them failed. Three columns (consent evidence, visitor ID reference, pickup ID reference) are **secured**, so only administrators can see them until profiles are created in the maker portal or through the API.
+- Field-level security: profiles `hcl_IdentityDocs` (visitor and pickup ID document references) and `hcl_ConsentSensitive` (consent evidence) are in the solution. The three columns are secured, so only members of these profiles can read or edit them. Add the users or teams who need access (for example front office for ID references) to the profiles after import; nobody is a member by default.
 - Student photo column, file-upload control on the Allergy "Medical Certificate" field is untested (the column exists; the control may show as text).
 
 ## Design assumptions to confirm

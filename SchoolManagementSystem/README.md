@@ -1,10 +1,10 @@
-# School Management System - deliverable pack (v2.2.0.0)
+# School Management System - deliverable pack (v2.2.1.0)
 
 An end-to-end **School Management System** on Dynamics 365 / Dataverse, delivered as one solution (Dataverse unique name `ClinicSchoolSuite`, display name "School Management System") and prepared for UAT. It combines three earlier builds; the original clinic work is the school's **health centre (clinic) module**.
 
 | Folder | What is in it |
 |---|---|
-| `1_Solution` | `SchoolManagementSystem_2.2.0.0_managed.zip` (for TEST/UAT/PROD) and `_unmanaged.zip` (for DEV). Import ONE of them. |
+| `1_Solution` | `SchoolManagementSystem_2.2.1.0_managed.zip` (for TEST/UAT/PROD) and `_unmanaged.zip` (for DEV). Import ONE of them. |
 | `2_SampleData` | `UAT_SampleData.zip` - 51 clearly labelled test records (students, roll groups, medications, consent types, sample approvals, AI agent registry, clinic settings). |
 | `3_Docs` | UAT guide with test scripts and role matrix, architecture/module map, AI hand-off, known limitations. |
 | `4_Source` | Unpacked solution source for Git. |

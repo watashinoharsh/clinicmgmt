@@ -4,7 +4,7 @@ Source: this folder (`SchoolMgmtPlugins.csproj`, `Rules.cs`, `IntegrityPlugins.c
 Build: `dotnet build -c Release` produces `bin\Release\SchoolMgmtPlugins.1.0.0.nupkg` (a plug-in package, no assembly signing needed).
 Local tests: `cd Tests; dotnet run -c Release` - 44 rule tests.
 
-## Already included in the solution (v2.2.0.0)
+## Already included in the solution (v2.2.1.0)
 The solution zips in `1_Solution` already contain the plug-in package and its 18 steps (9 plug-ins x Create and Update, PreOperation, synchronous, with a pre-image named `PreImage` on updates). Importing the solution registers them. You only need the steps below if you register the plug-ins by hand (for example from a different build).
 
 ## Manual registration (Plugin Registration Tool)
