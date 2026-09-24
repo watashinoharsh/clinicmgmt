@@ -1,4 +1,4 @@
-# UAT guide - School Management System v2.1.1.0
+# UAT guide - School Management System v2.2.0.0
 
 ## 1. Prerequisites
 - A Dataverse environment with Dynamics 365 activities (appointment, task, contact, account) - a standard environment has these.
@@ -9,7 +9,7 @@
 ## 2. Setup checklist (administrator)
 | # | Step | Done |
 |---|---|---|
-| 1 | Import `SchoolManagementSystem_2.1.1.0_managed.zip` (or unmanaged in DEV) | |
+| 1 | Import `SchoolManagementSystem_2.2.0.0_managed.zip` (or unmanaged in DEV) | |
 | 2 | Bind connection references: `hcl_ClinicDataverse`, `smc_SchoolDataverse` (Dataverse), `hcl_ClinicOutlook` (Office 365 Outlook). Leave `hcl_AiHttp` unbound unless AI drafting is being tested | |
 | 3 | Turn on the flows (18 activate on import when connections are bound). The 2 AI flows stay OFF until an AI endpoint exists | |
 | 4 | Environment variables: `hcl_SharePointSiteUrl`, `hcl_NotificationDeepLinkBase`, `hcl_PaymentLinkBase`, `hcl_DefaultReminderIntervalHours`, `hcl_AiDraftEndpoint` - set per environment, leave empty if not used | |

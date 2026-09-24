@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="School Management System: one end-to-end solution covering students and parents, admissions and re-enrolment, attendance and kiosk, wellbeing and behaviour, school medical center and health centre (clinic), curriculum and assessment, communication and consent, approvals, activities, gradebook, academic reports and AI-assisted drafting." languagecode="1033" />
     </Descriptions>
-    <Version>2.1.1.0</Version>
+    <Version>2.2.0.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>Harsh</UniqueName>
@@ -206,6 +206,25 @@
       <RootComponent type="9" schemaName="smc_severitylevel" behavior="0" />
       <RootComponent type="9" schemaName="smc_temperatureunit" behavior="0" />
       <RootComponent type="9" schemaName="smc_verificationstatus" behavior="0" />
+      <RootComponent type="91" id="{5ab2a652-2db8-f111-aaae-7ced8daf410c}" schemaName="SchoolMgmtPlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" behavior="0" />
+      <RootComponent type="92" id="{223abe58-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{aac31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{aec31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{b1c31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{b5c31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{b8a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{b8c31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{bca5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{bcc31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{bfa5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{bfc31b65-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{c3a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{c6a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{caa5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{cda5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{d1a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{d4a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="92" id="{d9a5b65e-2db8-f111-aaae-7ced8daf410c}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>

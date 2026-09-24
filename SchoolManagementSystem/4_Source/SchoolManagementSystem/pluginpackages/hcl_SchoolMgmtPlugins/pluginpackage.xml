@@ -1,0 +1,9 @@
+<pluginpackage uniquename="hcl_SchoolMgmtPlugins">
+  <exportkeyversion>1</exportkeyversion>
+  <iscustomizable>1</iscustomizable>
+  <name>hcl_SchoolMgmtPlugins</name>
+  <package mimetype="application/octet-stream">hcl_SchoolMgmtPlugins.nupkg</package>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <version>1.0.0</version>
+</pluginpackage>

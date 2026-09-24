@@ -1,4 +1,4 @@
-# Known limitations and open items (v2.1.1.0)
+# Known limitations and open items (v2.2.0.0)
 
 ## Not built
 - **Phase 1 links.** No Student Profile / School / Campus / Staff / Academic Year lookups on the Phase 3 tables (those objects are not in the source environment). Attendance, kiosk, consent, activity participants, behaviour, gradebook results, reports and re-enrolment records are therefore **not linked to a student** yet. This is the largest functional gap.
@@ -16,6 +16,7 @@
 - Overlap: the clinic tables (visit, vaccination, allergy, referral...) and the school-medical tables (visit, vaccination, allergy...) cover similar ideas for different contexts.
 
 ## Testing status
+- **Data-integrity plug-ins** (9 plug-ins, 18 steps): verified in DEV with 17 live checks (14 rejections with the intended messages, 3 valid records accepted) plus 44 local rule tests. Rules are proposals; confirm each with the business before UAT.
 - Metadata read-back after each import confirmed the objects exist. Gradebook alternate-key rejection of duplicates was tested. **No user testing, no security-role testing, no end-to-end flow testing** has been done. The expected results in the UAT test scripts are design intent and may reveal defects.
 - Flow expressions (including the two AI flows, invoice recalculation on delete, lab flag, primary policy) were written and imported but not executed. The delete-triggered flows depend on the connector returning the deleted row's lookup value.
 - The form script (`smc_/scripts/medicalcentervisit.js`) passed a syntax check only; it has not been run in a browser.
