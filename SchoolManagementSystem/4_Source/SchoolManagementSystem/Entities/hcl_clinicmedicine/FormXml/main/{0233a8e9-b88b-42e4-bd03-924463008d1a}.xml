@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0233a8e9-b88b-42e4-bd03-924463008d1a}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{cf783ff4-2664-4a46-ac65-ce2e1c1bef6e}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{95ae503c-9c55-4039-b27b-2f6713e10b6e}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Medicine" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{81234488-9e7b-48e9-9c7e-96fa640563cd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{0f8fa854-40c9-48a0-93d3-327652c7d5a6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Generic name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_genericname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_genericname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b6469b95-bd6a-45cf-8051-69692098e28c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Strength" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_strength" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_strength" />
+                      </cell>
+                      <cell id="{8b053d79-ed38-4eb0-b7a5-dedee1ad0b97}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Form" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_form" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_form" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf69eb05-6457-4e52-9167-fe1674dabf95}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Unit price" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_unitprice" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_unitprice" />
+                      </cell>
+                      <cell id="{de39e31d-30ac-4ff8-9796-0eb8297433c8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Stock on hand" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_stockonhand" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_stockonhand" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5dd7b973-a39d-4895-b216-a16f24af8c1a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reorder level" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reorderlevel" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_reorderlevel" />
+                      </cell>
+                      <cell id="{3238f215-bc3c-4982-bf65-bd7e44a508f0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Low stock" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_lowstock" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_lowstock" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Medicine" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

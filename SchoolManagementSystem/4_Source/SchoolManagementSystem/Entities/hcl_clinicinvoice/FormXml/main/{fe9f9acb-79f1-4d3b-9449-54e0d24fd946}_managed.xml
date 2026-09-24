@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{fe9f9acb-79f1-4d3b-9449-54e0d24fd946}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_invoice" id="{dfbf35c1-a0c5-4725-bdf9-c978e7cfdd4f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Invoice" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_inv" showlabel="true" showbar="false" id="{fa347e59-ec8c-4751-b329-0f9f96c6cbc9}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Invoice" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{234077a9-07c9-440d-b8df-4a2039a11d83}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_patient" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_patient" />
+                      </cell>
+                      <cell id="{90818de1-8349-49d1-b827-2e05a907b630}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_visit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{401ea31f-5dcc-4d5d-a075-9971dae06c68}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Invoice date" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_invoicedate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_invoicedate" />
+                      </cell>
+                      <cell id="{08d13b98-9af1-43de-bb47-4b5438e8c4b3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_status" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_status" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_amounts" showlabel="true" showbar="false" id="{c59cc2c9-71b0-46f0-a1b2-456ce033e7a3}" layout="varwidth" columns="4" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Amounts" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cfe7d1e0-da15-4edd-bfae-650ce2922d16}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_subtotal" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_subtotal" disabled="true" />
+                      </cell>
+                      <cell id="{05239976-0074-4d12-8d8f-ef6a294adb1e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_discount" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_discount" />
+                      </cell>
+                      <cell id="{7df608c7-e78f-40d0-8589-000d4712db44}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tax rate" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_taxrate" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_taxrate" />
+                      </cell>
+                      <cell id="{f8caf8d2-f156-4e9b-b927-3b6f2662a0dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_tax" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_tax" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6bf0b170-5304-40a5-9929-d6357f78f445}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_total" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_total" disabled="true" />
+                      </cell>
+                      <cell id="{7bfd7b43-c62c-4a4c-83b6-1441c71255af}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Amount paid" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_amountpaid" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_amountpaid" disabled="true" />
+                      </cell>
+                      <cell id="{db207fc4-fb9c-434c-bf7b-45f7a2eb3fee}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Balance due" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_balance" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_balance" disabled="true" />
+                      </cell>
+                      <cell id="{805cd714-3f4e-48c5-9b11-3583db60c19e}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_lines" id="{17087fae-e2f0-446f-a303-aa5a0602cdeb}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Line items" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_grid_lines" showlabel="true" showbar="false" id="{ee6b989f-d06c-4f53-8928-a670a278d4b1}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Line items" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{63dd59a2-26c1-4f30-ac64-5fa60b973ffb}" showlabel="false" rowspan="10" colspan="1">
+                        <labels>
+                          <label description="Line items" languagecode="1033" />
+                        </labels>
+                        <control id="grid_lines" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{759b7346-c4b5-f111-aaae-7ced8daf410c}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>hcl_clinicinvoiceline_invoice</RelationshipName>
+                            <TargetEntityType>hcl_clinicinvoiceline</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_pay" id="{3b93156d-ec65-4a29-8147-8ab6c33f4a8c}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Payments" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_grid_pay" showlabel="true" showbar="false" id="{df368d46-f83a-4b5d-bcdd-147676256c03}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Payments" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{26e7f7b5-efcc-479d-a1c3-def79eb6e458}" showlabel="false" rowspan="10" colspan="1">
+                        <labels>
+                          <label description="Payments" languagecode="1033" />
+                        </labels>
+                        <control id="grid_pay" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{789b7346-c4b5-f111-aaae-7ced8daf410c}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>hcl_clinicpayment_invoice</RelationshipName>
+                            <TargetEntityType>hcl_clinicpayment</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a97b1fbe-5eb9-4bc7-8daa-3e2c56e8591c}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{a8bb60bf-9a01-4277-ac5c-b0cd3dce7fa3}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Invoice no" languagecode="1033" />
+              </labels>
+              <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" disabled="true" />
+            </cell>
+            <cell id="{82947871-2358-4e37-a708-89ae363efa23}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+              <control id="hcl_status" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_status" />
+            </cell>
+            <cell id="{ee591f92-9851-4eb7-bb84-9351a044212f}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+              <control id="hcl_total" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_total" disabled="true" />
+            </cell>
+            <cell id="{16256fa0-c3df-4341-988f-66f2b95f5c6d}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Balance due" languagecode="1033" />
+              </labels>
+              <control id="hcl_balance" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_balance" disabled="true" />
+            </cell>
+            <cell id="{c6121ca4-17c7-410a-8758-b6c6bb6c0041}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Invoice" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

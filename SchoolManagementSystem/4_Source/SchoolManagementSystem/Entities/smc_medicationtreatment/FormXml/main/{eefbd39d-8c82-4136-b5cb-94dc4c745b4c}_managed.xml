@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{eefbd39d-8c82-4136-b5cb-94dc4c745b4c}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{62d182cc-db6d-4028-82cd-65ebc0cce5f1}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{8b34163a-4b42-424e-9c24-f3e01c14f766}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Medication Treatment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5a303f6e-8b71-4f47-8b70-e12521c72dd5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{0c357d15-b3e7-48e7-9a66-12340494969a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2adfc741-4fa7-4f5c-ba8a-df9cdd0bcd2e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Medical Center Visit" languagecode="1033" />
+                        </labels>
+                        <control id="smc_medicalcentervisit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_medicalcentervisit" />
+                      </cell>
+                      <cell id="{1e0d5748-2eec-4d76-bc32-1f82aaccfb2b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Medication" languagecode="1033" />
+                        </labels>
+                        <control id="smc_medication" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_medication" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5fa1ab56-4487-4dc3-b345-2b1cda173e90}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Dose" languagecode="1033" />
+                        </labels>
+                        <control id="smc_dose" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="smc_dose" />
+                      </cell>
+                      <cell id="{5cabef34-4b01-43fd-b3c0-6dfc6d16513b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Unit" languagecode="1033" />
+                        </labels>
+                        <control id="smc_unit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_unit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3fc481f0-9e42-4d48-b7be-bba296203d24}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Other Unit" languagecode="1033" />
+                        </labels>
+                        <control id="smc_otherunit" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_otherunit" />
+                      </cell>
+                      <cell id="{acee54fa-022f-41c3-9813-8fb373669593}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="smc_frequency" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_frequency" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c3a65025-c68b-4979-b53f-b9bb603ac93a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Other Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="smc_otherfrequency" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_otherfrequency" />
+                      </cell>
+                      <cell id="{1e512a78-8163-4243-873e-965bc055fb9d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_startdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_startdate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4cbf214d-426c-4b4d-940d-640c99a80589}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="End Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_enddate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_enddate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{547f9701-65fd-42d7-930b-ab75e8e207d1}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Instruction" languagecode="1033" />
+                        </labels>
+                        <control id="smc_instruction" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_instruction" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{56a21752-cce4-439f-9145-1d24c8af7c97}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Medication Treatment" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

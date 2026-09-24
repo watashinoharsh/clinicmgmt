@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{59a121fb-f54e-4a4c-b691-d1bfc64f4d34}</formid>
+    <IntroducedVersion>1.2.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{45dba63f-13b9-4a37-882c-5db069d8f6a7}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{ef5528f7-b4c3-4e2c-93e1-51a0b766bb1e}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Lab Test" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{64953e95-ef14-47e9-870f-63df99cadbd2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Test Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{471f8972-6763-4d41-8152-cc3d97f0fdae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Code" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_code" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_code" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17ca1a92-f617-4271-b9ee-88c94a724892}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_category" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_category" />
+                      </cell>
+                      <cell id="{ac5ed928-e51e-4189-bc5c-e2399a75ecc0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Unit" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_unit" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_unit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ae53cf14-8805-49bb-9bdc-9951bc894449}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reference Range Low" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_refrangelow" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_refrangelow" />
+                      </cell>
+                      <cell id="{fbc6dc58-7d29-45e8-a769-a84685d6ac90}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reference Range High" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_refrangehigh" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_refrangehigh" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{792ef925-4246-45d1-97e7-4abab119d8a5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Price" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_price" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_price" />
+                      </cell>
+                      <cell id="{3781d311-ca16-4964-b775-ecbc8e1bbc4d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Turnaround (hours)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_turnaroundhours" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_turnaroundhours" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Service" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

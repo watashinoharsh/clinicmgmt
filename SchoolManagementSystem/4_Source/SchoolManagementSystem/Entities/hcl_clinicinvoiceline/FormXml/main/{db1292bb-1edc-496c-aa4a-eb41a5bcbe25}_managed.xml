@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{db1292bb-1edc-496c-aa4a-eb41a5bcbe25}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{6486cfde-4751-41b6-9e08-2f07c6005f9d}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{8519d857-a91d-4184-a7b7-3e661e9cfdfc}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Invoice Line" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{36478534-cb67-4a1d-b180-8f5b64efbdf7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Item" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{8c0a405c-f492-4425-acc3-c4117460b702}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_invoice" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_invoice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{05703bd1-1d17-410f-b8fa-aa978d43c78e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_service" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_service" />
+                      </cell>
+                      <cell id="{033ae1e9-bfb1-4fe8-a327-2e3f428bfacb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_description" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_description" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{55727d66-2162-4b71-b7ad-2df1c38b4e96}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_quantity" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_quantity" />
+                      </cell>
+                      <cell id="{8c6abf00-c939-4491-8965-b445056cfaa0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Unit price" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_unitprice" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_unitprice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e2b3498-b430-4a49-9000-f41854e5668c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Line total" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_linetotal" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_linetotal" disabled="true" />
+                      </cell>
+                      <cell id="{f2736833-3111-4c80-8ba0-c9e8a279d379}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Invoice Line" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,119 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Closed_with_follow_up": {
+          "runAfter": {},
+          "actions": {
+            "Create_follow_up_task": {
+              "runAfter": {
+                "Get_patient": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "tasks",
+                  "item/subject": "@concat('Follow-up call - ', outputs('Get_patient')?['body/fullname'])",
+                  "item/regardingobjectid_contact_task@odata.bind": "contacts(@{triggerOutputs()?['body/_hcl_patient_value']})",
+                  "item/scheduledend": "@if(less(addDays(triggerOutputs()?['body/hcl_followupdate'], -2), utcNow()), utcNow(), addDays(triggerOutputs()?['body/hcl_followupdate'], -2))",
+                  "item/ownerid@odata.bind": "systemusers(@{triggerOutputs()?['body/_ownerid_value']})"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Get_patient": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "$select": "fullname",
+                  "recordId": "@triggerOutputs()?['body/_hcl_patient_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/hcl_status']",
+                  813450001
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@empty(triggerOutputs()?['body/hcl_followupdate'])",
+                    true
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "triggers": {
+        "When_a_visit_status_changes": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_visit",
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/filteringattributes": "hcl_status"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

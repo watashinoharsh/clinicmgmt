@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{64edbe27-741a-40b4-93a3-4f2a85d59837}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{c037fe8f-0b6f-4345-a9ae-1f46d82032e2}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{682d8b54-3b7c-4049-92da-c59ed4385708}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Vaccination Record" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0bfd124b-dd9a-47c0-9695-a128dc8ade12}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Vaccination Details" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{0546f846-9168-4906-a5b5-804ffccab7d2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9188bd27-15b4-47c6-8359-4eb01eff020a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parent Consent" languagecode="1033" />
+                        </labels>
+                        <control id="smc_parentconsent" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="smc_parentconsent" />
+                      </cell>
+                      <cell id="{110c7214-edbf-4552-9028-6f6d72647562}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is Vaccinated" languagecode="1033" />
+                        </labels>
+                        <control id="smc_isvaccinated" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="smc_isvaccinated" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{046372a2-45f1-4fda-a878-27dc250d284a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Administered Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_administereddate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_administereddate" />
+                      </cell>
+                      <cell id="{892b7afd-ca19-4b05-9c1b-500f07e08ec9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Roll Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_rollgroup" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_rollgroup" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{91e84bcc-7783-406e-a5a9-2628cf7dd6af}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Year Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_yeargroup" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_yeargroup" />
+                      </cell>
+                      <cell id="{dccdbedc-724e-4f5b-b804-9091540ba3be}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Administered By" languagecode="1033" />
+                        </labels>
+                        <control id="smc_administeredby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_administeredby" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0dbbddd5-4691-41da-8454-601ec44abe70}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Note" languagecode="1033" />
+                        </labels>
+                        <control id="smc_note" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_note" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bcfaed9-6c04-4928-a7db-7f7095913699}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Vaccination Record" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

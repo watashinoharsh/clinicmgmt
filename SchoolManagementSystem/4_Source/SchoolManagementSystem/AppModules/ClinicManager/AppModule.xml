@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>ClinicManager</UniqueName>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <WebResourceId>181963b8-c5b5-f111-aaae-7ced8daf410c</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="entity" />
+    <AppModuleComponent type="1" schemaName="hcl_insurancepolicy" />
+    <AppModuleComponent type="1" schemaName="hcl_labresult" />
+    <AppModuleComponent type="1" schemaName="hcl_labtest" />
+    <AppModuleComponent type="1" schemaName="hcl_patientallergy" />
+    <AppModuleComponent type="1" schemaName="hcl_referral" />
+    <AppModuleComponent type="1" schemaName="hcl_vaccination" />
+    <AppModuleComponent type="26" id="{f7ceaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{fbceaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{ffceaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{03cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{07cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{0ccfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{0fcfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{12cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="26" id="{15cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="60" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+    <AppModuleComponent type="60" id="{7b9b7346-c4b5-f111-aaae-7ced8daf410c}" />
+    <AppModuleComponent type="62" schemaName="hcl_ClinicManagerSiteMap" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{18cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{24cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{3ccfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{30cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{3c85b516-4bcd-4720-ba41-d0d9fd6d102a}" />
+    <Role id="{abe30782-3afa-4cf4-89e0-d1a7085f17ae}" />
+    <Role id="{971796f6-dcba-4830-8f17-c0d825b35d6a}" />
+    <Role id="{6055ef77-d884-4956-a56a-6a4e693f7fa7}" />
+    <Role id="{8b4f3005-87c3-4506-9f34-89666e468465}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Clinic Manager" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Clinic Management - front desk, clinical, billing and inventory in one place" languagecode="1033" />
+  </Descriptions>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

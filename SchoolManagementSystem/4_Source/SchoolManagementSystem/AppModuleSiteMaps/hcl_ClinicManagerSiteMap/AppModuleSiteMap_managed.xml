@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>hcl_ClinicManagerSiteMap</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="Home" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Home" />
+      </Titles>
+      <Group Id="g_Home" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Home" />
+        </Titles>
+        <SubArea Id="s_home" Url="$webresource:hcl_/clinic/home.html">
+          <Titles>
+            <Title LCID="1033" Title="Clinic home" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="FrontDesk" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Front desk" />
+      </Titles>
+      <Group Id="g_FrontDesk" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Front desk" />
+        </Titles>
+        <SubArea Id="s_today" Url="/main.aspx?pagetype=entitylist&amp;etn=appointment&amp;viewid=%7Bfbceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Today's appointments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_wait" Url="/main.aspx?pagetype=entitylist&amp;etn=appointment&amp;viewid=%7Bffceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Waiting room" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_up" Url="/main.aspx?pagetype=entitylist&amp;etn=appointment&amp;viewid=%7B03cfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Upcoming" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_pat" Url="/main.aspx?pagetype=entitylist&amp;etn=contact&amp;viewid=%7Bf7ceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Patients" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_task" Url="/main.aspx?pagetype=entitylist&amp;etn=task&amp;viewid=%7B07cfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Follow-up tasks" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Clinical" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Clinical" />
+      </Titles>
+      <Group Id="g_Clinical" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Clinical" />
+        </Titles>
+        <SubArea Id="s_open" Url="/main.aspx?pagetype=entitylist&amp;etn=hcl_visit&amp;viewid=%7B0ccfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Open visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_visit" Entity="hcl_visit">
+          <Titles>
+            <Title LCID="1033" Title="All visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_rx" Entity="hcl_prescription">
+          <Titles>
+            <Title LCID="1033" Title="Prescriptions" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="g_ClinicalRecords" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Clinical records" />
+        </Titles>
+        <SubArea Id="s_allergy" Entity="hcl_patientallergy">
+          <Titles>
+            <Title LCID="1033" Title="Allergies" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_labres" Entity="hcl_labresult">
+          <Titles>
+            <Title LCID="1033" Title="Lab results" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_vacc" Entity="hcl_vaccination">
+          <Titles>
+            <Title LCID="1033" Title="Vaccinations" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_ref" Entity="hcl_referral">
+          <Titles>
+            <Title LCID="1033" Title="Referrals" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_ins" Entity="hcl_insurancepolicy">
+          <Titles>
+            <Title LCID="1033" Title="Insurance policies" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Billing" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Billing" />
+      </Titles>
+      <Group Id="g_Billing" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Billing" />
+        </Titles>
+        <SubArea Id="s_unpaid" Url="/main.aspx?pagetype=entitylist&amp;etn=hcl_clinicinvoice&amp;viewid=%7B0fcfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Unpaid invoices" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_inv" Entity="hcl_clinicinvoice">
+          <Titles>
+            <Title LCID="1033" Title="All invoices" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_pay" Entity="hcl_clinicpayment">
+          <Titles>
+            <Title LCID="1033" Title="Payments" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Inventory" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Inventory" />
+      </Titles>
+      <Group Id="g_Inventory" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Inventory" />
+        </Titles>
+        <SubArea Id="s_low" Url="/main.aspx?pagetype=entitylist&amp;etn=hcl_clinicmedicine&amp;viewid=%7B12cfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Low stock" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_med" Entity="hcl_clinicmedicine">
+          <Titles>
+            <Title LCID="1033" Title="Medicines" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Setup" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Setup" />
+      </Titles>
+      <Group Id="g_Setup" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Setup" />
+        </Titles>
+        <SubArea Id="s_sch" Entity="hcl_doctorschedule">
+          <Titles>
+            <Title LCID="1033" Title="Doctor schedules" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_labtest" Entity="hcl_labtest">
+          <Titles>
+            <Title LCID="1033" Title="Lab tests" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_svc" Entity="hcl_clinicservice">
+          <Titles>
+            <Title LCID="1033" Title="Services" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_acc" Entity="account">
+          <Titles>
+            <Title LCID="1033" Title="Insurers" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_settings" Entity="hcl_clinicsetting">
+          <Titles>
+            <Title LCID="1033" Title="Clinic settings" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Clinic Manager Site Map" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

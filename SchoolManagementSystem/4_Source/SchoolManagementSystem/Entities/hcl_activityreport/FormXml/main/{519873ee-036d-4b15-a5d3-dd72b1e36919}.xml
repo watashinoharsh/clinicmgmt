@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{519873ee-036d-4b15-a5d3-dd72b1e36919}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{39b27e1f-6417-4411-85f1-81e0b636b990}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{4acd19f3-6160-4525-b4ef-7e51d68ee03b}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Activity Report" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1ffdba94-7585-4107-a3cd-1b1dd77aa336}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Report" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{5f21bfc4-6a60-4025-8590-6d4943885f86}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_activity" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_activity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2904ea86-573e-49bf-974a-b8f314453d60}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Summary" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_summary" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_summary" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{32837d21-44c5-4e02-80ff-f40f860e1a01}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Report Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reportstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_reportstatus" />
+                      </cell>
+                      <cell id="{dbaa2ea2-625d-4ce3-9677-50f1ba7d6434}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Activity Report" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

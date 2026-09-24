@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c00fa324-641a-44e2-9ebf-f701af85534f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_approvalhistoryid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_request" width="140" />
+          <cell name="hcl_action" width="140" />
+          <cell name="hcl_actor" width="140" />
+          <cell name="hcl_occurredon" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_approvalhistory">
+          <attribute name="hcl_approvalhistoryid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_request" />
+          <attribute name="hcl_action" />
+          <attribute name="hcl_actor" />
+          <attribute name="hcl_occurredon" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Approval History Entries" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

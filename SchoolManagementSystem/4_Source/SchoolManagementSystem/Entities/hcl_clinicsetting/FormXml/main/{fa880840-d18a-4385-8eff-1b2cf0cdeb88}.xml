@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{fa880840-d18a-4385-8eff-1b2cf0cdeb88}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{bd010b0b-ac72-4ed6-8ae5-4c3d2d191758}" IsUserDefined="1" verticallayout="true" showlabel="false" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="false" showbar="false" id="{d42b43c3-c3f0-4a57-bee1-59ca2060915b}" layout="varwidth" columns="1" labelwidth="200" celllabelposition="Top">
+                  <labels>
+                    <label description="Clinic settings" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{48ddbbe1-a8cb-45dc-9400-e36329c7dd7d}" showlabel="true">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41fe97b1-dbbd-44bb-b380-e20689c22e5f}" showlabel="true">
+                        <labels>
+                          <label description="Clinic name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_clinicname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_clinicname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{70b26570-2297-444a-9eb7-2fdaf816e796}" showlabel="true">
+                        <labels>
+                          <label description="Time zone (Windows name, e.g. India Standard Time)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_timezone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_timezone" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6b49447f-1c92-4966-bc5d-e75709210230}" showlabel="true">
+                        <labels>
+                          <label description="Manager email (daily summary and low-stock emails)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_manageremail" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="hcl_manageremail" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9dedc2b-6122-4e6b-819d-76708923ecb3}" showlabel="true">
+                        <labels>
+                          <label description="Default tax rate (0.05 = 5%)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_defaulttaxrate" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_defaulttaxrate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9b29264-934d-4d4c-b54a-3f2d988ed865}" showlabel="true">
+                        <labels>
+                          <label description="Currency symbol" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_currencysymbol" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_currencysymbol" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Clinic Settings" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a24d719f-08f7-48a1-8902-10c684c9057e}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{bbed32bf-ceef-41f3-99a2-6b0900005a82}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{cf2ba2e4-3a85-40b8-aa0c-46b53adc812c}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Service" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{974937af-7b1a-4972-8627-db250aeb28f8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{4c1fbc85-bbe9-4643-a3d6-96f4ba1e0e53}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_category" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_category" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{25263a29-2476-4bee-a495-04d3e5236641}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Default price" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_defaultprice" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_defaultprice" />
+                      </cell>
+                      <cell id="{f1b7da71-a957-4b6c-9c56-15d20677ca3d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Active" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_active" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_active" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Service" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

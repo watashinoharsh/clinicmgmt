@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1ff6ddd8-3163-4fdd-aab6-5fff33758014}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{663bec57-ac66-4b01-a80e-dba1326dcaad}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{4eb70123-dfe1-47c1-bf6b-ece8a943ad04}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Payment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{57d89f00-98d8-45ff-b67c-5a567bfacef6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Payment no" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" disabled="true" />
+                      </cell>
+                      <cell id="{5f268486-50db-49bd-9f76-2c33967983ed}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Invoice" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_invoice" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_invoice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e4187f3-4d2a-412d-91aa-2ecf01f6f8f7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Amount" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_amount" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_amount" />
+                      </cell>
+                      <cell id="{dfd11fc1-ad74-4fc6-8616-17218a71cf66}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Method" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_method" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_method" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b42aa74-3046-483c-8cfa-3fb96e540cd1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Paid on" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_paidon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_paidon" />
+                      </cell>
+                      <cell id="{fafc875e-0dc6-4b2f-8864-ece24d927e3c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reference" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reference" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_reference" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Payment" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

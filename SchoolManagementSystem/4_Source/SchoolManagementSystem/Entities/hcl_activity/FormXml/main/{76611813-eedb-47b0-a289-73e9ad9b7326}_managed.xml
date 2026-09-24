@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{76611813-eedb-47b0-a289-73e9ad9b7326}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{53700544-725d-4902-8990-ebd0294cb854}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{34367f8a-286b-46b5-b064-010bf19f59a1}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Activity" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{96d9ad5e-f555-409a-85c2-402f2d84a79f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{9d37e6a2-b47a-43de-b24b-b08cc73b9f2b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_activitytype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_activitytype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{50ab6930-71cb-4263-aaca-b450c6a3fc2e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Starts On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_startson" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_startson" />
+                      </cell>
+                      <cell id="{8074bf59-4b97-4fef-b3f2-ddfc05c892c5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ends On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_endson" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_endson" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0b97cc16-7627-4a10-8d2a-578c38a16f8e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Approval Mode" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_approvalmode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_approvalmode" />
+                      </cell>
+                      <cell id="{3fc6a3a4-e501-4b20-afd4-b660fb349062}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_activitystatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_activitystatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0723c279-69f1-477e-963c-8eb40cae33a0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Payment Link" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_paymentlink" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_paymentlink" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3f497508-c0e3-4042-9a4c-0a16e8b2ba84}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_description" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_description" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6cd6b2ed-a9e5-4320-b027-0ca072a83d8a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Activity" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

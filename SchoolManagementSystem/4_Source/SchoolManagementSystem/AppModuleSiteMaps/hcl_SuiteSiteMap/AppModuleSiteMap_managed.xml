@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>hcl_SuiteSiteMap</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="2.1.0.0">
+    <Area Id="Students" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Student &amp; Parent" />
+      </Titles>
+      <Group Id="g_Students" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Student &amp; Parent" />
+        </Titles>
+        <SubArea Id="u_stu" Entity="smc_studentprofile">
+          <Titles>
+            <Title LCID="1033" Title="Student profiles" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_con" Entity="contact">
+          <Titles>
+            <Title LCID="1033" Title="Contacts / Parents" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_yg" Entity="smc_yeargroup">
+          <Titles>
+            <Title LCID="1033" Title="Year groups" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rg" Entity="smc_rollgroup">
+          <Titles>
+            <Title LCID="1033" Title="Roll groups" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Admissions" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Admissions &amp; Re-enrolment" />
+      </Titles>
+      <Group Id="g_Admissions" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Admissions &amp; Re-enrolment" />
+        </Titles>
+        <SubArea Id="u_rc" Entity="hcl_reenrolmentcycle">
+          <Titles>
+            <Title LCID="1033" Title="Re-enrolment cycles" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_re" Entity="hcl_reenrolment">
+          <Titles>
+            <Title LCID="1033" Title="Re-enrolments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rr" Entity="hcl_reenrolmentrule">
+          <Titles>
+            <Title LCID="1033" Title="Eligibility &amp; blocking rules" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rch" Entity="hcl_reenrolmentcohort">
+          <Titles>
+            <Title LCID="1033" Title="Cohorts" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rp" Entity="hcl_rolloverplan">
+          <Titles>
+            <Title LCID="1033" Title="Rollover plans" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Attendance" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Attendance &amp; Kiosk" />
+      </Titles>
+      <Group Id="g_Attendance" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Attendance &amp; Kiosk" />
+        </Titles>
+        <SubArea Id="u_att" Entity="hcl_attendancerecord">
+          <Titles>
+            <Title LCID="1033" Title="Attendance" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_mu" Entity="hcl_musterevent">
+          <Titles>
+            <Title LCID="1033" Title="Emergency muster" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_mue" Entity="hcl_musterentry">
+          <Titles>
+            <Title LCID="1033" Title="Muster entries" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ki" Entity="hcl_kioskrecord">
+          <Titles>
+            <Title LCID="1033" Title="Kiosk records" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_vi" Entity="hcl_visitor">
+          <Titles>
+            <Title LCID="1033" Title="Visitors" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_gp" Entity="hcl_gatepass">
+          <Titles>
+            <Title LCID="1033" Title="Gate passes" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_pk" Entity="hcl_pickupauthorisation">
+          <Titles>
+            <Title LCID="1033" Title="Pickup authorisations" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Wellbeing" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Wellbeing &amp; Behaviour" />
+      </Titles>
+      <Group Id="g_Wellbeing" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Wellbeing &amp; Behaviour" />
+        </Titles>
+        <SubArea Id="u_wn" Entity="smc_wellbeingnote">
+          <Titles>
+            <Title LCID="1033" Title="Wellbeing notes" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_bc" Entity="hcl_behaviourcategory">
+          <Titles>
+            <Title LCID="1033" Title="Behaviour categories" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_br" Entity="hcl_behaviourrecord">
+          <Titles>
+            <Title LCID="1033" Title="Rewards &amp; consequences" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="MedicalCenter" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="School Medical Center" />
+      </Titles>
+      <Group Id="g_MedicalCenter" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="School Medical Center" />
+        </Titles>
+        <SubArea Id="u_mv" Entity="smc_medicalcentervisit">
+          <Titles>
+            <Title LCID="1033" Title="Medical center visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_mt" Entity="smc_medicationtreatment">
+          <Titles>
+            <Title LCID="1033" Title="Medication treatments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_al" Entity="smc_allergy">
+          <Titles>
+            <Title LCID="1033" Title="Allergies" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_md" Entity="smc_medicaldetail">
+          <Titles>
+            <Title LCID="1033" Title="Medical details" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_vr" Entity="smc_vaccinationrecord">
+          <Titles>
+            <Title LCID="1033" Title="Vaccination records" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_me" Entity="smc_medication">
+          <Titles>
+            <Title LCID="1033" Title="Medications" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_mun" Entity="smc_medicationunit">
+          <Titles>
+            <Title LCID="1033" Title="Medication units" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_mf" Entity="smc_medicationfrequency">
+          <Titles>
+            <Title LCID="1033" Title="Medication frequencies" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Clinic" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Health Centre (Clinic)" />
+      </Titles>
+      <Group Id="g_Clinic" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Health Centre (Clinic)" />
+        </Titles>
+        <SubArea Id="u_ap" Entity="appointment">
+          <Titles>
+            <Title LCID="1033" Title="Appointments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_cv" Entity="hcl_visit">
+          <Titles>
+            <Title LCID="1033" Title="Clinic visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rx" Entity="hcl_prescription">
+          <Titles>
+            <Title LCID="1033" Title="Prescriptions" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_la" Entity="hcl_labresult">
+          <Titles>
+            <Title LCID="1033" Title="Lab results" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_lt" Entity="hcl_labtest">
+          <Titles>
+            <Title LCID="1033" Title="Lab tests" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_pa" Entity="hcl_patientallergy">
+          <Titles>
+            <Title LCID="1033" Title="Patient allergies" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_va" Entity="hcl_vaccination">
+          <Titles>
+            <Title LCID="1033" Title="Vaccinations" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_rf" Entity="hcl_referral">
+          <Titles>
+            <Title LCID="1033" Title="Referrals" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ip" Entity="hcl_insurancepolicy">
+          <Titles>
+            <Title LCID="1033" Title="Insurance policies" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_inv" Entity="hcl_clinicinvoice">
+          <Titles>
+            <Title LCID="1033" Title="Invoices" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_pay" Entity="hcl_clinicpayment">
+          <Titles>
+            <Title LCID="1033" Title="Payments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_med" Entity="hcl_clinicmedicine">
+          <Titles>
+            <Title LCID="1033" Title="Medicine stock" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_svc" Entity="hcl_clinicservice">
+          <Titles>
+            <Title LCID="1033" Title="Services" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_sch" Entity="hcl_doctorschedule">
+          <Titles>
+            <Title LCID="1033" Title="Doctor schedules" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_set" Entity="hcl_clinicsetting">
+          <Titles>
+            <Title LCID="1033" Title="Clinic settings" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Curriculum" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Curriculum &amp; Assessment" />
+      </Titles>
+      <Group Id="g_Curriculum" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Curriculum &amp; Assessment" />
+        </Titles>
+        <SubArea Id="u_gp2" Entity="hcl_gradebookpublish">
+          <Titles>
+            <Title LCID="1033" Title="Gradebook publishes" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_gc" Entity="hcl_gradebookcomponent">
+          <Titles>
+            <Title LCID="1033" Title="Gradebook components" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_gr" Entity="hcl_gradebookresult">
+          <Titles>
+            <Title LCID="1033" Title="Gradebook results" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ar" Entity="hcl_academicreport">
+          <Titles>
+            <Title LCID="1033" Title="Academic reports" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_arv" Entity="hcl_academicreportversion">
+          <Titles>
+            <Title LCID="1033" Title="Report versions" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Engagement" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Engagement &amp; Communication" />
+      </Titles>
+      <Group Id="g_Engagement" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Engagement &amp; Communication" />
+        </Titles>
+        <SubArea Id="u_no" Entity="hcl_notification">
+          <Titles>
+            <Title LCID="1033" Title="Notifications" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_nr" Entity="hcl_notificationrecipient">
+          <Titles>
+            <Title LCID="1033" Title="Recipients" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_nru" Entity="hcl_notificationrule">
+          <Titles>
+            <Title LCID="1033" Title="Notification rules" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_nt" Entity="hcl_notificationtemplate">
+          <Titles>
+            <Title LCID="1033" Title="Templates" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_cr" Entity="hcl_consentrecord">
+          <Titles>
+            <Title LCID="1033" Title="Consent records" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ct" Entity="hcl_consenttype">
+          <Titles>
+            <Title LCID="1033" Title="Consent types" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ac" Entity="hcl_activity">
+          <Titles>
+            <Title LCID="1033" Title="Activities &amp; excursions" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ap2" Entity="hcl_activityparticipant">
+          <Titles>
+            <Title LCID="1033" Title="Participants" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_arisk" Entity="hcl_activityrisk">
+          <Titles>
+            <Title LCID="1033" Title="Risk assessments" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Approvals" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Approvals" />
+      </Titles>
+      <Group Id="g_Approvals" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Approvals" />
+        </Titles>
+        <SubArea Id="u_apr" Entity="hcl_approvalrequest">
+          <Titles>
+            <Title LCID="1033" Title="Approval requests" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_aph" Entity="hcl_approvalhistory">
+          <Titles>
+            <Title LCID="1033" Title="Approval history" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_apm" Entity="hcl_approvalmatrix">
+          <Titles>
+            <Title LCID="1033" Title="Approval matrix" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_apd" Entity="hcl_approvalmatrixdetail">
+          <Titles>
+            <Title LCID="1033" Title="Matrix details" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_apt" Entity="hcl_approvalcontenttemplate">
+          <Titles>
+            <Title LCID="1033" Title="Content templates" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_apg" Entity="hcl_approvaldelegation">
+          <Titles>
+            <Title LCID="1033" Title="Delegations" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Insights" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Insights &amp; AI" />
+      </Titles>
+      <Group Id="g_Insights" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Insights &amp; AI" />
+        </Titles>
+        <SubArea Id="u_sug" Entity="hcl_aisuggestion">
+          <Titles>
+            <Title LCID="1033" Title="AI suggestions to review" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_run" Entity="hcl_aiagentrun">
+          <Titles>
+            <Title LCID="1033" Title="AI agent runs" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_ag" Entity="hcl_aiagent">
+          <Titles>
+            <Title LCID="1033" Title="AI agents" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="u_doc" Entity="hcl_documentreference">
+          <Titles>
+            <Title LCID="1033" Title="Documents" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="School Management System Site Map" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

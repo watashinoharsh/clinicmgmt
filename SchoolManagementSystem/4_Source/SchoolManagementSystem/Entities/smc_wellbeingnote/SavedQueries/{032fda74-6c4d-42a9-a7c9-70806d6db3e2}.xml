@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{032fda74-6c4d-42a9-a7c9-70806d6db3e2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="smc_name" select="1" icon="1" preview="1">
+        <row name="result" id="smc_wellbeingnoteid">
+          <cell name="smc_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smc_wellbeingnote">
+          <attribute name="smc_wellbeingnoteid" />
+          <attribute name="smc_name" />
+          <attribute name="createdon" />
+          <order attribute="smc_name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Wellbeing Note Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3700eb45-cc75-45a1-8c02-3a636b249a8a}</formid>
+    <IntroducedVersion>1.2.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{58dee18e-d945-46f8-a5a4-bdb1bb9a9f40}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{aa3e1609-e05b-402c-84fc-82f650c4a4e0}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Insurance Policy" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b4efdbb6-45d8-4342-a2e3-df229ad8921c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Policy Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{39c89874-fe85-441b-839e-1c2f061fc95c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Patient" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_patient" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_patient" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{42862212-f376-466b-8bc3-4434846240b2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Insurance Provider" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_provider" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_provider" />
+                      </cell>
+                      <cell id="{756230ff-809f-4477-83fa-91606b8814a2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Policy Number" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_policynumber" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_policynumber" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{aa003517-a487-4089-8bf1-138c006f73fc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Member ID" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_memberid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_memberid" />
+                      </cell>
+                      <cell id="{72a6882b-a567-4382-9e5b-aa95e86952a5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Coverage %" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_coveragepercent" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_coveragepercent" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c2764274-6f35-4255-b60f-695c94c1e9ee}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Co-pay" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_copay" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_copay" />
+                      </cell>
+                      <cell id="{c6f172d8-11a7-42bb-b41c-ab664ec58e21}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validfrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validfrom" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6a533163-a174-4dd4-9e61-20f6bf55a2bb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validto" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validto" />
+                      </cell>
+                      <cell id="{9a25f72f-c8ba-4a6f-ad56-4ce00cc1a2e6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is Primary" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_isprimary" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_isprimary" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8dd8a384-0075-4fa1-93f9-d83c5c56af65}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Insurance Policy" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

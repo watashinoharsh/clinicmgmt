@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name LocalizedName="Appointment" OriginalName="">Appointment</Name>
+  <EntityInfo>
+    <entity Name="Appointment">
+      <LocalizedNames>
+        <LocalizedName description="Appointment" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Appointments" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Commitment representing a time interval with start/end times and duration." languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="hcl_appointmentno">
+          <Type>nvarchar</Type>
+          <Name>hcl_appointmentno</Name>
+          <LogicalName>hcl_appointmentno</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ReadOnlyInUI|ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.1</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat>APT-{SEQNUM:6}</AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <Format>text</Format>
+          <MaxLength>100</MaxLength>
+          <Length>200</Length>
+          <displaynames>
+            <displayname description="Appointment No" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="hcl_checkedinat">
+          <Type>datetime</Type>
+          <Name>hcl_checkedinat</Name>
+          <LogicalName>hcl_checkedinat</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>inactive</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.1</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <Format>datetime</Format>
+          <CanChangeDateTimeBehavior>1</CanChangeDateTimeBehavior>
+          <Behavior>1</Behavior>
+          <displaynames>
+            <displayname description="Checked In At" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="hcl_slotkey">
+          <Type>nvarchar</Type>
+          <Name>hcl_slotkey</Name>
+          <LogicalName>hcl_slotkey</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.1</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <Format>text</Format>
+          <MaxLength>100</MaxLength>
+          <Length>200</Length>
+          <displaynames>
+            <displayname description="Slot Key" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="hcl_visittype">
+          <Type>picklist</Type>
+          <Name>hcl_visittype</Name>
+          <LogicalName>hcl_visittype</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.1</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <AppDefaultValue>-1</AppDefaultValue>
+          <optionset Name="hcl_appointment_hcl_visittype">
+            <OptionSetType>picklist</OptionSetType>
+            <IntroducedVersion>1.0.0.1</IntroducedVersion>
+            <IsCustomizable>1</IsCustomizable>
+            <displaynames>
+              <displayname description="Visit Type" languagecode="1033" />
+            </displaynames>
+            <options>
+              <option value="813450000" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="New Consultation" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="813450001" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Follow-up" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="813450002" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Emergency" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="813450003" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Procedure" languagecode="1033" />
+                </labels>
+              </option>
+            </options>
+          </optionset>
+          <displaynames>
+            <displayname description="Visit Type" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="StatusCode">
+          <Type>status</Type>
+          <Name>statuscode</Name>
+          <LogicalName>statuscode</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>0</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>5.0.0.0</IntroducedVersion>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <optionset Name="appointment_statuscode">
+            <OptionSetType>status</OptionSetType>
+            <IntroducedVersion>5.0.0.0</IntroducedVersion>
+            <displaynames>
+              <displayname description="Status Reason" languagecode="1033" />
+            </displaynames>
+            <Descriptions>
+              <Description description="Reason for the status of the appointment." languagecode="1033" />
+            </Descriptions>
+            <statuses>
+              <status value="1" state="0" Color="#3b79b7" IsHidden="0">
+                <labels>
+                  <label description="Free" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="813450001" state="3" IsHidden="0">
+                <labels>
+                  <label description="Confirmed" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="2" state="0" Color="#db3923" IsHidden="0">
+                <labels>
+                  <label description="Tentative" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="3" state="1" Color="#358717" IsHidden="0">
+                <labels>
+                  <label description="Completed" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="813450002" state="0" IsHidden="0">
+                <labels>
+                  <label description="Checked In" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="813450003" state="0" IsHidden="0">
+                <labels>
+                  <label description="In Consultation" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="4" state="2" Color="#666666" IsHidden="0">
+                <labels>
+                  <label description="Canceled" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="5" state="3" Color="#ea0600" IsHidden="0">
+                <labels>
+                  <label description="Busy" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="813450004" state="2" IsHidden="0">
+                <labels>
+                  <label description="No Show" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="6" state="3" Color="#6a1e7a" IsHidden="0">
+                <labels>
+                  <label description="Out of Office" languagecode="1033" />
+                </labels>
+              </status>
+              <status value="813450000" state="3" IsHidden="0">
+                <labels>
+                  <label description="Booked" languagecode="1033" />
+                </labels>
+              </status>
+            </statuses>
+          </optionset>
+          <displaynames>
+            <displayname description="Status Reason" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Select the appointment's status." languagecode="1033" />
+          </Descriptions>
+        </attribute>
+      </attributes>
+      <EntityKeys>
+        <EntityKey>
+          <Name>hcl_appointment_slotkey</Name>
+          <LogicalName>hcl_appointment_slotkey</LogicalName>
+          <IntroducedVersion>1.0.0.1</IntroducedVersion>
+          <IsCustomizable>0</IsCustomizable>
+          <EntityKeyAttributes>
+            <AttributeName>hcl_slotkey</AttributeName>
+          </EntityKeyAttributes>
+          <displaynames>
+            <displayname description="Slot Key" languagecode="1033" />
+          </displaynames>
+        </EntityKey>
+      </EntityKeys>
+      <EntitySetName>appointments</EntitySetName>
+      <IsDuplicateCheckSupported>1</IsDuplicateCheckSupported>
+      <IsBusinessProcessEnabled>1</IsBusinessProcessEnabled>
+      <IsRequiredOffline>0</IsRequiredOffline>
+      <IsInteractionCentricEnabled>1</IsInteractionCentricEnabled>
+      <IsCollaboration>1</IsCollaboration>
+      <AutoRouteToOwnerQueue>0</AutoRouteToOwnerQueue>
+      <IsConnectionsEnabled>1</IsConnectionsEnabled>
+      <IsDocumentManagementEnabled>0</IsDocumentManagementEnabled>
+      <AutoCreateAccessTeams>0</AutoCreateAccessTeams>
+      <IsOneNoteIntegrationEnabled>0</IsOneNoteIntegrationEnabled>
+      <IsKnowledgeManagementEnabled>0</IsKnowledgeManagementEnabled>
+      <IsSLAEnabled>0</IsSLAEnabled>
+      <IsDocumentRecommendationsEnabled>0</IsDocumentRecommendationsEnabled>
+      <IsBPFEntity>0</IsBPFEntity>
+      <OwnershipTypeMask>UserOwned</OwnershipTypeMask>
+      <IsAuditEnabled>0</IsAuditEnabled>
+      <IsRetrieveAuditEnabled>0</IsRetrieveAuditEnabled>
+      <IsRetrieveMultipleAuditEnabled>0</IsRetrieveMultipleAuditEnabled>
+      <IsActivity>1</IsActivity>
+      <ActivityTypeMask>CommunicationActivity</ActivityTypeMask>
+      <IsActivityParty>0</IsActivityParty>
+      <IsReplicated>1</IsReplicated>
+      <IsReplicationUserFiltered>1</IsReplicationUserFiltered>
+      <IsMailMergeEnabled>0</IsMailMergeEnabled>
+      <IsVisibleInMobile>1</IsVisibleInMobile>
+      <IsVisibleInMobileClient>1</IsVisibleInMobileClient>
+      <IsReadOnlyInMobileClient>0</IsReadOnlyInMobileClient>
+      <IsOfflineInMobileClient>1</IsOfflineInMobileClient>
+      <DaysSinceRecordLastModified>0</DaysSinceRecordLastModified>
+      <MobileOfflineFilters>
+		&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
+			&lt;entity name="appointment"&gt;
+				&lt;filter type="and"&gt;
+					&lt;condition attribute="modifiedon" operator="last-x-days" value="10"/&gt;
+				&lt;/filter&gt;
+			&lt;/entity&gt;
+		&lt;/fetch&gt;
+	</MobileOfflineFilters>
+      <IsMapiGridEnabled>1</IsMapiGridEnabled>
+      <IsReadingPaneEnabled>1</IsReadingPaneEnabled>
+      <IsQuickCreateEnabled>1</IsQuickCreateEnabled>
+      <SyncToExternalSearchIndex>1</SyncToExternalSearchIndex>
+      <IntroducedVersion>5.0.0.0</IntroducedVersion>
+      <EnforceStateTransitions>0</EnforceStateTransitions>
+      <EntityHelpUrlEnabled>0</EntityHelpUrlEnabled>
+      <ChangeTrackingEnabled>1</ChangeTrackingEnabled>
+      <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
+      <IsMSTeamsIntegrationEnabled>0</IsMSTeamsIntegrationEnabled>
+      <IsSolutionAware>0</IsSolutionAware>
+      <HasRelatedNotes>True</HasRelatedNotes>
+    </entity>
+  </EntityInfo>
+  <FormXml />
+  <SavedQueries />
+  <RibbonDiffXml />
+</Entity>

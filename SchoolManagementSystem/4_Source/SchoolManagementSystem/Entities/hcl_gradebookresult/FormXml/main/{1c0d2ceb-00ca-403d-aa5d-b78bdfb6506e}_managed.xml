@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1c0d2ceb-00ca-403d-aa5d-b78bdfb6506e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{7ba9faaa-ee8e-4412-9fd2-c596f5bbbfd2}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{538a13eb-b85d-48d9-8f88-29bdbc87568e}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Gradebook Result" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3e7d27ca-fdde-46d3-bb13-852ba3e5afd5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Result" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{df484ea5-b78d-4b40-b9ba-2da3c32c2662}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Gradebook Component" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_component" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_component" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{45e0ebba-495f-4527-94fe-82fe3ee0d48b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Mark" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_mark" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_mark" />
+                      </cell>
+                      <cell id="{b8c81b03-e35f-4879-85f1-a996db21b1d8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Grade" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_grade" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_grade" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{54094ba6-f85b-4d09-97a7-4181c72e9d5b}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Teacher Comment" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_teachercomment" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_teachercomment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f1a9be09-f559-481e-b303-c645c8821d42}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Reporting Data" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reportingdata" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_reportingdata" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{965ba3ed-1a65-4d06-adf6-b8731e977b66}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="External Key" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_externalkey" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_externalkey" />
+                      </cell>
+                      <cell id="{7b8a768c-e8f1-4683-afd6-4edaaaeb6cff}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Gradebook Result" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

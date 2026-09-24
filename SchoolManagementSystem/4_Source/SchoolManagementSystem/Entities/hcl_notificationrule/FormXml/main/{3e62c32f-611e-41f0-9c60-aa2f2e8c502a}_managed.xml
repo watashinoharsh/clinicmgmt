@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3e62c32f-611e-41f0-9c60-aa2f2e8c502a}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{21495251-d132-4c47-ab6b-fd1ccfbb9a1e}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{0c133df7-4acf-4104-8928-c70744365e2d}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Notification Rule" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1a158ae3-201d-4e19-a23b-32db081872b3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Rule Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{79c0e6ff-55d2-4adb-8ca4-09084d23ccd9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Event Code" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_eventcode" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_eventcode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{99aa9828-0a37-405e-be8f-df1eb9ebbbc7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_category" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_category" />
+                      </cell>
+                      <cell id="{c0da719b-3268-470b-9526-da58086b4f91}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Template" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_template" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_template" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db4c7cb2-0f79-49a4-8d36-6d3212fc1a74}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Channels" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_channels" classid="{4AA28AB7-9C13-4F57-A73D-4E3C9A2C0F05}" datafieldname="hcl_channels" />
+                      </cell>
+                      <cell id="{cfac5778-6de7-4421-9143-b73108d38a9b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reminder Interval (hours)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reminderintervalhours" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_reminderintervalhours" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ddae0e84-1694-41c0-814a-739a191580be}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Max Reminders" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_maxreminders" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_maxreminders" />
+                      </cell>
+                      <cell id="{853c4068-b465-4654-9f2e-801233b4337c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Stop Condition" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_stopcondition" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_stopcondition" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ef56c89c-c0ec-4cf8-932e-0107eddbf1b2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is Active" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_isactive" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_isactive" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Notification Rule" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

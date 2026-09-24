@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{7b9b7346-c4b5-f111-aaae-7ced8daf410c}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_summary" id="{c7ce506c-320f-45c7-9dba-781d6c4495c5}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Summary" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="62%">
+              <sections>
+                <section name="sec_patient" showlabel="true" showbar="false" id="{3fe0eb16-0b62-4b8d-822c-60b1747fd970}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Patient" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b46e23bd-4d50-49ed-9a13-d006845dad17}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="First name" languagecode="1033" />
+                        </labels>
+                        <control id="firstname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="firstname" />
+                      </cell>
+                      <cell id="{4ebb0afe-09ab-425c-98d6-ac3586684788}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Last name" languagecode="1033" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="lastname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34874663-5230-4645-b06e-2fb3c7f3f924}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Date of birth" languagecode="1033" />
+                        </labels>
+                        <control id="birthdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="birthdate" />
+                      </cell>
+                      <cell id="{1762c338-2685-467e-9624-3737a0abc17a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Gender" languagecode="1033" />
+                        </labels>
+                        <control id="gendercode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="gendercode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8543505f-6f9e-4924-a01b-19856596f3c3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is patient" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_ispatient" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_ispatient" />
+                      </cell>
+                      <cell id="{45a5b8e5-6cb0-4bf8-a70b-c4624ef8e01c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Blood group" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_bloodgroup" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_bloodgroup" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_contact" showlabel="true" showbar="false" id="{97a65884-5ef4-4e42-9255-ab6011f42a18}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Contact" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9fd53874-09f3-4461-849c-576d8efbab37}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Mobile phone" languagecode="1033" />
+                        </labels>
+                        <control id="mobilephone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="mobilephone" />
+                      </cell>
+                      <cell id="{a1529f53-a691-4972-b852-c335e15bd90c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="emailaddress1" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a18b4ff8-2106-4bd1-8bd5-19f9de940954}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="address1_line1" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="address1_line1" />
+                      </cell>
+                      <cell id="{43a97475-ca86-4d8f-817c-82bceffb58f3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="address1_city" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="address1_city" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_alerts" showlabel="true" showbar="false" id="{7edf2591-ff44-4e8c-943b-9237d7f4d4de}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Clinical alerts" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c611f2a9-89b0-4d44-96d3-2964050ea100}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Allergies" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_allergies" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="hcl_allergies" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dc6d066b-c488-4fb4-9f31-50786ad44275}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency contact" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_emergencycontactname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_emergencycontactname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{096492ba-5f38-4c25-b902-2c698574f7f3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency phone" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_emergencycontactphone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_emergencycontactphone" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_insurance" showlabel="true" showbar="false" id="{71a1bb84-b5d5-4932-a560-c8fbfad8f4c2}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Insurance and consent" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e92cdf54-bd56-486f-807c-d234e3c7cc7f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Insurance provider" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_insuranceprovider" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_insuranceprovider" />
+                      </cell>
+                      <cell id="{21226f03-8ed1-4ad1-87e6-5c5860f4c7f0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Policy no" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_insurancepolicyno" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_insurancepolicyno" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d4477e73-aad2-4506-961e-59aff34d367f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Do not email" languagecode="1033" />
+                        </labels>
+                        <control id="donotemail" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="donotemail" />
+                      </cell>
+                      <cell id="{1b31126e-b597-4d6e-9f4c-57346411739b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Do not phone" languagecode="1033" />
+                        </labels>
+                        <control id="donotphone" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="donotphone" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="38%">
+              <sections>
+                <section name="sec_timeline" showlabel="true" showbar="false" id="{c49de8e0-74d2-49f4-96fd-07ab5245ae6f}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Timeline" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{23a37936-c774-44d0-8b2f-013f868bc7e3}" showlabel="false" rowspan="14" colspan="1" auto="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_history" id="{78ca63b7-5135-4d89-a030-67c135ecd64f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Clinical history" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_grid_visits" showlabel="true" showbar="false" id="{e68273f0-11a7-40bb-9168-edefd23cffb3}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Visits" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ef92f53c-c028-4bcb-aeb9-3e2996f2dcb9}" showlabel="false" rowspan="12" colspan="1">
+                        <labels>
+                          <label description="Visits" languagecode="1033" />
+                        </labels>
+                        <control id="grid_visits" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{6c9b7346-c4b5-f111-aaae-7ced8daf410c}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>hcl_visit_patient</RelationshipName>
+                            <TargetEntityType>hcl_visit</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_billing" id="{4494e4d9-9778-4ebd-a6dd-1227c5e4b930}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Billing" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_grid_invoices" showlabel="true" showbar="false" id="{5a39eb87-d610-4749-8644-85fd50009cbe}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Invoices" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f5520cf8-fffd-4d94-ab62-214186d5b969}" showlabel="false" rowspan="12" colspan="1">
+                        <labels>
+                          <label description="Invoices" languagecode="1033" />
+                        </labels>
+                        <control id="grid_invoices" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{6f9b7346-c4b5-f111-aaae-7ced8daf410c}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>hcl_clinicinvoice_patient</RelationshipName>
+                            <TargetEntityType>hcl_clinicinvoice</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{90a291db-2c64-4eb2-9a8d-a26c4dbfa16c}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{8b504d9e-ed25-4467-a2df-330f5cba3ec9}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Patient No" languagecode="1033" />
+              </labels>
+              <control id="hcl_patientno" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_patientno" disabled="true" />
+            </cell>
+            <cell id="{16cc32e9-b933-4b77-bea9-16f312a0078d}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Blood group" languagecode="1033" />
+              </labels>
+              <control id="hcl_bloodgroup" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_bloodgroup" />
+            </cell>
+            <cell id="{a2f882ff-35a0-4933-ba72-33fa96b357f9}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Age" languagecode="1033" />
+              </labels>
+              <control id="hcl_age" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_age" disabled="true" />
+            </cell>
+            <cell id="{76614136-7cc0-4439-b4b2-31a8aa537265}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Allergies" languagecode="1033" />
+              </labels>
+              <control id="hcl_allergies" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="hcl_allergies" />
+            </cell>
+            <cell id="{b3cdd76e-ed33-4951-a740-449a9bfd6d4f}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Clinic Patient" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Clinic Management - Clinic Patient" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

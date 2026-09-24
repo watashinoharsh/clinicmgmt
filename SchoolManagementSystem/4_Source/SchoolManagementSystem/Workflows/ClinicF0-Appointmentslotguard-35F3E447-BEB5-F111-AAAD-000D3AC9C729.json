@@ -1,0 +1,283 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicOutlook"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Compose_key": {
+          "runAfter": {},
+          "type": "Compose",
+          "inputs": "@concat(triggerOutputs()?['body/_ownerid_value'], '_', formatDateTime(triggerOutputs()?['body/scheduledstart'], 'yyyyMMddHHmm'))"
+        },
+        "Appointment_is_active": {
+          "runAfter": {
+            "Compose_key": [
+              "Succeeded"
+            ]
+          },
+          "type": "If",
+          "expression": {
+            "or": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/statecode']",
+                  0
+                ]
+              },
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/statecode']",
+                  3
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "Key_is_new_or_changed": {
+              "runAfter": {},
+              "actions": {
+                "Scope_duplicate": {
+                  "runAfter": {
+                    "Scope_set_key": [
+                      "Failed"
+                    ]
+                  },
+                  "actions": {
+                    "Is_duplicate_key_error": {
+                      "runAfter": {},
+                      "type": "If",
+                      "expression": {
+                        "or": [
+                          {
+                            "contains": [
+                              "@toLower(string(result('Scope_set_key')))",
+                              "duplicate"
+                            ]
+                          },
+                          {
+                            "contains": [
+                              "@toLower(string(result('Scope_set_key')))",
+                              "already exists"
+                            ]
+                          },
+                          {
+                            "contains": [
+                              "@toLower(string(result('Scope_set_key')))",
+                              "preconditionfailed"
+                            ]
+                          }
+                        ]
+                      },
+                      "actions": {
+                        "Email_creator": {
+                          "runAfter": {
+                            "Get_creator": [
+                              "Succeeded"
+                            ]
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "operationId": "SendEmailV2",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                              "connectionName": "shared_office365"
+                            },
+                            "parameters": {
+                              "emailMessage/Importance": "Normal",
+                              "emailMessage/Body": "<p>The appointment you just created was cancelled because that doctor already has a booking at the same time. Please pick another slot.</p>",
+                              "emailMessage/Subject": "Appointment cancelled - slot already booked",
+                              "emailMessage/To": "@outputs('Get_creator')?['body/internalemailaddress']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Get_creator": {
+                          "runAfter": {
+                            "Cancel_duplicate_appointment": [
+                              "Succeeded"
+                            ]
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                              "connectionName": "shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "systemusers",
+                              "$select": "internalemailaddress,fullname",
+                              "recordId": "@triggerOutputs()?['body/_createdby_value']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Cancel_duplicate_appointment": {
+                          "runAfter": {},
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "operationId": "UpdateRecord",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                              "connectionName": "shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "appointments",
+                              "item/statecode": 2,
+                              "item/statuscode": 4,
+                              "recordId": "@triggerOutputs()?['body/activityid']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        }
+                      },
+                      "else": {
+                        "actions": {
+                          "Terminate_not_a_duplicate": {
+                            "runAfter": {},
+                            "type": "Terminate",
+                            "inputs": {
+                              "runStatus": "Failed",
+                              "runError": {
+                                "code": "SlotKeyError",
+                                "message": "Could not set the slot key and the error was not a duplicate-key error. Appointment left as is."
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "type": "Scope"
+                },
+                "Scope_set_key": {
+                  "runAfter": {},
+                  "actions": {
+                    "Set_Slot_Key": {
+                      "runAfter": {},
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "operationId": "UpdateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "connectionName": "shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "appointments",
+                          "item/hcl_slotkey": "@outputs('Compose_key')",
+                          "recordId": "@triggerOutputs()?['body/activityid']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "type": "Scope"
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "type": "If",
+              "expression": {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/hcl_slotkey']",
+                    "@outputs('Compose_key')"
+                  ]
+                }
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Slot_key_present": {
+                "runAfter": {},
+                "type": "If",
+                "expression": {
+                  "not": {
+                    "equals": [
+                      "@empty(triggerOutputs()?['body/hcl_slotkey'])",
+                      true
+                    ]
+                  }
+                },
+                "actions": {
+                  "Clear_slot_key": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "operationId": "UpdateRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "appointments",
+                        "item/hcl_slotkey": "@null",
+                        "recordId": "@triggerOutputs()?['body/activityid']"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "else": {
+                  "actions": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "triggers": {
+        "When_an_appointment_is_created_or_its_time_or_doctor_changes": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "appointment",
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/filteringattributes": "scheduledstart,ownerid,statecode"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

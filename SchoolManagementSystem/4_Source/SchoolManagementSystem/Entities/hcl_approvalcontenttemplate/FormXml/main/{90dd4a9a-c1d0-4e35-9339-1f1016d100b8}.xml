@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{90dd4a9a-c1d0-4e35-9339-1f1016d100b8}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{67f75a1b-a538-4ff1-80ac-a05433f58905}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{41ac8ce1-a93c-4bdf-8fc0-81413b2c8d67}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Approval Content Template" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b4055c6d-d95e-411a-a3ff-274e89d92fdc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Template Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{8c75768a-e3fa-4f6e-a55f-ecfa323b6014}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Request Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_requesttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_requesttype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d2316d58-a8fa-49b8-8b5c-be9fcbd1d1ff}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Title Template" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_titletemplate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_titletemplate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ad4fe774-db25-406d-b0a4-0ed14f47b9a3}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Body Template" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_bodytemplate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_bodytemplate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Approval Content Template" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

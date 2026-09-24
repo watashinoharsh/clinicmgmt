@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b88af688-b49c-47dc-b1a1-659811493b22}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{ee0974af-96ed-40f7-87c3-68fb694c5ed5}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{a9cdd869-7ff6-4c7d-aed5-1fdb467ca9f4}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Attendance Record" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3dfce39f-5190-4d47-b377-cf58030e6bf1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Attendance" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{e38175a3-87d0-45a1-bbb5-d667de8b8a3a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Attendance Date" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_attendancedate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_attendancedate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eb80405f-e6af-4cb1-845b-d2200dce4ac2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Period" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_period" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_period" />
+                      </cell>
+                      <cell id="{6494bad7-fe98-4901-b445-fa4e603a73e5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Attendance Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_attendancestatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_attendancestatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d2dfa346-7d5d-4a7b-9673-69c75271db5f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Source" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_source" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_source" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5e377164-b797-4195-b7e7-f9f9a15ab2f1}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Notes" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_notes" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_notes" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{20294226-e12e-4976-bf75-394ed46d9e06}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Attendance Record" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

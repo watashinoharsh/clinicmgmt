@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8595ecd8-bb39-4f2c-9a0e-73e5fd5ca60d}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{109c71ff-a2fb-4428-8333-9fcd2df60859}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{718cbaa2-1806-47f2-b4bd-a3e204f52829}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Allergy" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c6931b33-391f-417d-8c5e-b8620733cc00}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{cb60c38c-bfcb-42ea-8ac4-48233aed823f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{07d53362-b5de-46e7-a246-d54aee6758ae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Allergen Type" languagecode="1033" />
+                        </labels>
+                        <control id="smc_allergentype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_allergentype" />
+                      </cell>
+                      <cell id="{e970a7b4-22d6-4b59-920f-88e48769d0c6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Severity Level" languagecode="1033" />
+                        </labels>
+                        <control id="smc_severitylevel" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_severitylevel" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a450ab99-9ac5-4e08-b8b8-b34d84bb2844}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Reaction Symptoms" languagecode="1033" />
+                        </labels>
+                        <control id="smc_reactionsymptoms" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_reactionsymptoms" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf5fc8cc-4e34-4ec2-b4ad-e613729d849d}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Doctor Instructions" languagecode="1033" />
+                        </labels>
+                        <control id="smc_doctorinstructions" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_doctorinstructions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6279c31a-f157-402a-be1f-628ece148e4d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Verified By" languagecode="1033" />
+                        </labels>
+                        <control id="smc_verifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_verifiedby" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c670ad84-ad72-4471-ada2-bf4d48258d71}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Verification Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_verificationdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_verificationdate" />
+                      </cell>
+                      <cell id="{ff08a2ff-e312-4b4c-afa1-6aaf1d2128d5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Verification Status" languagecode="1033" />
+                        </labels>
+                        <control id="smc_verificationstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_verificationstatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{78a0a4ed-73b4-40e8-8f63-1de3ac4330f1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Last Reaction Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_lastreactiondate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_lastreactiondate" />
+                      </cell>
+                      <cell id="{22e83e3b-dec1-4492-849b-3ce9e84e1784}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e6bd539a-ed17-41bb-9296-25f4a60895ad}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Medical Certificate" languagecode="1033" />
+                        </labels>
+                        <control id="smc_medicalcertificate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_medicalcertificate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Allergy" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

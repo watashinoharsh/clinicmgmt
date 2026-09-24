@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f91264d8-bde0-42d6-b9a7-010e92689c4a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_clinicinvoiceid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_patient" width="140" />
+          <cell name="hcl_invoicedate" width="140" />
+          <cell name="hcl_status" width="140" />
+          <cell name="hcl_total" width="140" />
+          <cell name="hcl_amountpaid" width="140" />
+          <cell name="hcl_balance" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_clinicinvoice">
+          <attribute name="hcl_name" />
+          <attribute name="hcl_patient" />
+          <attribute name="hcl_invoicedate" />
+          <attribute name="hcl_status" />
+          <attribute name="hcl_total" />
+          <attribute name="hcl_amountpaid" />
+          <attribute name="hcl_balance" />
+          <attribute name="hcl_clinicinvoiceid" />
+          <order attribute="hcl_invoicedate" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Clinic Invoices" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

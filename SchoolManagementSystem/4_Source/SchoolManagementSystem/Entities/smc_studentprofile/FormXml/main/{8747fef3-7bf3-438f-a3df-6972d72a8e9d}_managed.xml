@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8747fef3-7bf3-438f-a3df-6972d72a8e9d}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{4ed2f6d8-3fee-4237-89a7-af51e273a4a0}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_student" showlabel="true" showbar="false" id="{c9c306bc-c2c6-4611-92fd-4fdc8d88758b}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Student" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{691aa137-dd6e-4976-9dcf-53456e783b91}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Name" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{e24b3cb1-8cbb-4c90-af79-61ce23bb53ac}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student ID" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_studentid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6c282e85-d5a5-4fa7-9349-63badc0b4641}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Date of Birth" languagecode="1033" />
+                        </labels>
+                        <control id="smc_dateofbirth" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_dateofbirth" />
+                      </cell>
+                      <cell id="{55c4154e-47e6-419d-a050-3a5f1d9ee553}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Year Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_yeargroup" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_yeargroup" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f619f399-90c2-4365-b91a-3e75691868ae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Roll Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_rollgroup" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_rollgroup" />
+                      </cell>
+                      <cell id="{2b5fe878-b2cd-4ec8-8c4c-a89b9ade0878}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_contacts" showlabel="true" showbar="false" id="{ac4a4029-73ad-41c5-8433-c92e0f1d1749}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Emergency contacts" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9e3d6e35-267e-41d7-ba5b-8c88fd887b4a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency Contact 1 Name" languagecode="1033" />
+                        </labels>
+                        <control id="smc_emergencycontact1name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_emergencycontact1name" />
+                      </cell>
+                      <cell id="{4c89792c-5bad-4a28-93f0-36a6fda67eec}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency Contact 1 Phone" languagecode="1033" />
+                        </labels>
+                        <control id="smc_emergencycontact1phone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_emergencycontact1phone" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{43a17499-b1dd-4d4d-babf-89af957dcae2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency Contact 2 Name" languagecode="1033" />
+                        </labels>
+                        <control id="smc_emergencycontact2name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_emergencycontact2name" />
+                      </cell>
+                      <cell id="{89805b52-e9a9-4a42-8139-5f9aa9c8ed68}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Emergency Contact 2 Phone" languagecode="1033" />
+                        </labels>
+                        <control id="smc_emergencycontact2phone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_emergencycontact2phone" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_medical" id="{ddf27047-6ee7-4f8a-a8ae-c84f367b6aae}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Medical" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_consent" showlabel="true" showbar="false" id="{073a588d-ab98-48db-9435-c208d57dee56}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Parent consent" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7bf9a128-ad51-49db-b14d-2478c5387db2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parent Consent (medical treatment)" languagecode="1033" />
+                        </labels>
+                        <control id="smc_parentconsent" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="smc_parentconsent" />
+                      </cell>
+                      <cell id="{cf9337c0-f6d6-45af-b47f-8b42525ea31b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Consent Expiry Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_consentexpiry" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_consentexpiry" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_details" showlabel="true" showbar="false" id="{40358272-f14b-48bc-8d66-31e4ead63356}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Medical details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bb47ab5e-13ee-4b38-918b-77c46eb1d9ec}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Medical Details" languagecode="1033" />
+                        </labels>
+                        <control id="grid_medicaldetail" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{f000ff7c-da9a-42c7-ba8e-d5a54788d7e7}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_medicaldetail_studentprofile</RelationshipName>
+                            <TargetEntityType>smc_medicaldetail</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_visits" showlabel="true" showbar="false" id="{83e733b9-86ca-488c-b3cc-cbcee1828faa}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Visits" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9d0f75a2-6057-43e1-b0d9-ba26b14dafcc}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Visits" languagecode="1033" />
+                        </labels>
+                        <control id="grid_visits" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{03bd5c63-be88-497f-9d20-3e4fed454027}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_medicalcentervisit_studentprofile</RelationshipName>
+                            <TargetEntityType>smc_medicalcentervisit</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_wellbeing" id="{88f221cd-7899-47be-81c4-5a448ff1200c}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Wellbeing" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_allergies" showlabel="true" showbar="false" id="{52b4e453-577b-4321-9232-22f459bdded3}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Allergies" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{041ece02-26db-42e6-aeee-2eae8049ecf6}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Allergies" languagecode="1033" />
+                        </labels>
+                        <control id="grid_allergy" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{a77fd18c-29ea-491c-beb6-da709224cc32}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_allergy_studentprofile</RelationshipName>
+                            <TargetEntityType>smc_allergy</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_notes" showlabel="true" showbar="false" id="{3bc9456d-54e9-492e-a798-b2b3a7acad43}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Wellbeing notes" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c4ee4a7a-7463-487d-86da-1bbbd2c382d3}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Wellbeing Notes" languagecode="1033" />
+                        </labels>
+                        <control id="grid_wellbeing" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{81cc6243-e954-4de6-a58e-f7de913b774b}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_wellbeingnote_studentprofile</RelationshipName>
+                            <TargetEntityType>smc_wellbeingnote</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_vacc" showlabel="true" showbar="false" id="{d4857df5-ee1f-4972-943f-ef0161e33683}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Vaccination records" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f4d5da0d-b581-4e34-a977-9618057e34e7}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Vaccination Records" languagecode="1033" />
+                        </labels>
+                        <control id="grid_vacc" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{4f4fba90-3f7d-4338-97a0-2cdb1dccb4b5}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_vaccinationrecord_studentprofile</RelationshipName>
+                            <TargetEntityType>smc_vaccinationrecord</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Student Profile" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

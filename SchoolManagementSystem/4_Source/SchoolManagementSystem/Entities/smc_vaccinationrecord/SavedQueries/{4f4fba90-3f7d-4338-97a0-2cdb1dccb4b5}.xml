@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4f4fba90-3f7d-4338-97a0-2cdb1dccb4b5}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="smc_name" select="1" icon="1" preview="1">
+        <row name="result" id="smc_vaccinationrecordid">
+          <cell name="smc_name" width="140" />
+          <cell name="smc_studentprofile" width="140" />
+          <cell name="smc_yeargroup" width="140" />
+          <cell name="smc_rollgroup" width="140" />
+          <cell name="smc_parentconsent" width="140" />
+          <cell name="smc_isvaccinated" width="140" />
+          <cell name="smc_administereddate" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smc_vaccinationrecord">
+          <attribute name="smc_vaccinationrecordid" />
+          <attribute name="smc_name" />
+          <attribute name="smc_studentprofile" />
+          <attribute name="smc_yeargroup" />
+          <attribute name="smc_rollgroup" />
+          <attribute name="smc_parentconsent" />
+          <attribute name="smc_isvaccinated" />
+          <attribute name="smc_administereddate" />
+          <order attribute="smc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Vaccination Records" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

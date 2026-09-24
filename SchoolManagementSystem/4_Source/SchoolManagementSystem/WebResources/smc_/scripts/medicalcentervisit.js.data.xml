@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{b339559d-066d-49c6-b88a-18a99af92a6a}</WebResourceId>
+  <Name>smc_/scripts/medicalcentervisit.js</Name>
+  <DisplayName>Medical Center Visit form script</DisplayName>
+  <Description>Medical Center Visit form logic</Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/smc_scriptsmedicalcentervisitjsB339559D-066D-49C6-B88A-18A99AF92A6A</FileName>
+</WebResource>

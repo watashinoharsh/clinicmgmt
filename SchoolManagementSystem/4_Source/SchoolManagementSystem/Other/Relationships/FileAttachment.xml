@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="FileAttachment_smc_allergy_smc_medicalcertificate">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>0</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>smc_allergy</ReferencingEntityName>
+    <ReferencedEntityName>FileAttachment</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>RemoveLink</CascadeDelete>
+    <CascadeArchive>RemoveLink</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
+    <ReferencingAttributeName>smc_medicalcertificate</ReferencingAttributeName>
+    <RelationshipDescription />
+  </EntityRelationship>
+</EntityRelationships>

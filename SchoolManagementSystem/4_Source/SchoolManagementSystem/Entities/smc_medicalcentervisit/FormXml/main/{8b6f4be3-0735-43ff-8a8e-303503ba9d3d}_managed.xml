@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8b6f4be3-0735-43ff-8a8e-303503ba9d3d}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{d32be761-6599-40e6-8acd-826f150dd0ba}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_visit" showlabel="true" showbar="false" id="{999f1a28-226c-472d-a0e0-327eead0223b}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Visit" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9bbeea5b-0133-4570-baeb-4570386f21a6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visit Reference" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{ee921343-0851-4246-a27a-a5c56eaa87fa}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d54ffedf-344b-4de0-b56c-a94861f20296}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Reason for visit" languagecode="1033" />
+                        </labels>
+                        <control id="smc_reasonforvisit" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_reasonforvisit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7059e8f1-cfc1-4329-b09c-7dc3e22ea2c9}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Observation" languagecode="1033" />
+                        </labels>
+                        <control id="smc_observation" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_observation" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2b0c9e49-f52c-497e-9bf1-04896d8c5500}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Time In" languagecode="1033" />
+                        </labels>
+                        <control id="smc_timein" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_timein" />
+                      </cell>
+                      <cell id="{bfc4ac43-9705-4d29-8dde-37bb06238a8e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Time Out" languagecode="1033" />
+                        </labels>
+                        <control id="smc_timeout" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_timeout" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{561348f5-1b75-48ad-95ad-72d021791076}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_vitals" showlabel="true" showbar="false" id="{d96a2099-bee3-4bdb-8744-716443bd2c99}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Health indicators/Vital signs" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dc557ab1-12fb-4ac6-b97d-e72556f57463}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Blood pressure" languagecode="1033" />
+                        </labels>
+                        <control id="smc_bloodpressure" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_bloodpressure" />
+                      </cell>
+                      <cell id="{ee7a4190-83db-469a-8f67-9530baa4bf8d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Heart Rate / Pulse (bpm)" languagecode="1033" />
+                        </labels>
+                        <control id="smc_heartrate" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="smc_heartrate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5b3ee9cd-a31f-4203-851e-4490c15ff398}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Respiratory Rate" languagecode="1033" />
+                        </labels>
+                        <control id="smc_respiratoryrate" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="smc_respiratoryrate" />
+                      </cell>
+                      <cell id="{448a0b51-403c-4dc5-93eb-603cf8dfa864}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Temperature" languagecode="1033" />
+                        </labels>
+                        <control id="smc_temperature" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="smc_temperature" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a59070ca-7b6e-4dd6-b884-d60c9175b2f7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Temperature Unit" languagecode="1033" />
+                        </labels>
+                        <control id="smc_temperatureunit" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_temperatureunit" />
+                      </cell>
+                      <cell id="{d0e51b19-f615-46aa-a2a2-c47e5d447fa6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Observation Staff" languagecode="1033" />
+                        </labels>
+                        <control id="smc_observationstaff" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_observationstaff" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_treatment" id="{b9cca2e3-0503-481d-b206-943d48c6c5e9}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Treatment" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_treatment" showlabel="true" showbar="false" id="{b67f5629-10ba-4554-a254-9db1b3a343d7}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Treatment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7b0c8cd5-c66a-49c0-9134-bc70d3ead359}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Treatment Type" languagecode="1033" />
+                        </labels>
+                        <control id="smc_treatmenttype" classid="{4AA28AB7-9C13-4F57-A73D-4E3C9A2C0F05}" datafieldname="smc_treatmenttype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4053f0c7-6b53-45ab-a932-ddbce715ceae}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="First aid / Wound care" languagecode="1033" />
+                        </labels>
+                        <control id="smc_firstaidwoundcare" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_firstaidwoundcare" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b71d3e18-0b8e-4234-bbd5-c51026cd35e8}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Rest In Clinic" languagecode="1033" />
+                        </labels>
+                        <control id="smc_restinclinic" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_restinclinic" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4b0c979c-0939-43df-978b-3603996313f2}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Other Treatment" languagecode="1033" />
+                        </labels>
+                        <control id="smc_othertreatment" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_othertreatment" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_medication" showlabel="true" showbar="false" id="{52519c09-efa1-4d2b-b58d-63e3b9e121bd}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Medication Treatment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1922a1ff-8727-44b8-849b-1873057fee0c}" showlabel="false" rowspan="6" colspan="2">
+                        <labels>
+                          <label description="Medication Treatment" languagecode="1033" />
+                        </labels>
+                        <control id="grid_medicationtreatment" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{b3cf44f2-6715-408c-9094-73b52a7083be}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>smc_medicationtreatment_medicalcentervisit</RelationshipName>
+                            <TargetEntityType>smc_medicationtreatment</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_outcome" id="{14f2b324-a090-435c-b8ea-47426024af31}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Outcome" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_outcome" showlabel="true" showbar="false" id="{7f8ec5ba-583c-45a3-853c-3b2aae137949}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Final outcome" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{de9506ac-5f93-44f1-a88d-4adb8b86bc47}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Final outcome" languagecode="1033" />
+                        </labels>
+                        <control id="smc_finaloutcome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_finaloutcome" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1c863f0f-0ce0-4674-9847-3a8cdcedb633}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Final Outcome Type" languagecode="1033" />
+                        </labels>
+                        <control id="smc_finaloutcometype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_finaloutcometype" />
+                      </cell>
+                      <cell id="{09754486-0611-490a-a97c-c595f7e619d5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Notify Parent" languagecode="1033" />
+                        </labels>
+                        <control id="smc_notifyparent" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="smc_notifyparent" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ff51d0b8-485b-46a3-af06-1ad62d8e5aca}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Transfer To" languagecode="1033" />
+                        </labels>
+                        <control id="smc_transferto" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_transferto" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0be0e40e-a5c0-4035-835b-e36e2f17c22f}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Notification Message" languagecode="1033" />
+                        </labels>
+                        <control id="smc_notificationmessage" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_notificationmessage" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onLoad" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{ae5cb305-5ca0-428b-bff7-427209adc0f6}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onsave" application="false" active="false">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onSave" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{f55b6346-8424-41bf-b0bb-7fd27ff502e6}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_treatmenttype">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onTreatmentTypeChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{a0338b36-0c50-4814-9b8f-85a9dda34fb9}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_finaloutcometype">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onOutcomeTypeChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{2ec3ab91-1bf0-4c3b-9a07-e5abd5d9af3f}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_bloodpressure">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onVitalChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{70830791-50a2-46b8-8e94-a0c64e0f570c}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_heartrate">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onVitalChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{3da86a2f-20e6-4a78-81c4-d043bfc3da4f}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_respiratoryrate">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onVitalChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{d31998db-7481-4a83-92ac-1cca88087fcc}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_temperature">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onVitalChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{4a72d50c-1e82-4061-8955-78deffae5a23}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="smc_temperatureunit">
+          <Handlers>
+            <Handler functionName="SMC.Visit.onVitalChange" libraryName="smc_/scripts/medicalcentervisit.js" handlerUniqueId="{4a9450ee-eda5-499e-a199-473ed1b2fa90}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <formLibraries>
+        <Library name="smc_/scripts/medicalcentervisit.js" libraryUniqueId="{088e2be2-e493-49a1-b02f-51343c2fbc75}" />
+      </formLibraries>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Medical Center Visit" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

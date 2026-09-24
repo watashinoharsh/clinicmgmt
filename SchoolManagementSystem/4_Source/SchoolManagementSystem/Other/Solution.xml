@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26091.144" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26091.144" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26091.00144">
+  <SolutionManifest>
+    <UniqueName>ClinicSchoolSuite</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="School Management System" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="School Management System: one end-to-end solution covering students and parents, admissions and re-enrolment, attendance and kiosk, wellbeing and behaviour, school medical center and health centre (clinic), curriculum and assessment, communication and consent, approvals, activities, gradebook, academic reports and AI-assisted drafting." languagecode="1033" />
+    </Descriptions>
+    <Version>2.1.1.0</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>Harsh</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Clinic Management" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Clinic Management for Power Platform" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>hcl</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>81345</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="1" />
+      <RootComponent type="1" schemaName="appointment" behavior="1" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="hcl_academicreport" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_academicreportversion" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activity" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activityfeedback" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activityparticipant" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activityreport" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activityrisk" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activitytransport" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_activityvenue" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_aiagent" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_aiagentrun" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_aisuggestion" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvalcontenttemplate" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvaldelegation" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvalhistory" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvalmatrix" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvalmatrixdetail" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_approvalrequest" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_attendancerecord" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_behaviourcategory" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_behaviourrecord" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicinvoice" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicinvoiceline" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicmedicine" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicpayment" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicservice" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_clinicsetting" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_consentrecord" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_consenttype" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_doctorschedule" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_documentreference" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_gatepass" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_gradebookcomponent" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_gradebookpublish" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_gradebookresult" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_insurancepolicy" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_kioskrecord" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_labresult" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_labtest" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_musterentry" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_musterevent" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_notification" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_notificationrecipient" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_notificationrecipientrule" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_notificationrule" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_notificationtemplate" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_patientallergy" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_pickupauthorisation" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_prescription" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_reenrolment" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_reenrolmentcohort" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_reenrolmentcycle" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_reenrolmentrule" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_referral" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_rolloverplan" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_vaccination" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_visit" behavior="0" />
+      <RootComponent type="1" schemaName="hcl_visitor" behavior="0" />
+      <RootComponent type="1" schemaName="smc_allergy" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medicalcentervisit" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medicaldetail" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medication" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medicationfrequency" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medicationtreatment" behavior="0" />
+      <RootComponent type="1" schemaName="smc_medicationunit" behavior="0" />
+      <RootComponent type="1" schemaName="smc_rollgroup" behavior="0" />
+      <RootComponent type="1" schemaName="smc_studentprofile" behavior="0" />
+      <RootComponent type="1" schemaName="smc_vaccinationrecord" behavior="0" />
+      <RootComponent type="1" schemaName="smc_wellbeingnote" behavior="0" />
+      <RootComponent type="1" schemaName="smc_yeargroup" behavior="0" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="task" behavior="1" />
+      <RootComponent type="20" id="{18cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{24cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{30cfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{3989e3e8-2726-4dd6-a8f1-71bce38083cc}" behavior="0" />
+      <RootComponent type="20" id="{3c85b516-4bcd-4720-ba41-d0d9fd6d102a}" behavior="0" />
+      <RootComponent type="20" id="{3ccfaf39-bcb5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="20" id="{6055ef77-d884-4956-a56a-6a4e693f7fa7}" behavior="0" />
+      <RootComponent type="20" id="{8b4f3005-87c3-4506-9f34-89666e468465}" behavior="0" />
+      <RootComponent type="20" id="{971796f6-dcba-4830-8f17-c0d825b35d6a}" behavior="0" />
+      <RootComponent type="20" id="{abe30782-3afa-4cf4-89e0-d1a7085f17ae}" behavior="0" />
+      <RootComponent type="29" id="{0c807f66-c9b5-f111-aaad-000d3ac99980}" behavior="0" />
+      <RootComponent type="29" id="{15b4bcea-1326-41ab-83dd-3d3ebbd41d15}" behavior="0" />
+      <RootComponent type="29" id="{17664b9a-a5e9-4ebc-852f-852c9374bbd8}" behavior="0" />
+      <RootComponent type="29" id="{1f807f66-c9b5-f111-aaad-000d3ac99980}" behavior="0" />
+      <RootComponent type="29" id="{205d1a24-3d64-47c8-b6b4-1cef010a1579}" behavior="0" />
+      <RootComponent type="29" id="{22815f89-d237-418f-9dfb-3f0249cca72b}" behavior="0" />
+      <RootComponent type="29" id="{35f3e447-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{45f3e447-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{94626016-bfb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{9a43dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{a0626016-bfb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{a308899b-019e-4d5d-8687-a38a6e646dbe}" behavior="0" />
+      <RootComponent type="29" id="{a643dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{ac678b15-4708-430c-8bb4-e363eb9eeb03}" behavior="0" />
+      <RootComponent type="29" id="{b08a3b88-aecc-4fae-8be3-cdf9f0d6f86e}" behavior="0" />
+      <RootComponent type="29" id="{b243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{c054dd91-e2b5-f111-aaae-7ced8daf410c}" behavior="0" />
+      <RootComponent type="29" id="{c243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{d243dd4d-beb5-f111-aaad-000d3ac9c729}" behavior="0" />
+      <RootComponent type="29" id="{f14162a2-0f78-42e6-8b1d-f29354796052}" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/home.html" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/icon-manager.svg" behavior="0" />
+      <RootComponent type="61" schemaName="hcl_/clinic/icon-mobile.svg" behavior="0" />
+      <RootComponent type="61" schemaName="smc_/scripts/medicalcentervisit.js" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_CEPhase3SiteMap" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_ClinicManagerSiteMap" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_ClinicMobileSiteMap" behavior="0" />
+      <RootComponent type="62" schemaName="hcl_SuiteSiteMap" behavior="0" />
+      <RootComponent type="62" schemaName="smc_SchoolMedicalSiteMap" behavior="0" />
+      <RootComponent type="80" schemaName="ClinicManager" behavior="0" />
+      <RootComponent type="80" schemaName="ClinicMobile" behavior="0" />
+      <RootComponent type="80" schemaName="hcl_CEPhase3Admin" behavior="0" />
+      <RootComponent type="80" schemaName="hcl_ClinicSchoolSuite" behavior="0" />
+      <RootComponent type="80" schemaName="SchoolMedical" behavior="0" />
+      <RootComponent type="9" schemaName="smc_allergentype" behavior="0" />
+      <RootComponent type="9" schemaName="smc_medicationform" behavior="0" />
+      <RootComponent type="9" schemaName="smc_severitylevel" behavior="0" />
+      <RootComponent type="9" schemaName="smc_temperatureunit" behavior="0" />
+      <RootComponent type="9" schemaName="smc_verificationstatus" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="2" schemaName="isonlinemeeting" displayName="Is Online Meeting" parentSchemaName="appointment" parentDisplayName="Appointment" solution="msft_ActivitiesInfra_Extensions (9.2.0.81)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="onlinemeetingjoinurl" displayName="Online Meeting Join Url" parentSchemaName="appointment" parentDisplayName="Appointment" solution="msft_ActivitiesInfra_Extensions (9.2.0.81)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Appointment" parentDisplayName="Appointment" solution="msdynce_Activities (9.0.1.2033)" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Activity.HyperlinkControlWithImage" displayName="MscrmControls.Activity.HyperlinkControlWithImage" solution="msdynce_ActivitiesPatch (9.0.26086.260830001)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2609.1007)" />
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.RichTextEditor.RichTextEditorControl" displayName="MscrmControls.RichTextEditor.RichTextEditorControl" solution="msdyn_RichTextEditor (9.0.26083.1012)">
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
+          <package appName="msdyn_CustomControlsExtended" version="9.0.26083.1012">msdyn_TimelineExtended (9.0.26083.1012)</package>
+        </Required>
+        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=ClinicManager,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="ClinicManager" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=ClinicMobile,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="ClinicMobile" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

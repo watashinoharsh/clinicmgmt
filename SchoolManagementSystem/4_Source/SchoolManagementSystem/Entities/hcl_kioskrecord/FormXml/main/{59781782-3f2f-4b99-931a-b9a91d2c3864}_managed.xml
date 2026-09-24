@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{59781782-3f2f-4b99-931a-b9a91d2c3864}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{1a2211e3-2cde-4774-965d-4d9076b5db8b}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{e3bab41a-7453-45e9-ba5f-68307da3f0ba}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Kiosk Record" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d3a2deed-0b2f-4048-8fd1-2d91df10467a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Interaction" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{8bfa702d-f3d5-4f97-ab94-a58f94b4447e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Interaction Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_interactiontype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_interactiontype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3508cdc2-c389-4e36-9207-1f0da0926a37}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Occurred On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_occurredon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_occurredon" />
+                      </cell>
+                      <cell id="{13d75c0c-3ea1-45bd-ac0f-7c56bb91e340}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visitor" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visitor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_visitor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1b746d2a-af1a-45e0-8d88-6c2b31f8f89c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Gate Pass" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_gatepass" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_gatepass" />
+                      </cell>
+                      <cell id="{621ef528-fe3c-401b-a881-b53b0ceed837}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Pickup Authorisation" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_pickupauthorisation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_pickupauthorisation" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{146fe960-4978-4ff1-b7ed-d98ea63a616b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Outcome Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_outcomestatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_outcomestatus" />
+                      </cell>
+                      <cell id="{0014b2cf-0f42-4c08-ab2e-8e5caace6025}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Escalation Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_escalationstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_escalationstatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{225052be-2f7c-4920-8f99-b398ee415639}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Notes" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_notes" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_notes" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{30f025d7-ac3f-4b00-8124-902c49861639}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Kiosk Record" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

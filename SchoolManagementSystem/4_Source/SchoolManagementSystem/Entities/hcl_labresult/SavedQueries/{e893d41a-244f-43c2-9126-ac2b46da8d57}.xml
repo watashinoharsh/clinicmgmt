@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e893d41a-244f-43c2-9126-ac2b46da8d57}</savedqueryid>
+    <layoutxml>
+      <grid name="hcl_labresults" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="hcl_labresult" id="hcl_labresultid">
+          <cell name="hcl_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_labresult">
+          <attribute name="hcl_labresultid" />
+          <attribute name="hcl_name" />
+          <attribute name="createdon" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.2.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Lab Result Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

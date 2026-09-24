@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>smc_SchoolMedicalSiteMap</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="1.0.1.0">
+    <Area Id="Students" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Students" />
+      </Titles>
+      <Group Id="g_Students" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Students" />
+        </Titles>
+        <SubArea Id="s_students" Entity="smc_studentprofile">
+          <Titles>
+            <Title LCID="1033" Title="Student profiles" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_medical" Entity="smc_medicaldetail">
+          <Titles>
+            <Title LCID="1033" Title="Medical details" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_wellbeing" Entity="smc_wellbeingnote">
+          <Titles>
+            <Title LCID="1033" Title="Wellbeing notes" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_allergy" Entity="smc_allergy">
+          <Titles>
+            <Title LCID="1033" Title="Allergies" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="MedicalCenter" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Medical Center" />
+      </Titles>
+      <Group Id="g_MedicalCenter" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Medical Center" />
+        </Titles>
+        <SubArea Id="s_visit" Entity="smc_medicalcentervisit">
+          <Titles>
+            <Title LCID="1033" Title="Visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_medtx" Entity="smc_medicationtreatment">
+          <Titles>
+            <Title LCID="1033" Title="Medication treatments" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_vacc" Entity="smc_vaccinationrecord">
+          <Titles>
+            <Title LCID="1033" Title="Vaccination records" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+    <Area Id="Setup" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Setup" />
+      </Titles>
+      <Group Id="g_Setup" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Setup" />
+        </Titles>
+        <SubArea Id="s_year" Entity="smc_yeargroup">
+          <Titles>
+            <Title LCID="1033" Title="Year groups" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_roll" Entity="smc_rollgroup">
+          <Titles>
+            <Title LCID="1033" Title="Roll groups" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_med" Entity="smc_medication">
+          <Titles>
+            <Title LCID="1033" Title="Medications" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_unit" Entity="smc_medicationunit">
+          <Titles>
+            <Title LCID="1033" Title="Medication units" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="s_freq" Entity="smc_medicationfrequency">
+          <Titles>
+            <Title LCID="1033" Title="Medication frequencies" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="School Medical Center Site Map" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

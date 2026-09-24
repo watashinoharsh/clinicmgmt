@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d5bb7235-da9d-4cc5-bb0c-61359b4124a4}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{03fd6c38-2a28-4138-a7a9-63c948b3e84f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{c53f648e-ab90-4d61-acef-a5afdd4c4633}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Medical Detail" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dddaa0ad-ce48-4b37-8f95-52166d6192b2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Condition" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{523dd82f-fc19-4006-b26f-f99ffb9bb8f8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d8ace666-710c-4106-97b3-e965b610b98e}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Details" languagecode="1033" />
+                        </labels>
+                        <control id="smc_details" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_details" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34ad47ea-b8b9-4d9d-a759-7e6409ec48ad}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Medical Detail" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

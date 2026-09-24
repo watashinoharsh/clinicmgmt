@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>SchoolMedical</UniqueName>
+  <IntroducedVersion>1.0.1.0</IntroducedVersion>
+  <WebResourceId>00000000-0000-0000-0000-000000000000</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="smc_allergy" />
+    <AppModuleComponent type="1" schemaName="smc_medicalcentervisit" />
+    <AppModuleComponent type="1" schemaName="smc_medicaldetail" />
+    <AppModuleComponent type="1" schemaName="smc_medication" />
+    <AppModuleComponent type="1" schemaName="smc_medicationfrequency" />
+    <AppModuleComponent type="1" schemaName="smc_medicationtreatment" />
+    <AppModuleComponent type="1" schemaName="smc_medicationunit" />
+    <AppModuleComponent type="1" schemaName="smc_rollgroup" />
+    <AppModuleComponent type="1" schemaName="smc_studentprofile" />
+    <AppModuleComponent type="1" schemaName="smc_vaccinationrecord" />
+    <AppModuleComponent type="1" schemaName="smc_wellbeingnote" />
+    <AppModuleComponent type="1" schemaName="smc_yeargroup" />
+    <AppModuleComponent type="62" schemaName="smc_SchoolMedicalSiteMap" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{3989e3e8-2726-4dd6-a8f1-71bce38083cc}" />
+    <Role id="{3c85b516-4bcd-4720-ba41-d0d9fd6d102a}" />
+    <Role id="{abe30782-3afa-4cf4-89e0-d1a7085f17ae}" />
+    <Role id="{971796f6-dcba-4830-8f17-c0d825b35d6a}" />
+    <Role id="{6055ef77-d884-4956-a56a-6a4e693f7fa7}" />
+    <Role id="{8b4f3005-87c3-4506-9f34-89666e468465}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="School Medical Center" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="School medical center: student medical and wellbeing profiles, visits, treatment, allergies and vaccinations" languagecode="1033" />
+  </Descriptions>
+</AppModule>

@@ -1,0 +1,3 @@
+hcl_balance: =hcl_total - hcl_amountpaid
+hcl_tax: =(hcl_subtotal - hcl_discount) * hcl_taxrate
+hcl_total: =hcl_subtotal - hcl_discount + hcl_tax

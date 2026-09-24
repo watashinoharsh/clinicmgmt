@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2ff65dfa-83bd-4e8f-b84f-ce2d9ecc5c38}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{e7955dfa-8141-4d79-8441-51f24fe3a5a7}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{ec01e0f9-319b-45e3-a9aa-ab2539826cc8}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Notification" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3bf5823b-92aa-4455-9ca8-652ed34376d1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e0a03d6e-69b0-4acc-9181-a0c01828c04e}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Message" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_message" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_message" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{62249b0c-b2c2-44cd-b59b-dd1aee892334}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingtype" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingtype" />
+                      </cell>
+                      <cell id="{7e66e0c8-43a2-412a-b7c1-d9f496f4a5a5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Id" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{716d04b6-f16d-4023-a939-a26292861ad2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Context" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_context" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_context" />
+                      </cell>
+                      <cell id="{46f9337f-a48b-4f94-9544-c03b918d4daf}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Deep Link URL" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_deeplinkurl" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_deeplinkurl" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a175dd55-dc02-499a-a19c-57ed325553f8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Priority" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_priority" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_priority" />
+                      </cell>
+                      <cell id="{780f9cf5-5489-4acc-84c6-e2448443c64f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_category" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_category" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a3dd6441-ba50-42bd-971f-efe25894f0b9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Notification Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_notificationstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_notificationstatus" />
+                      </cell>
+                      <cell id="{d17ccdb4-96f6-4849-ae69-da9da6f2a290}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Notification Rule" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_rule" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_rule" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6d019068-757b-449c-86d3-b19406a7f5d5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Notification" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

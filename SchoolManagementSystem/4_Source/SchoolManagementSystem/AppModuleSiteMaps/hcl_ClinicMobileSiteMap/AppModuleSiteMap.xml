@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>hcl_ClinicMobileSiteMap</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="Mobile" ShowGroups="true">
+      <Titles>
+        <Title LCID="1033" Title="Clinic" />
+      </Titles>
+      <Group Id="g_m" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Clinic" />
+        </Titles>
+        <SubArea Id="m_home" Url="$webresource:hcl_/clinic/home.html">
+          <Titles>
+            <Title LCID="1033" Title="Home" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="m_today" Url="/main.aspx?pagetype=entitylist&amp;etn=appointment&amp;viewid=%7Bfbceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Today" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="m_wait" Url="/main.aspx?pagetype=entitylist&amp;etn=appointment&amp;viewid=%7Bffceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Waiting room" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="m_pat" Url="/main.aspx?pagetype=entitylist&amp;etn=contact&amp;viewid=%7Bf7ceaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Patients" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="m_visit" Url="/main.aspx?pagetype=entitylist&amp;etn=hcl_visit&amp;viewid=%7B0ccfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Open visits" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="m_task" Url="/main.aspx?pagetype=entitylist&amp;etn=task&amp;viewid=%7B07cfaf39-bcb5-f111-aaae-7ced8daf410c%7D&amp;viewtype=1039">
+          <Titles>
+            <Title LCID="1033" Title="Follow-ups" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Clinic Mobile Site Map" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

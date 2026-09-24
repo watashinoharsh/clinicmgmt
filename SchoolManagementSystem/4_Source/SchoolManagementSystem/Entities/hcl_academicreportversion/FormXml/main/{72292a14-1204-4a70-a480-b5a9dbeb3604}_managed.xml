@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{72292a14-1204-4a70-a480-b5a9dbeb3604}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{8f56620b-7876-420d-89a7-9e4631c6ca14}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{020c1c32-45eb-4c70-a02b-828668b4a83a}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Academic Report Version" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad4b4589-54f7-4284-96bc-9d2ebee311a8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Version" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{4d4143c8-1806-4d00-b0a6-1f3b28d25860}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Academic Report" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_report" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_report" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ceb275b7-2b60-47b2-9d94-ff64c10a7ff8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Version Number" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_versionnumber" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_versionnumber" />
+                      </cell>
+                      <cell id="{f7ffb8bf-8dc6-48e9-8ec2-5fabc7de4f53}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Version State" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_versionstate" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_versionstate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a60ced82-608a-466a-8cd8-2bf83b84c626}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Effective From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_effectivefrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_effectivefrom" />
+                      </cell>
+                      <cell id="{90723aef-acdb-403a-8d28-6e68557061dc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Expires On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_expireson" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_expireson" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e18b61a2-e351-4eb4-b29d-ba352ea65f36}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Published On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_publishedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_publishedon" />
+                      </cell>
+                      <cell id="{71c401ae-8ad7-4b29-a308-ea488492c90f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reviewed On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reviewedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_reviewedon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e4e230b-d82b-4f46-8a1d-c66e2f77959c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SharePoint Reference" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_sharepointref" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_sharepointref" />
+                      </cell>
+                      <cell id="{99b4be90-c054-46f4-b499-006f259fd457}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Academic Report Version" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

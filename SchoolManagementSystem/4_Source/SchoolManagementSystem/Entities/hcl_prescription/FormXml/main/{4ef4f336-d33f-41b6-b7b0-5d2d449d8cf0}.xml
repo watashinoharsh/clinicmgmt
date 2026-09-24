@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4ef4f336-d33f-41b6-b7b0-5d2d449d8cf0}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{56aab502-f630-4896-a63a-970f14546945}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{0b242126-2aa5-47a8-91ba-5fba0648d698}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Prescription" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{14528a7f-d278-4733-a886-0e60389a041f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Medicine" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{cbf70d93-169f-47f8-95cd-647d07f571d2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visit" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_visit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f55647df-f025-472a-884d-8fd56c6fbb69}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Catalogue medicine" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_medicine" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_medicine" />
+                      </cell>
+                      <cell id="{9f3276ee-f6fd-4759-bd79-f40384a43104}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Dosage" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_dosage" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_dosage" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9171308e-1081-4a7d-a222-a8b7f75f2087}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_frequency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_frequency" />
+                      </cell>
+                      <cell id="{5b38a00d-0d03-4b3e-b859-fba2ea3da831}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Duration (days)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_durationdays" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_durationdays" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6de6c3ec-62f4-48f9-9196-f6c5fcbf1f35}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Quantity" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_quantity" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_quantity" />
+                      </cell>
+                      <cell id="{141a0c30-5507-4f36-8831-4f81fd894381}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Instructions" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_instructions" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_instructions" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bec94dd-f832-4aa0-ac12-0342898cf2de}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Dispensed" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_dispensed" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_dispensed" />
+                      </cell>
+                      <cell id="{78bd6cd5-cccf-41cb-9760-4f9d5acbc8da}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Stock deducted" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_stockdeducted" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_stockdeducted" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Prescription" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

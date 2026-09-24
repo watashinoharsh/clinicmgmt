@@ -1,0 +1,112 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Is_primary": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/hcl_isprimary']",
+              true
+            ]
+          },
+          "actions": {
+            "List_other_primary": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_insurancepolicies",
+                  "$filter": "_hcl_patient_value eq @{triggerOutputs()?['body/_hcl_patient_value']} and hcl_isprimary eq true and hcl_insurancepolicyid ne @{triggerOutputs()?['body/hcl_insurancepolicyid']}",
+                  "$select": "hcl_insurancepolicyid"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {}
+            },
+            "For_each_other": {
+              "runAfter": {
+                "List_other_primary": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Foreach",
+              "foreach": "@outputs('List_other_primary')?['body/value']",
+              "actions": {
+                "Unset_primary": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hcl_insurancepolicies",
+                      "item/hcl_isprimary": false,
+                      "recordId": "@items('For_each_other')?['hcl_insurancepolicyid']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runAfter": {}
+                }
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "triggers": {
+        "When_a_policy_is_marked_primary": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_insurancepolicy",
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/filteringattributes": "hcl_isprimary,hcl_patient"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

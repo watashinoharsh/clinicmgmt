@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{102a8daf-a7ff-4ccf-8fc9-2f23967e8b14}</formid>
+    <IntroducedVersion>2.1.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{72f0ee48-0ed2-4d92-94c3-8a85ee6a231f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{2214dcd9-c5ee-420d-a073-e9687fdd76e3}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="AI Suggestion" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a44a67cd-4fe4-415b-83a4-89a044fed079}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{d2a8d251-799b-4efe-8a6e-0e0c69133153}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="AI Agent" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_agent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_agent" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a1703a1c-3347-4ef7-9117-9d06d9e56c99}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingtype" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingtype" />
+                      </cell>
+                      <cell id="{e08eebe3-1013-4b8c-87e2-0e10d9adfea6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Id" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9142e8b0-1060-4f19-9d3d-0fcd70085ee5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Audience" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_audience" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_audience" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b4be8590-c580-402d-be3a-27f12ef40cd2}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Content" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_content" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_content" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{328854de-5301-43b4-8168-fefb3c65c241}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Suggestion Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_suggestionstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_suggestionstatus" />
+                      </cell>
+                      <cell id="{ec106671-bc41-449f-800d-e33ce5fc8c4a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reviewed On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reviewedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_reviewedon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b46cadd8-548d-4f2e-8e2a-32403785930d}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Review Comment" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reviewcomment" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_reviewcomment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0576d33f-0473-44e5-803c-1a9aa34a891b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="AI Suggestion" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

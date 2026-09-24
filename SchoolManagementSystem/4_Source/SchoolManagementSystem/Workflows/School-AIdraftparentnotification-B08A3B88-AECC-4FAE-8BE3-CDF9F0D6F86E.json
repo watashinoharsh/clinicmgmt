@@ -1,0 +1,185 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "smc_SchoolDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_webcontents": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_AiHttp"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_webcontents"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Needs_draft": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "or": [
+                  {
+                    "equals": [
+                      "@triggerOutputs()?['body/smc_finaloutcometype']",
+                      813460000
+                    ]
+                  },
+                  {
+                    "equals": [
+                      "@triggerOutputs()?['body/smc_finaloutcometype']",
+                      813460001
+                    ]
+                  }
+                ]
+              },
+              {
+                "equals": [
+                  "@empty(triggerOutputs()?['body/smc_notificationmessage'])",
+                  true
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "Get_student": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "smc_studentprofiles",
+                  "$select": "smc_name",
+                  "recordId": "@triggerOutputs()?['body/_smc_studentprofile_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {}
+            },
+            "Standard_message": {
+              "runAfter": {
+                "Get_student": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Compose",
+              "inputs": "@concat('Your child, ', outputs('Get_student')?['body/smc_name'], ', visited the medical center at ', formatDateTime(utcNow(), 'HH:mm'), '. Our medical team has assessed the situation and provided appropriate care. If any follow-up or additional attention is required, we will contact you directly.')"
+            },
+            "Draft_with_AI": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "InvokeHttp",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_webcontents",
+                  "connectionName": "shared_webcontents"
+                },
+                "parameters": {
+                  "request/method": "POST",
+                  "request/url": "@parameters('hcl_AiDraftEndpoint (hcl_AiDraftEndpoint)')",
+                  "request/headers": {
+                    "Content-Type": "application/json"
+                  },
+                  "request/body": {
+                    "agent": "MessageDrafting",
+                    "audience": "Parent",
+                    "outcome": "@if(equals(triggerOutputs()?['body/smc_finaloutcometype'], 813460000), 'ReturnToClass', 'SendHome')",
+                    "studentFirstName": "@first(split(outputs('Get_student')?['body/smc_name'], ' '))",
+                    "visitTime": "@formatDateTime(utcNow(), 'HH:mm')",
+                    "tone": "calm, factual, reassuring",
+                    "maxWords": 90,
+                    "includeMedicalDetail": false
+                  }
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Standard_message": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Save_draft": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "smc_medicalcentervisits",
+                  "item/smc_notificationmessage": "@coalesce(body('Draft_with_AI')?['draft'], body('Draft_with_AI')?['body']?['draft'], outputs('Standard_message'))",
+                  "recordId": "@triggerOutputs()?['body/smc_medicalcentervisitid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Draft_with_AI": [
+                  "Succeeded",
+                  "Failed",
+                  "TimedOut"
+                ]
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "triggers": {
+        "When_the_final_outcome_type_is_set": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "smc_medicalcentervisit",
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/filteringattributes": "smc_finaloutcometype"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "hcl_AiDraftEndpoint (hcl_AiDraftEndpoint)": {
+          "defaultValue": "",
+          "type": "String",
+          "metadata": {
+            "schemaName": "hcl_AiDraftEndpoint"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

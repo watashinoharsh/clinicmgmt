@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cac15dd4-1ab5-4586-b1ed-84923d2e460b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{69e3bec5-8ff7-4a8e-a9e0-5321afb3ce6b}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{366fdec7-eb86-499f-bd9c-8192f1894c7b}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Approval Delegation" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d472d3c7-1871-483b-9faa-6f57d9ee10a2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Delegation Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{9893eeec-8656-4f3f-a121-bf9e57674fa7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Delegator" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_delegator" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_delegator" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{581935e2-2495-4213-9677-ca0adeb85dbe}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Delegate" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_delegate" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_delegate" />
+                      </cell>
+                      <cell id="{5c013f45-ce78-468c-adf8-4bbb56434ff3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Request Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_requesttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_requesttype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2582aaff-0978-4d78-ab5a-06b1fc5a2c52}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validfrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validfrom" />
+                      </cell>
+                      <cell id="{45f6d5fe-14c9-45c2-85ef-06f40d719a0a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validto" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validto" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6bef6835-7c9d-462b-b759-7eb22be8ed8d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is Active" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_isactive" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_isactive" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Approval Delegation" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b7255600-4599-4af0-8dfc-fbfd8b411e06}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{59d143c8-a1fb-4b94-8342-b323f967fe7f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{975a2f38-6dd2-4dd8-a9d7-cedca6533929}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Visitor" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{58f33311-9c74-4314-a760-025b33794413}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visitor Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{d41fc84c-8bd6-4bb7-9a80-89d5199cbf40}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Organisation" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_organisation" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_organisation" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3df212d5-c284-4bdd-8be8-636a7b4e20d9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Phone" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_phone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_phone" />
+                      </cell>
+                      <cell id="{40113ce5-57d9-4ad7-bacb-1271c9bba1ee}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_email" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_email" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dd4cbba8-81ea-45bd-9012-469c4f03f4bb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Purpose" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_purpose" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_purpose" />
+                      </cell>
+                      <cell id="{1575d475-9394-4ace-92a1-10b093e8cc30}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="ID Document Reference" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_iddocumentref" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_iddocumentref" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4c68d4b3-16f4-41d2-914f-7a3be921bb98}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Visitor" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

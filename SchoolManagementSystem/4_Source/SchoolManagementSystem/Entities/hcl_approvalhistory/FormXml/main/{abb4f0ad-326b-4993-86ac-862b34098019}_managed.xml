@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{abb4f0ad-326b-4993-86ac-862b34098019}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{8edd33bf-d94f-473f-bb89-9c18adefe102}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{cd7ebb59-fb9e-4d9b-9351-9a508cc51c26}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Approval History" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{874785ff-78f1-4c22-a3aa-3eadc37d60f5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Entry" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{7d3bee11-8548-44a4-8f62-42b59de02ac8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Approval Request" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_request" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_request" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{844fbb08-aa15-471e-8bbb-7c6a1b2c2e30}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Action" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_action" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_action" />
+                      </cell>
+                      <cell id="{d98d8225-836e-4efc-a683-31331e3f126a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Actor" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_actor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_actor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{af6fec0d-0f82-44f2-9374-0374a14f795f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Occurred On" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_occurredon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_occurredon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4296df9b-6cf7-4907-872a-5657ee08af88}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Comment" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_comment" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_comment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41827d45-3d36-4018-8469-ff611fa35425}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Approval History" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

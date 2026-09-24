@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{96efe81d-101e-41e8-9e42-d47dda889547}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_doctorscheduleid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_doctor" width="140" />
+          <cell name="hcl_dayofweek" width="140" />
+          <cell name="hcl_startminute" width="140" />
+          <cell name="hcl_endminute" width="140" />
+          <cell name="hcl_slotminutes" width="140" />
+          <cell name="hcl_active" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_doctorschedule">
+          <attribute name="hcl_name" />
+          <attribute name="hcl_doctor" />
+          <attribute name="hcl_dayofweek" />
+          <attribute name="hcl_startminute" />
+          <attribute name="hcl_endminute" />
+          <attribute name="hcl_slotminutes" />
+          <attribute name="hcl_active" />
+          <attribute name="hcl_doctorscheduleid" />
+          <order attribute="hcl_dayofweek" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Doctor Schedules" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

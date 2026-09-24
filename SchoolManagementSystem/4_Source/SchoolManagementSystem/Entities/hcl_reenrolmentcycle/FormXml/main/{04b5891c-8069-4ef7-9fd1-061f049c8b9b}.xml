@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{04b5891c-8069-4ef7-9fd1-061f049c8b9b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{024c0f04-a876-4b4f-918c-f708f9a76161}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{83ccf4ef-5d60-44bd-9b4c-bb3b5799ee46}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Re-enrolment Cycle" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e3d2460c-56e1-4b26-af7a-fe0e674b35d1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cycle Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{9bc1e09f-bcfc-4c07-966a-f4f9553cef0e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Opens" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_opens" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_opens" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0655e8b5-d554-46d4-8ef6-ab1a7cc1c416}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Closes" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_closes" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_closes" />
+                      </cell>
+                      <cell id="{8b1f9afa-28d9-45d8-a352-244ec847292c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cycle Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_cyclestatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_cyclestatus" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Re-enrolment Cycle" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

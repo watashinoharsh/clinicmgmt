@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ecdfd35f-5954-45b3-983c-07817101d7c9}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{56da6aec-1939-4e3f-b5fd-e59e58e5d2eb}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{710d2036-2892-4829-b3d6-755b61119911}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Approval Matrix Detail" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e17489e5-1c02-4df4-b155-798c38c109a3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Detail Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{fec2e162-9b0e-41a4-96f3-0df071ec7216}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Approval Matrix" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_matrix" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_matrix" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7f75393a-f352-4344-bdfc-abc459346d12}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Resolver Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_resolvertype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_resolvertype" />
+                      </cell>
+                      <cell id="{fb35954c-f4fb-464f-9cf7-38e3d8e8240b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Role Code" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_rolecode" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_rolecode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4340ecc0-3b14-40de-83f7-3cb8a0eefbf9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Priority" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_priority" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_priority" />
+                      </cell>
+                      <cell id="{1135a689-70aa-4f6a-a506-485ac8c892cf}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Escalate After (hours)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_escalationafterhours" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_escalationafterhours" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5edc3475-3f2c-4078-930e-aa2fb04763cc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Effective From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_effectivefrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_effectivefrom" />
+                      </cell>
+                      <cell id="{4dd02e30-cfc5-4313-879d-24e08dea7af7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Effective To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_effectiveto" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_effectiveto" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7dd07e6b-29e3-43f0-928f-9adda0ec55f0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Content Template" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_contenttemplate" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_contenttemplate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Approval Matrix Detail" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

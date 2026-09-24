@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{cf0e7f01-50ce-48c6-9bec-51143b699991}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_approvalcontenttemplateid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_requesttype" width="140" />
+          <cell name="hcl_titletemplate" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_approvalcontenttemplate">
+          <attribute name="hcl_approvalcontenttemplateid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_requesttype" />
+          <attribute name="hcl_titletemplate" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Approval Content Templates" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

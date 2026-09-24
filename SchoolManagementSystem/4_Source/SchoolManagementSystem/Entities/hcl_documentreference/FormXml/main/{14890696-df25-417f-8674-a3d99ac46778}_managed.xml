@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{14890696-df25-417f-8674-a3d99ac46778}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{12e16df8-a3e0-4e1b-8f42-e9fd00249925}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{8a4af364-1e3b-4907-9bd9-342037b5b9d7}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Document Reference" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a8484a97-05ae-402b-b9bb-b128630fa932}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Document" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{8d886cfe-e79b-4d1a-8473-0042cfb6614b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingtype" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingtype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{789493a2-1c5f-4324-a32a-45da62bca223}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Regarding Id" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_regardingid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_regardingid" />
+                      </cell>
+                      <cell id="{ef7d70f3-da09-4c56-bf0a-67bfbe79fe1d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SharePoint URL" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_sharepointurl" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_sharepointurl" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db9cf4f9-b708-49cf-8dda-bb91ba30f96c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Classification" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_classification" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_classification" />
+                      </cell>
+                      <cell id="{03deadab-4aa7-485e-8230-e4dc3c9e3b54}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Document Reference" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,91 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "smc_SchoolDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_student_profile": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "smc_studentprofiles",
+              "$select": "_smc_yeargroup_value,_smc_rollgroup_value",
+              "recordId": "@triggerOutputs()?['body/_smc_studentprofile_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runAfter": {}
+        },
+        "Copy_year_and_roll_group": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "smc_vaccinationrecords",
+              "item/smc_yeargroup@odata.bind": "@if(empty(outputs('Get_student_profile')?['body/_smc_yeargroup_value']), null, concat('smc_yeargroups(', outputs('Get_student_profile')?['body/_smc_yeargroup_value'], ')'))",
+              "item/smc_rollgroup@odata.bind": "@if(empty(outputs('Get_student_profile')?['body/_smc_rollgroup_value']), null, concat('smc_rollgroups(', outputs('Get_student_profile')?['body/_smc_rollgroup_value'], ')'))",
+              "recordId": "@triggerOutputs()?['body/smc_vaccinationrecordid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runAfter": {
+            "Get_student_profile": [
+              "Succeeded"
+            ]
+          }
+        }
+      },
+      "triggers": {
+        "When_a_vaccination_record_is_created_or_its_student_changes": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "smc_vaccinationrecord",
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/filteringattributes": "smc_studentprofile"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

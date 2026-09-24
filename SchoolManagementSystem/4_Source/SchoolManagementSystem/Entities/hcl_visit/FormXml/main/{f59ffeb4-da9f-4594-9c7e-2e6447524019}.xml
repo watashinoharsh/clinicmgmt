@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f59ffeb4-da9f-4594-9c7e-2e6447524019}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_triage" id="{1897a356-c886-424c-93e7-c7afbb581599}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Triage" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_visit" showlabel="true" showbar="false" id="{ca4736a6-c9a8-4501-a0c1-8486ed192847}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Visit" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3ddf0128-2ace-4ffb-95a7-2a3eb98beceb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Patient" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_patient" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_patient" />
+                      </cell>
+                      <cell id="{2a7ab6e8-88bc-44ac-863e-65da25600bbb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Appointment" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_appointment" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_appointment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b5f868c-dc9c-4c18-b943-70a61b39aa84}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visit date" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visitdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_visitdate" />
+                      </cell>
+                      <cell id="{ad60492b-b588-4f8e-bdd5-bb5ebac76202}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sec_vitals" showlabel="true" showbar="false" id="{b15528b2-c909-46e1-bc59-6254b7fc8427}" layout="varwidth" columns="4" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Vitals" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{20d6206c-8568-42f9-bf9f-e7c1005ccc82}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="BP systolic (mmHg)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_bpsystolic" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_bpsystolic" />
+                      </cell>
+                      <cell id="{f1189f35-f560-481d-aa90-82afc01eb121}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="BP diastolic (mmHg)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_bpdiastolic" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_bpdiastolic" />
+                      </cell>
+                      <cell id="{b5cafc9e-5c3a-41f6-9c08-66ed084c25fb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Pulse (bpm)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_pulse" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_pulse" />
+                      </cell>
+                      <cell id="{3111fda5-42f0-4987-94c3-a2a22d1bee79}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SpO2 (%)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_spo2" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_spo2" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dc4e96dd-db79-4de3-8f77-44987b323b29}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Temperature (C)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_temperature" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_temperature" />
+                      </cell>
+                      <cell id="{85d11f64-ebcd-49b5-aafb-6a1d875b8f2d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Weight (kg)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_weightkg" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_weightkg" />
+                      </cell>
+                      <cell id="{40273192-c037-4ba2-9f83-76fa76b4a339}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Height (cm)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_heightcm" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_heightcm" />
+                      </cell>
+                      <cell id="{b85c8490-a692-4c36-a394-4524a6566871}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="BMI" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_bmi" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="hcl_bmi" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_consult" id="{14d12e35-a288-47b3-8588-1ead624a0f0a}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Consultation" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_consult" showlabel="true" showbar="false" id="{cbf98f9e-95c2-41d5-ba42-e195203f48ba}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Consultation" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c643814b-2f37-4ece-abc1-32e1c9bb6155}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Chief complaint" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_chiefcomplaint" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="hcl_chiefcomplaint" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{301321e3-b806-4738-9047-d57891281954}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Diagnosis" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_diagnosis" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="hcl_diagnosis" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{27692854-c65b-46f1-8e05-0dc383eb776e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Clinical notes" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_clinicalnotes" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="hcl_clinicalnotes" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{689ce461-2896-440a-af0c-67112a6f8ee3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Follow-up date" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_followupdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_followupdate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_rx" id="{85b66059-9576-422e-84c7-5d39ae4d1cfb}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Prescriptions" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_grid_rx" showlabel="true" showbar="false" id="{b6baf96e-0a17-4c62-850b-340a50f03cd6}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Prescriptions" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8afc76de-0ef0-4812-a574-40874a50b461}" showlabel="false" rowspan="12" colspan="1">
+                        <labels>
+                          <label description="Prescriptions" languagecode="1033" />
+                        </labels>
+                        <control id="grid_rx" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{729b7346-c4b5-f111-aaae-7ced8daf410c}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>hcl_prescription_visit</RelationshipName>
+                            <TargetEntityType>hcl_prescription</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_files" id="{387609ab-b0cd-476f-b65f-8a90b362808d}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="Files and notes" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_timeline" showlabel="true" showbar="false" id="{203da2e2-2de2-4eae-9a25-ccb4e14d93cb}" layout="varwidth" columns="1" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Notes and attachments" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{da691752-7854-4aff-a481-4e70cc40ab51}" showlabel="false" rowspan="14" colspan="1" auto="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{dcb0c7f9-f3a8-406b-b49d-11c9ce5ce8df}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{1cefd386-bdc2-4874-8641-3d7df6fc3774}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Visit no" languagecode="1033" />
+              </labels>
+              <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" disabled="true" />
+            </cell>
+            <cell id="{e6090ce2-7065-4358-9ccf-a1cb88c2b3ee}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Patient" languagecode="1033" />
+              </labels>
+              <control id="hcl_patient" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_patient" />
+            </cell>
+            <cell id="{6da79bdc-d34b-41d9-b5c1-0f84bf2ae57f}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Status" languagecode="1033" />
+              </labels>
+              <control id="hcl_status" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_status" />
+            </cell>
+            <cell id="{da08d628-207c-4916-a830-a60e158e996b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Doctor" languagecode="1033" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Visit" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{930b209b-76f5-42c0-bfe9-78f54c1fbf2e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_mustereventid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_eventtype" width="140" />
+          <cell name="hcl_startedon" width="140" />
+          <cell name="hcl_endedon" width="140" />
+          <cell name="hcl_musterstatus" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_musterevent">
+          <attribute name="hcl_mustereventid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_eventtype" />
+          <attribute name="hcl_startedon" />
+          <attribute name="hcl_endedon" />
+          <attribute name="hcl_musterstatus" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Muster Events" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

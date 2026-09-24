@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3827abc6-2ca5-487b-8328-df3845a58020}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{bf626c7c-7bd3-49da-8234-08135896b4d4}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{d9f659fc-670b-4e02-8873-fc6361d5b788}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Rollover Plan" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad3dcf32-751d-4fa8-9606-93b68cad5731}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Plan" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{8dd49324-570c-489d-aaac-e291fbfb13b1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cycle" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_cycle" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_cycle" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb646508-3070-4d55-9f5d-1ac077b0c847}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Capacity" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_capacity" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_capacity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9f47ae59-fd25-4770-98c1-456bba4a9f4d}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Notes" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_notes" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_notes" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Rollover Plan" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

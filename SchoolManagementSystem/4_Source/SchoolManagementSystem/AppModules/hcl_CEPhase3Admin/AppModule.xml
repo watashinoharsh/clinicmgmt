@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>hcl_CEPhase3Admin</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>00000000-0000-0000-0000-000000000000</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="hcl_academicreport" />
+    <AppModuleComponent type="1" schemaName="hcl_academicreportversion" />
+    <AppModuleComponent type="1" schemaName="hcl_activity" />
+    <AppModuleComponent type="1" schemaName="hcl_activityfeedback" />
+    <AppModuleComponent type="1" schemaName="hcl_activityparticipant" />
+    <AppModuleComponent type="1" schemaName="hcl_activityreport" />
+    <AppModuleComponent type="1" schemaName="hcl_activityrisk" />
+    <AppModuleComponent type="1" schemaName="hcl_activitytransport" />
+    <AppModuleComponent type="1" schemaName="hcl_activityvenue" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalcontenttemplate" />
+    <AppModuleComponent type="1" schemaName="hcl_approvaldelegation" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalhistory" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalmatrix" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalmatrixdetail" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalrequest" />
+    <AppModuleComponent type="1" schemaName="hcl_attendancerecord" />
+    <AppModuleComponent type="1" schemaName="hcl_behaviourcategory" />
+    <AppModuleComponent type="1" schemaName="hcl_behaviourrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_consentrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_consenttype" />
+    <AppModuleComponent type="1" schemaName="hcl_documentreference" />
+    <AppModuleComponent type="1" schemaName="hcl_gatepass" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookcomponent" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookpublish" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookresult" />
+    <AppModuleComponent type="1" schemaName="hcl_kioskrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_musterentry" />
+    <AppModuleComponent type="1" schemaName="hcl_musterevent" />
+    <AppModuleComponent type="1" schemaName="hcl_notification" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationrecipient" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationrecipientrule" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationrule" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationtemplate" />
+    <AppModuleComponent type="1" schemaName="hcl_pickupauthorisation" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolment" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentcohort" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentcycle" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentrule" />
+    <AppModuleComponent type="1" schemaName="hcl_rolloverplan" />
+    <AppModuleComponent type="1" schemaName="hcl_visitor" />
+    <AppModuleComponent type="62" schemaName="hcl_CEPhase3SiteMap" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{3c85b516-4bcd-4720-ba41-d0d9fd6d102a}" />
+    <Role id="{abe30782-3afa-4cf4-89e0-d1a7085f17ae}" />
+    <Role id="{971796f6-dcba-4830-8f17-c0d825b35d6a}" />
+    <Role id="{6055ef77-d884-4956-a56a-6a4e693f7fa7}" />
+    <Role id="{8b4f3005-87c3-4506-9f34-89666e468465}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="CE Phase 3 Admin" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="CE Phase 3: approvals, notifications, consent, kiosk, attendance, activities, behaviour, gradebook, reports and re-enrolment" languagecode="1033" />
+  </Descriptions>
+</AppModule>

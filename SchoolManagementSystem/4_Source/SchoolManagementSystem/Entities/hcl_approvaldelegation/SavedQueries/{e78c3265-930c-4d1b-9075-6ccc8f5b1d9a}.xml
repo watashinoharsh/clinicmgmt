@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{e78c3265-930c-4d1b-9075-6ccc8f5b1d9a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_approvaldelegationid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_delegator" width="140" />
+          <cell name="hcl_delegate" width="140" />
+          <cell name="hcl_requesttype" width="140" />
+          <cell name="hcl_validfrom" width="140" />
+          <cell name="hcl_validto" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_approvaldelegation">
+          <attribute name="hcl_approvaldelegationid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_delegator" />
+          <attribute name="hcl_delegate" />
+          <attribute name="hcl_requesttype" />
+          <attribute name="hcl_validfrom" />
+          <attribute name="hcl_validto" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Approval Delegations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

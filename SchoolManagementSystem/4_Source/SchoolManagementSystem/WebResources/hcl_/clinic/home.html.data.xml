@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{c31863b8-c5b5-f111-aaae-7ced8daf410c}</WebResourceId>
+  <Name>hcl_/clinic/home.html</Name>
+  <DisplayName>Clinic home</DisplayName>
+  <Description>Clinic Management</Description>
+  <WebResourceType>1</WebResourceType>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/hcl_clinichomehtmlC31863B8-C5B5-F111-AAAE-7CED8DAF410C</FileName>
+</WebResource>

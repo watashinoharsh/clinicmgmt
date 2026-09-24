@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b4cad6b5-32d7-4387-a090-b903819441c3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{24b15b6a-839c-4146-97ee-0f911bdf2a1f}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{230010a7-e675-4d64-8afb-ad3b46b0eaea}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Notification Template" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{32230007-c43e-4c27-881b-2a8185770d0f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Template Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{ab515e8a-3c66-4b00-8acb-6acb9a5f8e6b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Channel" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_channel" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_channel" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{450f9b26-34ae-4700-bae3-427b9542a1c0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Subject" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_subject" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7bb032bf-7db1-4d59-b866-ad87598631d4}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Body" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_body" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_body" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Notification Template" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{67c6cb6b-3078-4cdc-b0db-445c815d0220}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{5adebc28-4fbd-4e6b-b641-478b8a9e92aa}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{4d14b6fa-4506-46e9-aa09-234e208f08f1}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Re-enrolment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2f178100-e280-4e88-a200-726289ff97e9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Re-enrolment" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{53b76eed-bc84-4a23-8f2d-c6afa4d721ae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cycle" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_cycle" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_cycle" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{80235e4b-d60a-4fee-9776-cc1403e933c5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Intent" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_intent" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_intent" />
+                      </cell>
+                      <cell id="{09b6203c-8660-4faf-8cd8-f964273f092e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Deposit Paid" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_depositpaid" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_depositpaid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ed05f3db-9136-4048-9979-dd0f15f43553}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Deposit Reference" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_depositreference" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_depositreference" />
+                      </cell>
+                      <cell id="{e8d865a2-baed-4db0-9ac5-23817176d5db}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ready For Promotion" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_readyforpromotion" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_readyforpromotion" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ced60c9d-17d2-4b53-bd3e-b826f598e184}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Promotion Blocked Reason" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_promotionblockedreason" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_promotionblockedreason" />
+                      </cell>
+                      <cell id="{9f86b2bb-aa35-4028-a855-92cd67cbbf88}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2b95a6de-c310-4b7b-a982-7b101187d893}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Re-enrolment Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reenrolmentstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_reenrolmentstatus" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Re-enrolment" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

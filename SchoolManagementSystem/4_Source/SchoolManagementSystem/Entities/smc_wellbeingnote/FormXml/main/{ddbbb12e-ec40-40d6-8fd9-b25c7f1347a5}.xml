@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ddbbb12e-ec40-40d6-8fd9-b25c7f1347a5}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{cfbfc3f0-96ff-47ec-989b-b77390f4348a}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{82caf2cb-4eab-4c1b-9b6e-fe54ba1a8653}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Wellbeing Note" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f3d3d2cb-64a2-424b-8fd6-5a109529e797}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{d1de8efe-b18d-412f-aa0d-0d9789225ea8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Student Profile" languagecode="1033" />
+                        </labels>
+                        <control id="smc_studentprofile" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_studentprofile" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{76bed629-1fb6-4a98-b5a2-203c5a7e4dad}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Wellbeing Status" languagecode="1033" />
+                        </labels>
+                        <control id="smc_wellbeingstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="smc_wellbeingstatus" />
+                      </cell>
+                      <cell id="{4ec26515-9022-4bff-82ab-beee7d555b1b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Note Date" languagecode="1033" />
+                        </labels>
+                        <control id="smc_notedate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="smc_notedate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{be6df591-87c6-475b-9fd8-6e32096a3c20}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Note" languagecode="1033" />
+                        </labels>
+                        <control id="smc_note" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_note" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c91a7f6d-16c5-4814-9ede-e3d478659ce8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Wellbeing Note" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

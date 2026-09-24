@@ -1,0 +1,182 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_webcontents": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_AiHttp"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_webcontents"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Closed_with_follow_up": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/hcl_status']",
+                  813450001
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@empty(triggerOutputs()?['body/hcl_followupdate'])",
+                    true
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Get_patient": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "$select": "firstname",
+                  "recordId": "@triggerOutputs()?['body/_hcl_patient_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {}
+            },
+            "Standard_message": {
+              "runAfter": {
+                "Get_patient": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Compose",
+              "inputs": "@concat('Hello ', outputs('Get_patient')?['body/firstname'], ', this is a reminder that your follow-up visit is due on ', triggerOutputs()?['body/hcl_followupdate'], '. Please contact us to book a time.')"
+            },
+            "Draft_with_AI": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "InvokeHttp",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_webcontents",
+                  "connectionName": "shared_webcontents"
+                },
+                "parameters": {
+                  "request/method": "POST",
+                  "request/url": "@parameters('hcl_AiDraftEndpoint (hcl_AiDraftEndpoint)')",
+                  "request/headers": {
+                    "Content-Type": "application/json"
+                  },
+                  "request/body": {
+                    "agent": "MessageDrafting",
+                    "audience": "Patient",
+                    "purpose": "follow-up reminder",
+                    "patientFirstName": "@outputs('Get_patient')?['body/firstname']",
+                    "followUpDate": "@triggerOutputs()?['body/hcl_followupdate']",
+                    "tone": "warm, brief",
+                    "maxWords": 70,
+                    "includeMedicalDetail": false
+                  }
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Standard_message": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Create_notification_draft": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "hcl_notifications",
+                  "item/hcl_name": "Follow-up reminder (AI draft - review before sending)",
+                  "item/hcl_message": "@coalesce(body('Draft_with_AI')?['draft'], body('Draft_with_AI')?['body']?['draft'], outputs('Standard_message'))",
+                  "item/hcl_regardingtype": "hcl_visit",
+                  "item/hcl_regardingid": "@triggerOutputs()?['body/hcl_visitid']",
+                  "item/hcl_priority": 813450001,
+                  "item/hcl_category": 813450007,
+                  "item/hcl_notificationstatus": 813450000
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Draft_with_AI": [
+                  "Succeeded",
+                  "Failed",
+                  "TimedOut"
+                ]
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "triggers": {
+        "When_a_visit_is_closed": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_visit",
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/filteringattributes": "hcl_status"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "hcl_AiDraftEndpoint (hcl_AiDraftEndpoint)": {
+          "defaultValue": "",
+          "type": "String",
+          "metadata": {
+            "schemaName": "hcl_AiDraftEndpoint"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{62ac1acc-7626-4f24-833f-51a081037154}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{618b6de8-aae8-48a8-840c-473c1ed184ab}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{cf38c763-ce95-4143-82c3-00716b41e3e3}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Activity Participant" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{162c8549-fdb8-42d9-83bc-e1e862e1230f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Participant" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{a718ef0e-61d6-48ed-bc82-989ce9027f5f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_activity" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_activity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b7e21638-ffa7-4242-90d7-b3c25ef2d20e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Eligibility" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_eligibility" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_eligibility" />
+                      </cell>
+                      <cell id="{583461d9-2a7b-4359-9d5e-a3493fbabb7c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Consent Record" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_consentrecord" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_consentrecord" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4c76113b-7782-4019-8e33-5c3a2476a1ae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Attendance" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_attendance" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_attendance" />
+                      </cell>
+                      <cell id="{c72c226e-ec95-4e02-8a54-db7817320a97}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Payment Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_paymentstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_paymentstatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{20fd9647-c3e7-4e33-a644-0ab288f9a5c0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Activity Participant" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

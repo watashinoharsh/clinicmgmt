@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{729b7346-c4b5-f111-aaae-7ced8daf410c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_prescriptionid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_dosage" width="140" />
+          <cell name="hcl_frequency" width="140" />
+          <cell name="hcl_durationdays" width="140" />
+          <cell name="hcl_quantity" width="140" />
+          <cell name="hcl_dispensed" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_prescription">
+          <attribute name="hcl_name" />
+          <attribute name="hcl_dosage" />
+          <attribute name="hcl_frequency" />
+          <attribute name="hcl_durationdays" />
+          <attribute name="hcl_quantity" />
+          <attribute name="hcl_dispensed" />
+          <attribute name="hcl_prescriptionid" />
+          <order attribute="hcl_name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visit Prescriptions" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Visit Prescriptions" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

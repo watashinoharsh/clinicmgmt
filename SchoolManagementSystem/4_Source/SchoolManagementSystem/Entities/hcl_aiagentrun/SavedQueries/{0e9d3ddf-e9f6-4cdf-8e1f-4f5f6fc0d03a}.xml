@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{0e9d3ddf-e9f6-4cdf-8e1f-4f5f6fc0d03a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_aiagentrunid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_agent" width="140" />
+          <cell name="hcl_triggertype" width="140" />
+          <cell name="hcl_runstatus" width="140" />
+          <cell name="hcl_startedon" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_aiagentrun">
+          <attribute name="hcl_aiagentrunid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_agent" />
+          <attribute name="hcl_triggertype" />
+          <attribute name="hcl_runstatus" />
+          <attribute name="hcl_startedon" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>2.1.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active AI Agent Runs" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

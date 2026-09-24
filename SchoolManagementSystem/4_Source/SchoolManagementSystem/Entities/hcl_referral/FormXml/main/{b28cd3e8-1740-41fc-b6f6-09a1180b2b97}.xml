@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b28cd3e8-1740-41fc-b6f6-09a1180b2b97}</formid>
+    <IntroducedVersion>1.2.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{e64bab2a-114a-4631-9bb3-5abc2dcf19ba}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{87448d02-14d3-484e-8772-107f2b8cd193}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Referral" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{619a87cd-9dc1-4815-a2e4-2d959ef8a37f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Referral Title" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{674e9f65-55eb-4741-982c-85c060f36f32}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Patient" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_patient" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_patient" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f4f704c4-35c0-4467-839e-7b50112e2955}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visit" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_visit" />
+                      </cell>
+                      <cell id="{1fec42d7-a098-49b3-ba86-b9552beae714}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Specialty" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_specialty" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_specialty" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1cb17d95-1373-4000-ab1c-b222f53da124}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Referred To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_referredto" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_referredto" />
+                      </cell>
+                      <cell id="{cac8bd7e-8e87-40de-863a-61abb92b80b7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Urgency" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_urgency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_urgency" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9d0d1e87-227b-40f0-9018-d682f7bddba4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Referral Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_referralstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_referralstatus" />
+                      </cell>
+                      <cell id="{261fc384-8a72-495d-8a99-b05a87448638}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Referral Date" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_referraldate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_referraldate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3ce69238-6a04-448a-bde6-8f31b293094e}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Reason" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_reason" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_reason" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1ea9a42f-4ea6-48c5-81b4-517e9111f909}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Outcome" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_outcome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_outcome" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f62b3717-f8db-4bb1-99ba-bed1b23fe597}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Referral" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{80bd50e9-e154-47e8-ab91-efaa808ed5ea}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{25dac291-133f-461e-8822-c4a513c72820}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{a8523cef-e5cb-4b0b-9df9-6c5d8fb5e3df}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Activity Venue" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{164d6a8b-c986-467c-bf55-be67067e4f25}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Venue Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{f6c415be-d707-4adb-a974-5ea5e04f8e5d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Activity" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_activity" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_activity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{93205376-4b20-4ab2-a418-f1624089da4b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_address" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_address" />
+                      </cell>
+                      <cell id="{da3a7326-3cf6-40da-a77f-afae7f67352d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Contact Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_contactname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_contactname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{38315231-624b-4483-9d29-bf5e3460e200}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Contact Phone" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_contactphone" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_contactphone" />
+                      </cell>
+                      <cell id="{2b330b1b-61b5-4be3-b1f1-3cb44cbdf191}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Activity Venue" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

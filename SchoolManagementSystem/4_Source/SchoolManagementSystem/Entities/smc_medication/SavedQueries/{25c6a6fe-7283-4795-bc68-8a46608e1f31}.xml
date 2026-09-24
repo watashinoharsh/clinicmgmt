@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{25c6a6fe-7283-4795-bc68-8a46608e1f31}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="smc_name" select="1" icon="1" preview="1">
+        <row name="result" id="smc_medicationid">
+          <cell name="smc_name" width="140" />
+          <cell name="smc_form" width="140" />
+          <cell name="smc_strength" width="140" />
+          <cell name="smc_defaultdose" width="140" />
+          <cell name="smc_defaultunit" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smc_medication">
+          <attribute name="smc_medicationid" />
+          <attribute name="smc_name" />
+          <attribute name="smc_form" />
+          <attribute name="smc_strength" />
+          <attribute name="smc_defaultdose" />
+          <attribute name="smc_defaultunit" />
+          <order attribute="smc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Medications" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

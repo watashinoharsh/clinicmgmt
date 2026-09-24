@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{a9b9d5e9-2edf-46c6-b52f-be14b9ec19c8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_clinicmedicineid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_genericname" width="140" />
+          <cell name="hcl_strength" width="140" />
+          <cell name="hcl_form" width="140" />
+          <cell name="hcl_unitprice" width="140" />
+          <cell name="hcl_stockonhand" width="140" />
+          <cell name="hcl_reorderlevel" width="140" />
+          <cell name="hcl_lowstock" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_clinicmedicine">
+          <attribute name="hcl_name" />
+          <attribute name="hcl_genericname" />
+          <attribute name="hcl_strength" />
+          <attribute name="hcl_form" />
+          <attribute name="hcl_unitprice" />
+          <attribute name="hcl_stockonhand" />
+          <attribute name="hcl_reorderlevel" />
+          <attribute name="hcl_lowstock" />
+          <attribute name="hcl_clinicmedicineid" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Clinic Medicines" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

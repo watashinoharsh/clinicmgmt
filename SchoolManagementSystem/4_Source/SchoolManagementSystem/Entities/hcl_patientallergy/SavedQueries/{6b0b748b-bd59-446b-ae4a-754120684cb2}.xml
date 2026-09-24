@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{6b0b748b-bd59-446b-ae4a-754120684cb2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_patientallergyid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_patient" width="140" />
+          <cell name="hcl_allergytype" width="140" />
+          <cell name="hcl_severity" width="140" />
+          <cell name="hcl_onsetdate" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_patientallergy">
+          <attribute name="hcl_patientallergyid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_patient" />
+          <attribute name="hcl_allergytype" />
+          <attribute name="hcl_severity" />
+          <attribute name="hcl_onsetdate" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.2.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Patient Allergies" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

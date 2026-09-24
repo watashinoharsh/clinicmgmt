@@ -1,0 +1,128 @@
+# Clinic and School Suite - promotion pipeline (DRAFT - not run, not committed)
+# Flow: build managed from Git source -> TEST -> UAT -> PROD.
+# Approvals: configure "Approvals and checks" on the Azure DevOps Environments
+#   suite-test, suite-uat, suite-prod (named approver required on UAT and PROD).
+# No environment URLs or credentials here: service connections and variables come from the
+# Azure DevOps library group "suite-vars" (SC_TEST, SC_UAT, SC_PROD service connection names).
+# Requires the "Power Platform Build Tools" extension.
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - 4_Source/SchoolManagementSystem/**
+
+pr:
+  branches:
+    include:
+      - main
+
+variables:
+  - group: suite-vars
+  - name: solutionName
+    value: ClinicSchoolSuite
+  - name: solutionSource
+    value: 4_Source/SchoolManagementSystem
+
+stages:
+  - stage: Build
+    displayName: Build managed solution
+    jobs:
+      - job: pack
+        pool:
+          vmImage: windows-latest
+        steps:
+          - task: PowerPlatformToolInstaller@2
+          - task: PowerPlatformPackSolution@2
+            inputs:
+              SolutionSourceFolder: $(solutionSource)
+              SolutionOutputFile: $(Build.ArtifactStagingDirectory)/$(solutionName)_managed.zip
+              SolutionType: Managed
+          - task: PowerPlatformPackSolution@2
+            inputs:
+              SolutionSourceFolder: $(solutionSource)
+              SolutionOutputFile: $(Build.ArtifactStagingDirectory)/$(solutionName).zip
+              SolutionType: Unmanaged
+          - task: PowerPlatformChecker@2
+            displayName: Solution checker
+            inputs:
+              PowerPlatformSPN: $(SC_TEST)
+              FilesToAnalyze: $(Build.ArtifactStagingDirectory)/$(solutionName)_managed.zip
+              RuleSet: 0ad12346-e108-40b8-a956-9a8f95ea18c9
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: solution
+
+  - stage: Test
+    displayName: Deploy to TEST (managed)
+    dependsOn: Build
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - deployment: test
+        environment: suite-test
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerPlatformToolInstaller@2
+                - task: PowerPlatformImportSolution@2
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(SC_TEST)
+                    SolutionInputFile: $(Pipeline.Workspace)/solution/$(solutionName)_managed.zip
+                    AsyncOperation: true
+                    MaxAsyncWaitTime: 60
+                    PublishWorkflows: true
+
+  - stage: UAT
+    displayName: Deploy to UAT (managed) - named approver required
+    dependsOn: Test
+    jobs:
+      - deployment: uat
+        environment: suite-uat
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerPlatformToolInstaller@2
+                - task: PowerPlatformImportSolution@2
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(SC_UAT)
+                    SolutionInputFile: $(Pipeline.Workspace)/solution/$(solutionName)_managed.zip
+                    AsyncOperation: true
+                    MaxAsyncWaitTime: 60
+                    PublishWorkflows: true
+
+  - stage: Prod
+    displayName: Deploy to PROD (managed) - named approver + rollback plan required
+    dependsOn: UAT
+    jobs:
+      - deployment: prod
+        environment: suite-prod
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerPlatformToolInstaller@2
+                # Rollback point: back up the current PROD solution before importing.
+                - task: PowerPlatformBackupEnvironment@2
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(SC_PROD)
+                    BackupLabel: pre-$(solutionName)-$(Build.BuildNumber)
+                - task: PowerPlatformImportSolution@2
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(SC_PROD)
+                    SolutionInputFile: $(Pipeline.Workspace)/solution/$(solutionName)_managed.zip
+                    AsyncOperation: true
+                    MaxAsyncWaitTime: 60
+                    PublishWorkflows: true

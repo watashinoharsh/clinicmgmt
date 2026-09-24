@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="hcl_AiDraftEndpoint">
+  <displayname default="AI Draft Endpoint URL">
+    <label description="AI Draft Endpoint URL" languagecode="1033" />
+  </displayname>
+  <introducedversion>2.1.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

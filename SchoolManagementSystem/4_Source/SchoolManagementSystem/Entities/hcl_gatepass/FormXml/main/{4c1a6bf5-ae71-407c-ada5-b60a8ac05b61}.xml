@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4c1a6bf5-ae71-407c-ada5-b60a8ac05b61}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{ae1d8d1a-ba89-4933-b092-1e3337f5ba79}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{56119c5a-c7a7-420f-80d6-4a89ea44debc}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Gate Pass" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ce867076-7fd8-4cb7-9775-9df2e437b2ca}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Pass Number" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{592bde23-c448-4814-9166-5b60ebedd9e0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Visitor" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_visitor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_visitor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{27710fb7-64a8-421e-a3c9-19b9241b599c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validfrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validfrom" />
+                      </cell>
+                      <cell id="{9c67dd75-343e-480b-a165-d7758fb53d64}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validto" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validto" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9cb2023d-a380-4adc-97a8-8db80b5ad6dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Pass Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_passstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_passstatus" />
+                      </cell>
+                      <cell id="{202fa835-d926-4dbb-ac99-fd0230406bc4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Gate Pass" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

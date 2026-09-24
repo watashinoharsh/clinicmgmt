@@ -1,0 +1,129 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Get_lab_test": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_labtests",
+              "$select": "hcl_unit,hcl_refrangelow,hcl_refrangehigh",
+              "recordId": "@triggerOutputs()?['body/_hcl_labtest_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runAfter": {}
+        },
+        "Unit": {
+          "runAfter": {
+            "Get_lab_test": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(triggerOutputs()?['body/hcl_unit'], outputs('Get_lab_test')?['body/hcl_unit'])"
+        },
+        "Range_low": {
+          "runAfter": {
+            "Unit": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(triggerOutputs()?['body/hcl_refrangelow'], outputs('Get_lab_test')?['body/hcl_refrangelow'])"
+        },
+        "Range_high": {
+          "runAfter": {
+            "Range_low": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(triggerOutputs()?['body/hcl_refrangehigh'], outputs('Get_lab_test')?['body/hcl_refrangehigh'])"
+        },
+        "Flag": {
+          "runAfter": {
+            "Range_high": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@if(equals(triggerOutputs()?['body/hcl_resultvalue'], null), null, if(and(not(equals(outputs('Range_low'), null)), less(float(triggerOutputs()?['body/hcl_resultvalue']), float(outputs('Range_low')))), 813450001, if(and(not(equals(outputs('Range_high'), null)), greater(float(triggerOutputs()?['body/hcl_resultvalue']), float(outputs('Range_high')))), 813450002, 813450000)))"
+        },
+        "Save_snapshot_and_flag": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_labresults",
+              "item/hcl_unit": "@outputs('Unit')",
+              "item/hcl_refrangelow": "@outputs('Range_low')",
+              "item/hcl_refrangehigh": "@outputs('Range_high')",
+              "item/hcl_flag": "@outputs('Flag')",
+              "recordId": "@triggerOutputs()?['body/hcl_labresultid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runAfter": {
+            "Flag": [
+              "Succeeded"
+            ]
+          }
+        }
+      },
+      "triggers": {
+        "When_a_lab_result_is_created_or_its_test_or_value_changes": {
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_labresult",
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/filteringattributes": "hcl_labtest,hcl_resultvalue"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

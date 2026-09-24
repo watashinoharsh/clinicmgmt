@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{5c066b01-4f10-4e9f-8cba-58dbcc3a1b75}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{76f8957c-91cc-49f9-bd74-49e824b3a628}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{b5e02b2f-a22b-491b-8e4f-d1c87d929317}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Pickup Authorisation" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{774d6a7a-b3f2-449f-b1df-dfc13c0c86ee}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Authorisation" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{f02fd1f8-edcc-41e8-9f02-0bc72628d70e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Authorised Person" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_authorisedperson" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_authorisedperson" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bbe0dcf9-83fb-40a7-8fff-71a660ae494b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Relationship" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_relationship" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_relationship" />
+                      </cell>
+                      <cell id="{2261b9ce-3cfe-4c16-9389-4bbe71cdf2b4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid From" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validfrom" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validfrom" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{23f4c66a-b296-435e-b95f-93f022f920cd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valid To" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_validto" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="hcl_validto" />
+                      </cell>
+                      <cell id="{cf789fe6-7574-4181-8654-9361967d2a0c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Authorisation Status" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_authstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_authstatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dd1c11ee-9937-4d82-88ca-d1f79840ab51}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="ID Document Reference" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_iddocumentref" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_iddocumentref" />
+                      </cell>
+                      <cell id="{f9d7d98f-2e0c-4df5-99a3-7dc85e34d349}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Pickup Authorisation" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

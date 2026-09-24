@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{65707cc7-9929-4b43-9a47-93486737b804}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{e0bf6537-0338-40f9-b2ac-77fd47681ded}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{a28adfa1-5936-482f-8f89-8919f0de0013}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Roll Group" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{24b47963-8b51-4c62-a071-c7ad8502c356}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Roll Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smc_name" />
+                      </cell>
+                      <cell id="{ad210b20-602f-4249-8ac6-e65aabf1c213}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Year Group" languagecode="1033" />
+                        </labels>
+                        <control id="smc_yeargroup" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smc_yeargroup" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Roll Group" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

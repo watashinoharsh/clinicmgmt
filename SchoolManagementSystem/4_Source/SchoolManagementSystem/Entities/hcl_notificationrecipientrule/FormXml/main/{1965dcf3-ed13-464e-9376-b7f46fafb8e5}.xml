@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1965dcf3-ed13-464e-9376-b7f46fafb8e5}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{80724396-1eaa-4e8b-a976-a9654f751e9a}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{e1b0951c-61b9-4d96-b46d-72904624a297}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Notification Recipient Rule" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8f0c0d88-6323-49a0-a63f-54a105c0b437}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Recipient Rule" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{4324c31d-a13c-4bb1-aa5b-bb99160a0243}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Notification Rule" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_rule" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_rule" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b7ca1c23-1b2c-43e8-bb35-c8e0c77efe25}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Recipient Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_recipienttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_recipienttype" />
+                      </cell>
+                      <cell id="{a5d2dc07-e69b-4787-8dd9-38386bf79d3f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Role Code" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_rolecode" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_rolecode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{06e1dec1-4c2f-4585-af0c-2bb92ebae423}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Relationship Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_relationshiptype" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_relationshiptype" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Notification Recipient Rule" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

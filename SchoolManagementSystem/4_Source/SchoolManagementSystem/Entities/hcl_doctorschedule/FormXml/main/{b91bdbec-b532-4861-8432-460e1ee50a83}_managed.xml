@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b91bdbec-b532-4861-8432-460e1ee50a83}</formid>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{84f9cf5c-9539-480e-bec0-740b0e502ce5}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{8b9e8115-6771-492a-8e0f-0c914821efbf}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="Doctor Schedule" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a368e734-76f8-43ea-8624-46c6b5c21304}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Schedule no" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" disabled="true" />
+                      </cell>
+                      <cell id="{193a176b-67f8-40dc-b260-fa40a0292894}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_doctor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="hcl_doctor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ebe0cb2a-2c24-4f6a-9330-5ffbe1b0602f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Day of week (1 Mon - 7 Sun)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_dayofweek" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_dayofweek" />
+                      </cell>
+                      <cell id="{d47fa793-775b-42bf-a319-fff78a49859e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Slot length (min)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_slotminutes" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_slotminutes" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16489a40-4a48-4257-aed6-cb5ca73a2441}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Start (minutes after midnight)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_startminute" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_startminute" />
+                      </cell>
+                      <cell id="{b062f704-aa17-4e65-b535-eef11600a421}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="End (minutes after midnight)" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_endminute" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="hcl_endminute" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{454791f8-b4b9-4d62-ba23-b25b89b56c53}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_active" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_active" />
+                      </cell>
+                      <cell id="{5291ac56-9027-44e1-bf2f-e5bf4fd8bfe4}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Doctor Schedule" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

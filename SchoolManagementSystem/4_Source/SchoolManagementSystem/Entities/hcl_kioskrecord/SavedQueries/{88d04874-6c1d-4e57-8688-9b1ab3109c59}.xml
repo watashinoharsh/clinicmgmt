@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{88d04874-6c1d-4e57-8688-9b1ab3109c59}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="hcl_name" select="1" icon="1" preview="1">
+        <row name="result" id="hcl_kioskrecordid">
+          <cell name="hcl_name" width="140" />
+          <cell name="hcl_interactiontype" width="140" />
+          <cell name="hcl_occurredon" width="140" />
+          <cell name="hcl_outcomestatus" width="140" />
+          <cell name="hcl_escalationstatus" width="140" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="hcl_kioskrecord">
+          <attribute name="hcl_kioskrecordid" />
+          <attribute name="hcl_name" />
+          <attribute name="hcl_interactiontype" />
+          <attribute name="hcl_occurredon" />
+          <attribute name="hcl_outcomestatus" />
+          <attribute name="hcl_escalationstatus" />
+          <order attribute="hcl_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Kiosk Records" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

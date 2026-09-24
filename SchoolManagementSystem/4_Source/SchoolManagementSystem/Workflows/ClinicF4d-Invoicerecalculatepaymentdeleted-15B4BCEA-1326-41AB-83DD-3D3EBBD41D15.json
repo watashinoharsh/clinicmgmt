@@ -1,0 +1,228 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "connection": {
+          "connectionReferenceLogicalName": "hcl_ClinicDataverse"
+        },
+        "runtimeSource": "embedded",
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "actions": {
+        "Sum_lines": {
+          "actions": {
+            "Add_line": {
+              "runAfter": {},
+              "type": "IncrementVariable",
+              "inputs": {
+                "value": "@float(coalesce(items('Sum_lines')?['hcl_linetotal'], 0))",
+                "name": "Subtotal"
+              }
+            }
+          },
+          "runAfter": {
+            "List_lines": [
+              "Succeeded"
+            ]
+          },
+          "foreach": "@outputs('List_lines')?['body/value']",
+          "type": "Foreach"
+        },
+        "Init_subtotal": {
+          "runAfter": {},
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Subtotal",
+                "value": 0,
+                "type": "float"
+              }
+            ]
+          }
+        },
+        "Compute_total": {
+          "runAfter": {
+            "Get_invoice": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@mul(sub(variables('Subtotal'), float(coalesce(outputs('Get_invoice')?['body/hcl_discount'], 0))), add(1, float(coalesce(outputs('Get_invoice')?['body/hcl_taxrate'], 0))))"
+        },
+        "Compute_status": {
+          "runAfter": {
+            "Compute_total": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@if(equals(outputs('Get_invoice')?['body/hcl_status'], 813450004), 813450004, if(and(greater(outputs('Compute_total'), 0), greaterOrEquals(add(variables('Paid'), 0.005), outputs('Compute_total'))), 813450003, if(greater(variables('Paid'), 0), 813450002, if(or(equals(outputs('Get_invoice')?['body/hcl_status'], 813450003), equals(outputs('Get_invoice')?['body/hcl_status'], 813450002)), 813450001, outputs('Get_invoice')?['body/hcl_status']))))"
+        },
+        "Get_invoice": {
+          "runAfter": {
+            "Sum_payments": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicinvoices",
+              "$select": "hcl_discount,hcl_taxrate,hcl_status",
+              "recordId": "@triggerOutputs()?['body/_hcl_invoice_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Update_invoice": {
+          "runAfter": {
+            "Compute_status": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicinvoices",
+              "item/hcl_subtotal": "@variables('Subtotal')",
+              "item/hcl_amountpaid": "@variables('Paid')",
+              "item/hcl_status": "@outputs('Compute_status')",
+              "recordId": "@triggerOutputs()?['body/_hcl_invoice_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Sum_payments": {
+          "actions": {
+            "Add_payment": {
+              "runAfter": {},
+              "type": "IncrementVariable",
+              "inputs": {
+                "value": "@float(coalesce(items('Sum_payments')?['hcl_amount'], 0))",
+                "name": "Paid"
+              }
+            }
+          },
+          "runAfter": {
+            "List_payments": [
+              "Succeeded"
+            ]
+          },
+          "foreach": "@outputs('List_payments')?['body/value']",
+          "type": "Foreach"
+        },
+        "Init_paid": {
+          "runAfter": {
+            "Init_subtotal": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Paid",
+                "value": 0,
+                "type": "float"
+              }
+            ]
+          }
+        },
+        "List_payments": {
+          "runAfter": {
+            "Sum_lines": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicpayments",
+              "$filter": "_hcl_invoice_value eq @{triggerOutputs()?['body/_hcl_invoice_value']}",
+              "$select": "hcl_amount"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "List_lines": {
+          "runAfter": {
+            "Init_paid": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "hcl_clinicinvoicelines",
+              "$filter": "_hcl_invoice_value eq @{triggerOutputs()?['body/_hcl_invoice_value']}",
+              "$select": "hcl_linetotal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "triggers": {
+        "When_a_payment_is_deleted": {
+          "runtimeConfiguration": {
+            "concurrency": {
+              "runs": 1
+            }
+          },
+          "inputs": {
+            "host": {
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/entityname": "hcl_clinicpayment",
+              "subscriptionRequest/message": 2
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{657b778f-f5b2-4e55-9f9c-f84720b54464}</formid>
+    <IntroducedVersion>2.1.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="tab_general" id="{9da6d8fe-8ca8-42a9-9726-aea8590a26b8}" IsUserDefined="1" verticallayout="true" showlabel="true" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sec_main" showlabel="true" showbar="false" id="{fa3caf0f-9139-4c29-b234-ca81bc25a0b2}" layout="varwidth" columns="2" labelwidth="140" celllabelposition="Top">
+                  <labels>
+                    <label description="AI Agent" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bbadfa2b-8f59-4107-83ce-3f8bd7944156}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Agent Name" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_name" />
+                      </cell>
+                      <cell id="{6997d867-54b7-4f54-adf7-0f6d0134b948}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Agent Code" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_agentcode" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_agentcode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9174b2b9-d52b-4e5b-bddc-7d3fd51ea0a0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Agent Type" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_agenttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="hcl_agenttype" />
+                      </cell>
+                      <cell id="{a57fc054-84a6-4359-826f-b9fe881b318c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Is Enabled" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_isenabled" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_isenabled" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{37d2850f-485e-40a5-be41-f8cda295f646}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Requires Human Review" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_requireshumanreview" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="hcl_requireshumanreview" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6fa135bf-79fd-4137-b24a-03be0d2db786}" showlabel="true" locklevel="0" colspan="2">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="hcl_description" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hcl_description" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="AI Agent" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

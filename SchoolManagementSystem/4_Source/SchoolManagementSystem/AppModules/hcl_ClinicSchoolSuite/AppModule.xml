@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>hcl_ClinicSchoolSuite</UniqueName>
+  <IntroducedVersion>2.1.0.0</IntroducedVersion>
+  <WebResourceId>00000000-0000-0000-0000-000000000000</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="appointment" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="hcl_academicreport" />
+    <AppModuleComponent type="1" schemaName="hcl_academicreportversion" />
+    <AppModuleComponent type="1" schemaName="hcl_activity" />
+    <AppModuleComponent type="1" schemaName="hcl_activityparticipant" />
+    <AppModuleComponent type="1" schemaName="hcl_activityrisk" />
+    <AppModuleComponent type="1" schemaName="hcl_aiagent" />
+    <AppModuleComponent type="1" schemaName="hcl_aiagentrun" />
+    <AppModuleComponent type="1" schemaName="hcl_aisuggestion" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalcontenttemplate" />
+    <AppModuleComponent type="1" schemaName="hcl_approvaldelegation" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalhistory" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalmatrix" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalmatrixdetail" />
+    <AppModuleComponent type="1" schemaName="hcl_approvalrequest" />
+    <AppModuleComponent type="1" schemaName="hcl_attendancerecord" />
+    <AppModuleComponent type="1" schemaName="hcl_behaviourcategory" />
+    <AppModuleComponent type="1" schemaName="hcl_behaviourrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_clinicinvoice" />
+    <AppModuleComponent type="1" schemaName="hcl_clinicmedicine" />
+    <AppModuleComponent type="1" schemaName="hcl_clinicpayment" />
+    <AppModuleComponent type="1" schemaName="hcl_clinicservice" />
+    <AppModuleComponent type="1" schemaName="hcl_clinicsetting" />
+    <AppModuleComponent type="1" schemaName="hcl_consentrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_consenttype" />
+    <AppModuleComponent type="1" schemaName="hcl_doctorschedule" />
+    <AppModuleComponent type="1" schemaName="hcl_documentreference" />
+    <AppModuleComponent type="1" schemaName="hcl_gatepass" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookcomponent" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookpublish" />
+    <AppModuleComponent type="1" schemaName="hcl_gradebookresult" />
+    <AppModuleComponent type="1" schemaName="hcl_insurancepolicy" />
+    <AppModuleComponent type="1" schemaName="hcl_kioskrecord" />
+    <AppModuleComponent type="1" schemaName="hcl_labresult" />
+    <AppModuleComponent type="1" schemaName="hcl_labtest" />
+    <AppModuleComponent type="1" schemaName="hcl_musterentry" />
+    <AppModuleComponent type="1" schemaName="hcl_musterevent" />
+    <AppModuleComponent type="1" schemaName="hcl_notification" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationrecipient" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationrule" />
+    <AppModuleComponent type="1" schemaName="hcl_notificationtemplate" />
+    <AppModuleComponent type="1" schemaName="hcl_patientallergy" />
+    <AppModuleComponent type="1" schemaName="hcl_pickupauthorisation" />
+    <AppModuleComponent type="1" schemaName="hcl_prescription" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolment" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentcohort" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentcycle" />
+    <AppModuleComponent type="1" schemaName="hcl_reenrolmentrule" />
+    <AppModuleComponent type="1" schemaName="hcl_referral" />
+    <AppModuleComponent type="1" schemaName="hcl_rolloverplan" />
+    <AppModuleComponent type="1" schemaName="hcl_vaccination" />
+    <AppModuleComponent type="1" schemaName="hcl_visit" />
+    <AppModuleComponent type="1" schemaName="hcl_visitor" />
+    <AppModuleComponent type="1" schemaName="smc_allergy" />
+    <AppModuleComponent type="1" schemaName="smc_medicalcentervisit" />
+    <AppModuleComponent type="1" schemaName="smc_medicaldetail" />
+    <AppModuleComponent type="1" schemaName="smc_medication" />
+    <AppModuleComponent type="1" schemaName="smc_medicationfrequency" />
+    <AppModuleComponent type="1" schemaName="smc_medicationtreatment" />
+    <AppModuleComponent type="1" schemaName="smc_medicationunit" />
+    <AppModuleComponent type="1" schemaName="smc_rollgroup" />
+    <AppModuleComponent type="1" schemaName="smc_studentprofile" />
+    <AppModuleComponent type="1" schemaName="smc_vaccinationrecord" />
+    <AppModuleComponent type="1" schemaName="smc_wellbeingnote" />
+    <AppModuleComponent type="1" schemaName="smc_yeargroup" />
+    <AppModuleComponent type="62" schemaName="hcl_SuiteSiteMap" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{18cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{24cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{3ccfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{30cfaf39-bcb5-f111-aaae-7ced8daf410c}" />
+    <Role id="{3c85b516-4bcd-4720-ba41-d0d9fd6d102a}" />
+    <Role id="{abe30782-3afa-4cf4-89e0-d1a7085f17ae}" />
+    <Role id="{971796f6-dcba-4830-8f17-c0d825b35d6a}" />
+    <Role id="{6055ef77-d884-4956-a56a-6a4e693f7fa7}" />
+    <Role id="{8b4f3005-87c3-4506-9f34-89666e468465}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="School Management System" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="School Management System: students and parents, admissions and re-enrolment, attendance and kiosk, wellbeing and behaviour, medical center and health centre, curriculum and assessment, communication, approvals and AI suggestions" languagecode="1033" />
+  </Descriptions>
+</AppModule>

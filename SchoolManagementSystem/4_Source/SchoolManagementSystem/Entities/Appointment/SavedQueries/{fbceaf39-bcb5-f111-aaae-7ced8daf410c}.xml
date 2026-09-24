@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{fbceaf39-bcb5-f111-aaae-7ced8daf410c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" icon="1" preview="1">
+        <row name="result" id="activityid">
+          <cell name="subject" width="150" />
+          <cell name="scheduledstart" width="150" />
+          <cell name="scheduledend" width="150" />
+          <cell name="ownerid" width="150" />
+          <cell name="regardingobjectid" width="150" />
+          <cell name="statuscode" width="150" />
+          <cell name="hcl_visittype" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="appointment">
+          <attribute name="subject" />
+          <attribute name="scheduledstart" />
+          <attribute name="scheduledend" />
+          <attribute name="ownerid" />
+          <attribute name="regardingobjectid" />
+          <attribute name="statuscode" />
+          <attribute name="hcl_visittype" />
+          <attribute name="activityid" />
+          <order attribute="scheduledstart" descending="false" />
+          <filter type="and">
+            <condition attribute="scheduledstart" operator="today" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Today's Appointments" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Appointments starting today" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>
