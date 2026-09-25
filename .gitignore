@@ -1,0 +1,11 @@
+bin/
+obj/
+out/
+.vs/
+*.user
+*.suo
+TestResults/
+*.trx
+# never commit environment-specific secrets
+*.secret.json
+.env

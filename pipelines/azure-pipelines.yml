@@ -1,0 +1,136 @@
+# EduCore promotion pipeline: build and test from source, then TEST -> UAT -> PROD (managed).
+# Approvals: set "Approvals and checks" on the Azure DevOps Environments edu-test, edu-uat, edu-prod
+#   (a named approver is required on UAT and PROD).
+# No URLs or credentials live here. Service connection NAMES come from the variable group "edu-vars":
+#   SC_EDU_CHECKER, SC_EDU_TEST, SC_EDU_UAT, SC_EDU_PROD.
+# Requires the "Power Platform Build Tools" extension.
+
+trigger:
+  branches:
+    include: [main]
+  paths:
+    include: [solutions/*, src/*, tests/*, deploy/*, pipelines/*]
+
+pr:
+  branches:
+    include: [main]
+
+variables:
+  - group: edu-vars
+
+stages:
+  - stage: Build
+    displayName: Build, test and pack
+    jobs:
+      - job: build
+        pool:
+          vmImage: windows-latest
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: sdk
+              version: 8.x
+
+          - script: dotnet test tests/EduCore.Plugins.Tests/EduCore.Plugins.Tests.csproj --configuration Release --logger trx --results-directory $(Agent.TempDirectory)/testresults
+            displayName: Unit tests (any failure fails the build)
+
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: VSTest
+              testResultsFiles: $(Agent.TempDirectory)/testresults/*.trx
+
+          - script: dotnet build src/EduCore.Plugins/EduCore.Plugins.csproj --configuration Release
+            displayName: Build plug-in package
+          # The built .nupkg is copied into solutions/EduCore/src/pluginpackages/ before packing.
+          # Add that copy step in the phase that registers the first plug-in step (Phase 1).
+
+          - task: PowerPlatformToolInstaller@2
+
+          - ${{ each name in split('EduCore,EduFlows,EduApps', ',') }}:
+              - task: PowerPlatformPackSolution@2
+                displayName: Pack ${{ name }} (managed)
+                inputs:
+                  SolutionSourceFolder: solutions/${{ name }}/src
+                  SolutionOutputFile: $(Build.ArtifactStagingDirectory)/${{ name }}_managed.zip
+                  SolutionType: Managed
+              - task: PowerPlatformPackSolution@2
+                displayName: Pack ${{ name }} (unmanaged)
+                inputs:
+                  SolutionSourceFolder: solutions/${{ name }}/src
+                  SolutionOutputFile: $(Build.ArtifactStagingDirectory)/${{ name }}.zip
+                  SolutionType: Unmanaged
+              - task: PowerPlatformChecker@2
+                displayName: Solution checker ${{ name }}
+                inputs:
+                  PowerPlatformSPN: $(SC_EDU_CHECKER)
+                  FilesToAnalyze: $(Build.ArtifactStagingDirectory)/${{ name }}_managed.zip
+                  RuleSet: 0ad12346-e108-40b8-a956-9a8f95ea18c9
+
+          - task: CopyFiles@2
+            inputs:
+              SourceFolder: deploy
+              Contents: settings.*.json
+              TargetFolder: $(Build.ArtifactStagingDirectory)/deploy
+
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: edu
+
+  - stage: Test
+    displayName: Deploy to TEST
+    dependsOn: Build
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - deployment: test
+        environment: edu-test
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/deploy.yml
+                  parameters:
+                    serviceConnection: $(SC_EDU_TEST)
+                    settingsFile: settings.test.json
+
+  - stage: UAT
+    displayName: Deploy to UAT (named approver)
+    dependsOn: Test
+    jobs:
+      - deployment: uat
+        environment: edu-uat
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/deploy.yml
+                  parameters:
+                    serviceConnection: $(SC_EDU_UAT)
+                    settingsFile: settings.uat.json
+
+  - stage: Prod
+    displayName: Deploy to PROD (named approver and rollback plan)
+    dependsOn: UAT
+    jobs:
+      - deployment: prod
+        environment: edu-prod
+        pool:
+          vmImage: windows-latest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerPlatformToolInstaller@2
+                # Rollback point: back up PROD before importing.
+                - task: PowerPlatformBackupEnvironment@2
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(SC_EDU_PROD)
+                    BackupLabel: pre-edu-$(Build.BuildNumber)
+                - template: templates/deploy.yml
+                  parameters:
+                    serviceConnection: $(SC_EDU_PROD)
+                    settingsFile: settings.prod.json

@@ -1,0 +1,22 @@
+# Imports the three EduCore solutions, in dependency order, with the per-environment settings file.
+parameters:
+  - name: serviceConnection
+    type: string
+  - name: settingsFile
+    type: string
+
+steps:
+  - task: PowerPlatformToolInstaller@2
+
+  - ${{ each name in split('EduCore,EduFlows,EduApps', ',') }}:
+      - task: PowerPlatformImportSolution@2
+        displayName: Import ${{ name }}
+        inputs:
+          authenticationType: PowerPlatformSPN
+          PowerPlatformSPN: ${{ parameters.serviceConnection }}
+          SolutionInputFile: $(Pipeline.Workspace)/edu/${{ name }}_managed.zip
+          UseDeploymentSettingsFile: true
+          DeploymentSettingsFile: $(Pipeline.Workspace)/edu/deploy/${{ parameters.settingsFile }}
+          AsyncOperation: true
+          MaxAsyncWaitTime: 60
+          PublishWorkflows: true

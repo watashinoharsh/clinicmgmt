@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="edu_AttendanceThreshold">
+  <defaultvalue>90</defaultvalue>
+  <displayname default="Attendance Threshold (%)">
+    <label description="Attendance Threshold (%)" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000001</type>
+</environmentvariabledefinition>
