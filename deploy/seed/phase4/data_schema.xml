@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity name="edu_subjectassignment" displayname="Subject Assignment" etc="0" primaryidfield="edu_subjectassignmentid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Subject Assignment" name="edu_subjectassignmentid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_course" name="edu_course" type="entityreference" lookupType="edu_course" />
+      <field displayname="edu_section" name="edu_section" type="entityreference" lookupType="edu_section" />
+      <field displayname="edu_staff" name="edu_staff" type="entityreference" lookupType="edu_staff" />
+      <field displayname="edu_term" name="edu_term" type="entityreference" lookupType="edu_term" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_classschedule" displayname="Class Schedule" etc="0" primaryidfield="edu_classscheduleid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Class Schedule" name="edu_classscheduleid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_subjectassignment" name="edu_subjectassignment" type="entityreference" lookupType="edu_subjectassignment" />
+      <field displayname="edu_weekday" name="edu_weekday" type="optionsetvalue" />
+      <field displayname="edu_period" name="edu_period" type="entityreference" lookupType="edu_period" />
+      <field displayname="edu_room" name="edu_room" type="string" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_assessment" displayname="Assessment" etc="0" primaryidfield="edu_assessmentid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Assessment" name="edu_assessmentid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_subjectassignment" name="edu_subjectassignment" type="entityreference" lookupType="edu_subjectassignment" />
+      <field displayname="edu_assessmenttype" name="edu_assessmenttype" type="optionsetvalue" />
+      <field displayname="edu_maxmarks" name="edu_maxmarks" type="decimal" />
+      <field displayname="edu_weightage" name="edu_weightage" type="decimal" />
+      <field displayname="edu_assessmentdate" name="edu_assessmentdate" type="datetime" />
+    </fields>
+  </entity>
+  <entity name="edu_studentmark" displayname="Student Mark" etc="0" primaryidfield="edu_studentmarkid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Student Mark" name="edu_studentmarkid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_assessment" name="edu_assessment" type="entityreference" lookupType="edu_assessment" />
+      <field displayname="edu_student" name="edu_student" type="entityreference" lookupType="edu_student" />
+      <field displayname="edu_marksobtained" name="edu_marksobtained" type="decimal" />
+      <field displayname="edu_percentage" name="edu_percentage" type="decimal" />
+      <field displayname="edu_gradeletter" name="edu_gradeletter" type="string" />
+      <field displayname="edu_remarks" name="edu_remarks" type="string" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+</entities>

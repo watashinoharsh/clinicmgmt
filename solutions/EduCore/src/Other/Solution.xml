@@ -142,6 +142,10 @@
       <RootComponent type="1" schemaName="edu_studentguardian" behavior="0" />
       <RootComponent type="1" schemaName="edu_enrolment" behavior="0" />
       <RootComponent type="1" schemaName="edu_applicant" behavior="0" />
+      <RootComponent type="1" schemaName="edu_subjectassignment" behavior="0" />
+      <RootComponent type="1" schemaName="edu_classschedule" behavior="0" />
+      <RootComponent type="1" schemaName="edu_assessment" behavior="0" />
+      <RootComponent type="1" schemaName="edu_studentmark" behavior="0" />
       <RootComponent type="1" schemaName="contact" behavior="1" />
       <RootComponent type="380" schemaName="edu_AttendanceThreshold" behavior="0" />
       <RootComponent type="380" schemaName="edu_DefaultReminderIntervalHours" behavior="0" />

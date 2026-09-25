@@ -32,6 +32,9 @@ namespace EduCore.Plugins
                 case PeopleRules.Section: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_grade"), row.GetAttributeValue<EntityReference>("edu_academicyear"), row.GetAttributeValue<string>("edu_name"));
                 case PeopleRules.StudentGuardian: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_student"), row.GetAttributeValue<EntityReference>("edu_guardian"));
                 case PeopleRules.Enrolment: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_student"), row.GetAttributeValue<EntityReference>("edu_academicyear"));
+                case AcademicsRules.SubjectAssignment: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_course"), row.GetAttributeValue<EntityReference>("edu_section"), row.GetAttributeValue<EntityReference>("edu_term"));
+                case AcademicsRules.ClassSchedule: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_subjectassignment"), row.GetAttributeValue<OptionSetValue>("edu_weekday"), row.GetAttributeValue<EntityReference>("edu_period"));
+                case AcademicsRules.StudentMark: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_assessment"), row.GetAttributeValue<EntityReference>("edu_student"));
                 default: return null;
             }
         }

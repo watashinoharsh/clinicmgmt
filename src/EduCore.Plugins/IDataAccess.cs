@@ -24,6 +24,12 @@ namespace EduCore.Plugins
 
         /// <summary>Ids of every record matching all equalities, not counting the record excludeId.</summary>
         System.Collections.Generic.IList<Guid> FindIds(string entityName, Guid excludeId, params Tuple<string, object>[] equals);
+
+        /// <summary>Number of records whose setAttribute is one of ids and that match every equality, not counting excludeId.</summary>
+        int CountInSet(string entityName, Guid excludeId, string setAttribute, System.Collections.Generic.IList<Guid> ids, params Tuple<string, object>[] equals);
+
+        /// <summary>Every record matching all equalities (up to 5000), with the given columns.</summary>
+        System.Collections.Generic.IList<Entity> FindAll(string entityName, string[] columns, params Tuple<string, object>[] equals);
     }
 
     public sealed class OrgDataAccess : IDataAccess
@@ -92,6 +98,22 @@ namespace EduCore.Plugins
             var ids = new System.Collections.Generic.List<Guid>();
             foreach (var e in _service.RetrieveMultiple(query).Entities) ids.Add(e.Id);
             return ids;
+        }
+
+        public int CountInSet(string entityName, Guid excludeId, string setAttribute, System.Collections.Generic.IList<Guid> ids, params Tuple<string, object>[] equals)
+        {
+            if (ids == null || ids.Count == 0) return 0;
+            var query = Build(entityName, new string[0], null, 5000, equals);
+            var values = new object[ids.Count];
+            for (int i = 0; i < ids.Count; i++) values[i] = ids[i];
+            query.Criteria.AddCondition(setAttribute, ConditionOperator.In, values);
+            if (excludeId != Guid.Empty) query.Criteria.AddCondition(entityName + "id", ConditionOperator.NotEqual, excludeId);
+            return _service.RetrieveMultiple(query).Entities.Count;
+        }
+
+        public System.Collections.Generic.IList<Entity> FindAll(string entityName, string[] columns, params Tuple<string, object>[] equals)
+        {
+            return _service.RetrieveMultiple(Build(entityName, columns, null, 5000, equals)).Entities;
         }
 
         private static QueryExpression Build(string entityName, string[] columns, string orderDescBy, int top, Tuple<string, object>[] equals)
