@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity name="contact" displayname="Contact" etc="0" primaryidfield="contactid" primarynamefield="fullname" disableplugins="true">
+    <fields>
+      <field displayname="Contact" name="contactid" type="guid" primaryKey="true" />
+      <field displayname="firstname" name="firstname" type="string" />
+      <field displayname="lastname" name="lastname" type="string" />
+      <field displayname="emailaddress1" name="emailaddress1" type="string" />
+      <field displayname="mobilephone" name="mobilephone" type="string" />
+      <field displayname="edu_preferredcontactchannel" name="edu_preferredcontactchannel" type="optionsetvalue" />
+    </fields>
+  </entity>
+  <entity name="edu_staff" displayname="Staff" etc="0" primaryidfield="edu_staffid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Staff" name="edu_staffid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_staffcode" name="edu_staffcode" type="string" />
+      <field displayname="edu_email" name="edu_email" type="string" />
+      <field displayname="edu_stafftype" name="edu_stafftype" type="optionsetvalue" />
+      <field displayname="edu_isactive" name="edu_isactive" type="bool" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_section" displayname="Section" etc="0" primaryidfield="edu_sectionid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Section" name="edu_sectionid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_grade" name="edu_grade" type="entityreference" lookupType="edu_grade" />
+      <field displayname="edu_academicyear" name="edu_academicyear" type="entityreference" lookupType="edu_academicyear" />
+      <field displayname="edu_classteacher" name="edu_classteacher" type="entityreference" lookupType="edu_staff" />
+      <field displayname="edu_capacity" name="edu_capacity" type="number" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_student" displayname="Student" etc="0" primaryidfield="edu_studentid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Student" name="edu_studentid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_dateofbirth" name="edu_dateofbirth" type="datetime" />
+      <field displayname="edu_gender" name="edu_gender" type="optionsetvalue" />
+      <field displayname="edu_enrolmentdate" name="edu_enrolmentdate" type="datetime" />
+      <field displayname="edu_currentgrade" name="edu_currentgrade" type="entityreference" lookupType="edu_grade" />
+      <field displayname="edu_currentsection" name="edu_currentsection" type="entityreference" lookupType="edu_section" />
+    </fields>
+  </entity>
+  <entity name="edu_studentguardian" displayname="Student Guardian" etc="0" primaryidfield="edu_studentguardianid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Student Guardian" name="edu_studentguardianid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_student" name="edu_student" type="entityreference" lookupType="edu_student" />
+      <field displayname="edu_guardian" name="edu_guardian" type="entityreference" lookupType="contact" />
+      <field displayname="edu_relationship" name="edu_relationship" type="optionsetvalue" />
+      <field displayname="edu_isprimary" name="edu_isprimary" type="bool" />
+      <field displayname="edu_emergencycontact" name="edu_emergencycontact" type="bool" />
+      <field displayname="edu_pickupauthorised" name="edu_pickupauthorised" type="bool" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_enrolment" displayname="Enrolment" etc="0" primaryidfield="edu_enrolmentid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Enrolment" name="edu_enrolmentid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_student" name="edu_student" type="entityreference" lookupType="edu_student" />
+      <field displayname="edu_section" name="edu_section" type="entityreference" lookupType="edu_section" />
+      <field displayname="edu_academicyear" name="edu_academicyear" type="entityreference" lookupType="edu_academicyear" />
+      <field displayname="edu_startdate" name="edu_startdate" type="datetime" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+</entities>

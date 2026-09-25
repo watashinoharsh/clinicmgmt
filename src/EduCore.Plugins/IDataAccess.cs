@@ -15,6 +15,12 @@ namespace EduCore.Plugins
 
         /// <summary>Number of records of entityName whose attribute equals value, not counting the record excludeId.</summary>
         int CountOthers(string entityName, string attribute, object value, Guid excludeId);
+
+        /// <summary>Number of records matching every equality, not counting the record excludeId.</summary>
+        int CountWhere(string entityName, Guid excludeId, params Tuple<string, object>[] equals);
+
+        /// <summary>The first record matching every equality, ordered by orderDescBy descending, or null.</summary>
+        Entity FindFirst(string entityName, string[] columns, string orderDescBy, params Tuple<string, object>[] equals);
     }
 
     public sealed class OrgDataAccess : IDataAccess
@@ -60,6 +66,28 @@ namespace EduCore.Plugins
             query.Criteria.AddCondition(attribute, ConditionOperator.Equal, value);
             if (excludeId != Guid.Empty) query.Criteria.AddCondition(entityName + "id", ConditionOperator.NotEqual, excludeId);
             return _service.RetrieveMultiple(query).Entities.Count;
+        }
+
+        public int CountWhere(string entityName, Guid excludeId, params Tuple<string, object>[] equals)
+        {
+            var query = Build(entityName, new string[0], null, 2, equals);
+            if (excludeId != Guid.Empty) query.Criteria.AddCondition(entityName + "id", ConditionOperator.NotEqual, excludeId);
+            return _service.RetrieveMultiple(query).Entities.Count;
+        }
+
+        public Entity FindFirst(string entityName, string[] columns, string orderDescBy, params Tuple<string, object>[] equals)
+        {
+            var query = Build(entityName, columns, orderDescBy, 1, equals);
+            var rows = _service.RetrieveMultiple(query).Entities;
+            return rows.Count == 0 ? null : rows[0];
+        }
+
+        private static QueryExpression Build(string entityName, string[] columns, string orderDescBy, int top, Tuple<string, object>[] equals)
+        {
+            var query = new QueryExpression(entityName) { ColumnSet = new ColumnSet(columns), TopCount = top };
+            foreach (var e in equals) query.Criteria.AddCondition(e.Item1, ConditionOperator.Equal, e.Item2);
+            if (orderDescBy != null) query.AddOrder(orderDescBy, OrderType.Descending);
+            return query;
         }
     }
 }

@@ -28,6 +28,10 @@ namespace EduCore.Plugins
                 case Course: return EduKey.Build(row.GetAttributeValue<string>("edu_coursecode"));
                 case Period: return EduKey.Build(row.GetAttributeValue<int>("edu_sequence"));
                 case GradeBand: return EduKey.Build(row.GetAttributeValue<string>("edu_letter"));
+                case PeopleRules.Staff: return EduKey.Build(row.GetAttributeValue<string>("edu_staffcode"));
+                case PeopleRules.Section: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_grade"), row.GetAttributeValue<EntityReference>("edu_academicyear"), row.GetAttributeValue<string>("edu_name"));
+                case PeopleRules.StudentGuardian: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_student"), row.GetAttributeValue<EntityReference>("edu_guardian"));
+                case PeopleRules.Enrolment: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_student"), row.GetAttributeValue<EntityReference>("edu_academicyear"));
                 default: return null;
             }
         }
