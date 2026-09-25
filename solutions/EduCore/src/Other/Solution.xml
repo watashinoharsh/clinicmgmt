@@ -129,6 +129,14 @@
       <RootComponent type="1" schemaName="edu_reenrolmentrule" behavior="0" />
       <RootComponent type="1" schemaName="edu_rolloverplan" behavior="0" />
       <RootComponent type="1" schemaName="edu_visitor" behavior="0" />
+      <RootComponent type="1" schemaName="edu_academicyear" behavior="0" />
+      <RootComponent type="1" schemaName="edu_term" behavior="0" />
+      <RootComponent type="1" schemaName="edu_calendarday" behavior="0" />
+      <RootComponent type="1" schemaName="edu_grade" behavior="0" />
+      <RootComponent type="1" schemaName="edu_course" behavior="0" />
+      <RootComponent type="1" schemaName="edu_period" behavior="0" />
+      <RootComponent type="1" schemaName="edu_gradeband" behavior="0" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
       <RootComponent type="380" schemaName="edu_AttendanceThreshold" behavior="0" />
       <RootComponent type="380" schemaName="edu_DefaultReminderIntervalHours" behavior="0" />
       <RootComponent type="380" schemaName="edu_FeeReminderDaysBefore" behavior="0" />

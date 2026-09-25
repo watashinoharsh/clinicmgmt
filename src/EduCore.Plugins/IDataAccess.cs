@@ -12,6 +12,9 @@ namespace EduCore.Plugins
 
         /// <summary>True when at least one record of entityName has lookupAttribute equal to id.</summary>
         bool Exists(string entityName, string lookupAttribute, Guid id);
+
+        /// <summary>Number of records of entityName whose attribute equals value, not counting the record excludeId.</summary>
+        int CountOthers(string entityName, string attribute, object value, Guid excludeId);
     }
 
     public sealed class OrgDataAccess : IDataAccess
@@ -45,6 +48,18 @@ namespace EduCore.Plugins
             };
             query.Criteria.AddCondition(lookupAttribute, ConditionOperator.Equal, id);
             return _service.RetrieveMultiple(query).Entities.Count > 0;
+        }
+
+        public int CountOthers(string entityName, string attribute, object value, Guid excludeId)
+        {
+            var query = new QueryExpression(entityName)
+            {
+                ColumnSet = new ColumnSet(false),
+                TopCount = 2
+            };
+            query.Criteria.AddCondition(attribute, ConditionOperator.Equal, value);
+            if (excludeId != Guid.Empty) query.Criteria.AddCondition(entityName + "id", ConditionOperator.NotEqual, excludeId);
+            return _service.RetrieveMultiple(query).Entities.Count;
         }
     }
 }

@@ -31,7 +31,8 @@ DEV environment setup, first import and test users: `docs/phase0-runbook.md`.
 | Phase | State |
 |---|---|
 | 0 Foundations | Repo, solutions, env vars, tests, pipeline skeleton done. DEV environment and test users pending (see runbook) |
-| 1 to 10 | Not started. Plan and design: `docs/LLD_v2_EduCore.md` |
+| 1 Reference data and calendar | Built and imported to DEV with seed data. Open items: course to grade N:N, plug-in step registration (`docs/phase1.md`) |
+| 2 to 10 | Not started. Plan and design: `docs/LLD_v2_EduCore.md` |
 
 ## Requirements
 Power Platform CLI (`pac`), .NET SDK, PowerShell. A Dataverse environment for DEV.

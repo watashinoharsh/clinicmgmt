@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity name="edu_academicyear" displayname="Academic Year" etc="0" primaryidfield="edu_academicyearid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Academic Year" name="edu_academicyearid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Start Date" name="edu_startdate" type="datetime" />
+      <field displayname="End Date" name="edu_enddate" type="datetime" />
+      <field displayname="Is Current" name="edu_iscurrent" type="bool" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_term" displayname="Term" etc="0" primaryidfield="edu_termid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Term" name="edu_termid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Academic Year" name="edu_academicyear" type="entityreference" lookupType="edu_academicyear" />
+      <field displayname="Start Date" name="edu_startdate" type="datetime" />
+      <field displayname="End Date" name="edu_enddate" type="datetime" />
+      <field displayname="Sequence" name="edu_sequence" type="number" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_calendarday" displayname="Calendar Day" etc="0" primaryidfield="edu_calendardayid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Calendar Day" name="edu_calendardayid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Date" name="edu_date" type="datetime" />
+      <field displayname="Academic Year" name="edu_academicyear" type="entityreference" lookupType="edu_academicyear" />
+      <field displayname="Type" name="edu_daytype" type="optionsetvalue" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_grade" displayname="Grade" etc="0" primaryidfield="edu_gradeid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Grade" name="edu_gradeid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Sequence" name="edu_sequence" type="number" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_course" displayname="Course" etc="0" primaryidfield="edu_courseid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Course" name="edu_courseid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Course Code" name="edu_coursecode" type="string" />
+      <field displayname="Is Mandatory" name="edu_ismandatory" type="bool" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_period" displayname="Period" etc="0" primaryidfield="edu_periodid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Period" name="edu_periodid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Start Time" name="edu_starttime" type="string" />
+      <field displayname="End Time" name="edu_endtime" type="string" />
+      <field displayname="Sequence" name="edu_sequence" type="number" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_gradeband" displayname="Grade Band" etc="0" primaryidfield="edu_gradebandid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Grade Band" name="edu_gradebandid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="edu_name" type="string" />
+      <field displayname="Letter" name="edu_letter" type="string" />
+      <field displayname="Minimum %" name="edu_minpercent" type="decimal" />
+      <field displayname="GPA Points" name="edu_gpapoints" type="decimal" />
+      <field displayname="Unique Key" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+</entities>
