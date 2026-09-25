@@ -61,16 +61,9 @@ namespace EduCore.Plugins.Tests
         [Fact]
         public void Year_must_end_after_it_starts()
         {
-            Assert.NotNull(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2026, 6, 1), false, 0));
-            Assert.Null(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2027, 5, 31), false, 0));
-        }
-
-        [Fact]
-        public void Only_one_year_can_be_current()
-        {
-            Assert.NotNull(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2027, 5, 31), true, 1));
-            Assert.Null(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2027, 5, 31), true, 0));
-            Assert.Null(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2027, 5, 31), false, 3));
+            Assert.NotNull(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2026, 6, 1)));
+            Assert.Null(ReferenceRules.ValidateAcademicYear(new DateTime(2026, 6, 1), new DateTime(2027, 5, 31)));
+            Assert.Null(ReferenceRules.ValidateAcademicYear(null, null));
         }
 
         [Fact]

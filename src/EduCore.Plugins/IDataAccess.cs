@@ -21,6 +21,9 @@ namespace EduCore.Plugins
 
         /// <summary>The first record matching every equality, ordered by orderDescBy descending, or null.</summary>
         Entity FindFirst(string entityName, string[] columns, string orderDescBy, params Tuple<string, object>[] equals);
+
+        /// <summary>Ids of every record matching all equalities, not counting the record excludeId.</summary>
+        System.Collections.Generic.IList<Guid> FindIds(string entityName, Guid excludeId, params Tuple<string, object>[] equals);
     }
 
     public sealed class OrgDataAccess : IDataAccess
@@ -80,6 +83,15 @@ namespace EduCore.Plugins
             var query = Build(entityName, columns, orderDescBy, 1, equals);
             var rows = _service.RetrieveMultiple(query).Entities;
             return rows.Count == 0 ? null : rows[0];
+        }
+
+        public System.Collections.Generic.IList<Guid> FindIds(string entityName, Guid excludeId, params Tuple<string, object>[] equals)
+        {
+            var query = Build(entityName, new string[0], null, 5000, equals);
+            if (excludeId != Guid.Empty) query.Criteria.AddCondition(entityName + "id", ConditionOperator.NotEqual, excludeId);
+            var ids = new System.Collections.Generic.List<Guid>();
+            foreach (var e in _service.RetrieveMultiple(query).Entities) ids.Add(e.Id);
+            return ids;
         }
 
         private static QueryExpression Build(string entityName, string[] columns, string orderDescBy, int top, Tuple<string, object>[] equals)

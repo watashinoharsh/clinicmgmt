@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="StartDate">
+  <description default="Enrolment start date (default today)">
+    <label description="Enrolment start date (default today)" languagecode="1033" />
+  </description>
+  <displayname default="StartDate">
+    <label description="StartDate" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>1</isoptional>
+  <name>StartDate</name>
+  <type>1</type>
+</customapirequestparameter>

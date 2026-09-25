@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity name="contact" displayname="Contact" etc="0" primaryidfield="contactid" primarynamefield="fullname" disableplugins="true">
+    <fields>
+      <field displayname="Contact" name="contactid" type="guid" primaryKey="true" />
+      <field displayname="firstname" name="firstname" type="string" />
+      <field displayname="lastname" name="lastname" type="string" />
+      <field displayname="emailaddress1" name="emailaddress1" type="string" />
+      <field displayname="mobilephone" name="mobilephone" type="string" />
+      <field displayname="edu_preferredcontactchannel" name="edu_preferredcontactchannel" type="optionsetvalue" />
+    </fields>
+  </entity>
+  <entity name="edu_applicant" displayname="Applicant" etc="0" primaryidfield="edu_applicantid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Applicant" name="edu_applicantid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_dateofbirth" name="edu_dateofbirth" type="datetime" />
+      <field displayname="edu_applyinggrade" name="edu_applyinggrade" type="entityreference" lookupType="edu_grade" />
+      <field displayname="edu_academicyear" name="edu_academicyear" type="entityreference" lookupType="edu_academicyear" />
+      <field displayname="edu_primaryguardian" name="edu_primaryguardian" type="entityreference" lookupType="contact" />
+      <field displayname="edu_previousschool" name="edu_previousschool" type="string" />
+      <field displayname="edu_applicationdate" name="edu_applicationdate" type="datetime" />
+      <field displayname="edu_offerdate" name="edu_offerdate" type="datetime" />
+      <field displayname="edu_decisionreason" name="edu_decisionreason" type="string" />
+      <field displayname="statecode" name="statecode" type="state" />
+      <field displayname="statuscode" name="statuscode" type="status" />
+    </fields>
+  </entity>
+</entities>

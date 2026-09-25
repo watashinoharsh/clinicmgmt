@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Created">
+  <description default="False when the applicant had already been enrolled">
+    <label description="False when the applicant had already been enrolled" languagecode="1033" />
+  </description>
+  <displayname default="Created">
+    <label description="Created" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Created</name>
+  <type>0</type>
+</customapiresponseproperty>

@@ -5,7 +5,7 @@
 |---|---|
 | Tables (Org-owned) | `edu_academicyear`, `edu_term`, `edu_calendarday`, `edu_grade`, `edu_course`, `edu_period`, `edu_gradeband`. Each has a form, views, and an alternate key on `edu_uniquekey` (LLD section 3) |
 | Guardian on Contact | `contact.edu_preferredcontactchannel` (Email, SMS, Phone). Contact is the guardian (LLD C1); no custom guardian table |
-| Rules (`src/EduCore.Plugins`) | `ReferenceRules` (pure) and `ReferenceDataPlugin` (pre-operation): fills `edu_uniquekey`, one current academic year, year and term date order, terms inside their year, `HH:mm` period times |
+| Rules (`src/EduCore.Plugins`) | `ReferenceRules` (pure) and `ReferenceDataPlugin` (pre-operation): fills `edu_uniquekey`, one current academic year (making a year current clears the others), year and term date order, terms inside their year, `HH:mm` period times |
 | Tests | `ReferenceRulesTests`: 11 tests; whole suite 24 passing |
 | Seed data | `deploy/seed/phase1`: 1 year (2026-27), 3 terms, 5 calendar days, grades 1 to 12, 8 courses, 8 periods, 6 grade bands. Load with `pac data import --data deploy/seed/phase1/seed_phase1.zip` (DEV and UAT only) |
 

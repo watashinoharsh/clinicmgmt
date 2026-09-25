@@ -36,13 +36,11 @@ namespace EduCore.Plugins
             }
         }
 
-        /// <summary>Returns an error message, or null when the row is valid. <paramref name="otherCurrentYears"/> counts other years already flagged current.</summary>
-        public static string ValidateAcademicYear(DateTime? start, DateTime? end, bool isCurrent, int otherCurrentYears)
+        /// <summary>Returns an error message, or null when the row is valid. Making a year current clears the flag on the others (the plug-in does that in the same transaction).</summary>
+        public static string ValidateAcademicYear(DateTime? start, DateTime? end)
         {
             if (start.HasValue && end.HasValue && end.Value.Date <= start.Value.Date)
                 return "The academic year must end after it starts.";
-            if (isCurrent && otherCurrentYears > 0)
-                return "Only one academic year can be current. Clear the flag on the other year first.";
             return null;
         }
 

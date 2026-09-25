@@ -1,0 +1,15 @@
+<customapi uniquename="edu_EnrolApplicant">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Converts an applicant with an offer into a student, guardian link and enrolment in one transaction. Idempotent.">
+    <label description="Converts an applicant with an offer into a student, guardian link and enrolment in one transaction. Idempotent." languagecode="1033" />
+  </description>
+  <displayname default="Enrol Applicant">
+    <label description="Enrol Applicant" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>edu_EnrolApplicant</name>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

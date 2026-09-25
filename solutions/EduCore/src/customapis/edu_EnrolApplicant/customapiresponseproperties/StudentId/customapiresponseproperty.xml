@@ -1,0 +1,12 @@
+<customapiresponseproperty uniquename="StudentId">
+  <description default="The student created, or the existing one">
+    <label description="The student created, or the existing one" languagecode="1033" />
+  </description>
+  <displayname default="StudentId">
+    <label description="StudentId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <logicalentityname>edu_student</logicalentityname>
+  <name>StudentId</name>
+  <type>5</type>
+</customapiresponseproperty>

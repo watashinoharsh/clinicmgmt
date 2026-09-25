@@ -1,0 +1,13 @@
+<customapirequestparameter uniquename="ApplicantId">
+  <description default="Applicant to enrol">
+    <label description="Applicant to enrol" languagecode="1033" />
+  </description>
+  <displayname default="ApplicantId">
+    <label description="ApplicantId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <logicalentityname>edu_applicant</logicalentityname>
+  <name>ApplicantId</name>
+  <type>5</type>
+</customapirequestparameter>

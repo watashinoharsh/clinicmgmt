@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="Relationship">
+  <description default="edu_studentguardian relationship choice value for the primary guardian (default Legal Guardian)">
+    <label description="edu_studentguardian relationship choice value for the primary guardian (default Legal Guardian)" languagecode="1033" />
+  </description>
+  <displayname default="Relationship">
+    <label description="Relationship" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>1</isoptional>
+  <name>Relationship</name>
+  <type>7</type>
+</customapirequestparameter>
