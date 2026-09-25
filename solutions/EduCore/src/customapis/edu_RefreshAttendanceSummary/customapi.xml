@@ -1,0 +1,15 @@
+<customapi uniquename="edu_RefreshAttendanceSummary">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Recomputes the attendance summary (teaching days, present, late, absent, excused, percentage) for every student with an active enrolment in the term's academic year. Upserts by student and term.">
+    <label description="Recomputes the attendance summary (teaching days, present, late, absent, excused, percentage) for every student with an active enrolment in the term's academic year. Upserts by student and term." languagecode="1033" />
+  </description>
+  <displayname default="Refresh Attendance Summary">
+    <label description="Refresh Attendance Summary" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>edu_RefreshAttendanceSummary</name>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

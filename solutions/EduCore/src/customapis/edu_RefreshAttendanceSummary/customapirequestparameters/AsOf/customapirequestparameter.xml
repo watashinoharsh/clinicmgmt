@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="AsOf">
+  <description default="Count teaching days up to this date (default now)">
+    <label description="Count teaching days up to this date (default now)" languagecode="1033" />
+  </description>
+  <displayname default="AsOf">
+    <label description="AsOf" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>1</isoptional>
+  <name>AsOf</name>
+  <type>1</type>
+</customapirequestparameter>

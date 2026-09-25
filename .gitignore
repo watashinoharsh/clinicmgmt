@@ -9,3 +9,6 @@ TestResults/
 # never commit environment-specific secrets
 *.secret.json
 .env
+
+# agent worktrees
+.claude/

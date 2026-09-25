@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Refreshed">
+  <description default="Number of summary rows written">
+    <label description="Number of summary rows written" languagecode="1033" />
+  </description>
+  <displayname default="Refreshed">
+    <label description="Refreshed" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Refreshed</name>
+  <type>7</type>
+</customapiresponseproperty>

@@ -35,6 +35,7 @@ namespace EduCore.Plugins
                 case AcademicsRules.SubjectAssignment: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_course"), row.GetAttributeValue<EntityReference>("edu_section"), row.GetAttributeValue<EntityReference>("edu_term"));
                 case AcademicsRules.ClassSchedule: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_subjectassignment"), row.GetAttributeValue<OptionSetValue>("edu_weekday"), row.GetAttributeValue<EntityReference>("edu_period"));
                 case AcademicsRules.StudentMark: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_assessment"), row.GetAttributeValue<EntityReference>("edu_student"));
+                case AttendanceRules.Summary: return EduKey.Build(row.GetAttributeValue<EntityReference>("edu_student"), row.GetAttributeValue<EntityReference>("edu_term"));
                 default: return null;
             }
         }

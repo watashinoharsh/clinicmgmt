@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity name="edu_attendance" displayname="Attendance" etc="0" primaryidfield="edu_attendanceid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Attendance" name="edu_attendanceid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_student" name="edu_student" type="entityreference" lookupType="edu_student" />
+      <field displayname="edu_date" name="edu_date" type="datetime" />
+      <field displayname="edu_term" name="edu_term" type="entityreference" lookupType="edu_term" />
+      <field displayname="edu_attendancetype" name="edu_attendancetype" type="optionsetvalue" />
+      <field displayname="edu_attendancestatus" name="edu_attendancestatus" type="optionsetvalue" />
+      <field displayname="edu_absencereason" name="edu_absencereason" type="string" />
+      <field displayname="edu_recordedby" name="edu_recordedby" type="entityreference" lookupType="edu_staff" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+  <entity name="edu_attendancesummary" displayname="Attendance Summary" etc="0" primaryidfield="edu_attendancesummaryid" primarynamefield="edu_name" disableplugins="true">
+    <fields>
+      <field displayname="Attendance Summary" name="edu_attendancesummaryid" type="guid" primaryKey="true" />
+      <field displayname="edu_name" name="edu_name" type="string" />
+      <field displayname="edu_student" name="edu_student" type="entityreference" lookupType="edu_student" />
+      <field displayname="edu_term" name="edu_term" type="entityreference" lookupType="edu_term" />
+      <field displayname="edu_teachingdays" name="edu_teachingdays" type="number" />
+      <field displayname="edu_present" name="edu_present" type="number" />
+      <field displayname="edu_late" name="edu_late" type="number" />
+      <field displayname="edu_absent" name="edu_absent" type="number" />
+      <field displayname="edu_excused" name="edu_excused" type="number" />
+      <field displayname="edu_percentage" name="edu_percentage" type="decimal" />
+      <field displayname="edu_refreshedon" name="edu_refreshedon" type="datetime" />
+      <field displayname="edu_uniquekey" name="edu_uniquekey" type="string" />
+    </fields>
+  </entity>
+</entities>
